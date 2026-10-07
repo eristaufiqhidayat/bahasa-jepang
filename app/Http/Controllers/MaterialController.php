@@ -53,7 +53,7 @@ class MaterialController extends Controller
             'lessons' => ['title' => 'required|string|max:255', 'slug' => ['required', 'alpha_dash', 'max:255', Rule::unique('lessons')->ignore($id)], 'summary' => 'required|string|max:2000', 'content' => 'required|string|max:50000', 'japanese' => 'nullable|string|max:255', 'romaji' => 'nullable|string|max:255', 'translation' => 'nullable|string|max:5000', 'position' => 'required|integer|min:1|max:10000', 'duration_minutes' => 'required|integer|min:1|max:120', 'status' => 'required|in:draft,published'],
             'vocabularies' => ['lesson_id' => 'required|exists:lessons,id', 'japanese' => 'required|string|max:255', 'reading' => 'nullable|string|max:255', 'romaji' => 'required|string|max:255', 'meaning' => 'required|string|max:255', 'category' => 'required|string|max:255', 'example' => 'nullable|string|max:5000', 'example_translation' => 'nullable|string|max:5000'],
             'characters' => ['script' => 'required|in:hiragana,katakana', 'symbol' => ['required', 'string', 'max:10', Rule::unique('characters')->where('script', request('script'))->ignore($id)], 'romaji' => 'required|string|max:30', 'group' => 'required|string|max:255', 'position' => 'required|integer|min:1|max:10000'],
-            'questions' => ['lesson_id' => 'required|exists:lessons,id', 'prompt' => 'required|string|max:5000', 'type' => 'required|in:meaning,reading,listening', 'option_0' => 'required|string|max:255', 'option_1' => 'required|string|max:255', 'option_2' => 'required|string|max:255', 'option_3' => 'required|string|max:255', 'correct_index' => 'required|integer|between:0,3', 'explanation' => 'required|string|max:5000', 'position' => 'required|integer|min:1|max:10000'],
+            'questions' => ['lesson_id' => 'required|exists:lessons,id', 'prompt' => 'required|string|max:5000', 'type' => 'required|in:meaning,reading,listening', 'option_0' => 'required|string|max:255', 'option_1' => 'required|string|max:255', 'option_2' => 'required|string|max:255', 'option_3' => 'nullable|string|max:255', 'correct_index' => 'required|integer|between:0,3', 'explanation' => 'required|string|max:5000', 'position' => 'required|integer|min:1|max:10000'],
         };
 
         return $rules + ['audio' => 'nullable|file|mimes:mp3,wav,ogg,m4a|max:10240', 'remove_audio' => 'nullable|boolean'];
@@ -65,7 +65,13 @@ class MaterialController extends Controller
         $item = $id ? $config['model']::findOrFail($id) : new $config['model'];
         $data = $r->validate($this->rules($type, $id));
         if ($type === 'questions') {
-            $data['options'] = array_map(fn ($i) => $data['option_'.$i], range(0, 3));
+            $data['options'] = array_map(fn ($i) => $data['option_'.$i], range(0, 2));
+            if (isset($data['option_3']) && trim($data['option_3']) !== '') {
+                $data['options'][] = $data['option_3'];
+            }
+            if ((int) $data['correct_index'] >= count($data['options'])) {
+                return back()->withErrors(['correct_index' => 'Jawaban benar harus menunjuk pilihan yang terisi.'])->withInput();
+            }
             foreach (range(0, 3) as $i) {
                 unset($data['option_'.$i]);
             }

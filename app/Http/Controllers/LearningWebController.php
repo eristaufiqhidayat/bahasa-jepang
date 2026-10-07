@@ -47,7 +47,7 @@ class LearningWebController extends Controller
     private function grade(Request $request, Question $question, bool $preview)
     {
         abort_unless($preview || $question->lesson->status === 'published', 404);
-        $data = $request->validate(['answer_index' => 'required|integer|between:0,3']);
+        $data = $request->validate(['answer_index' => 'required|integer|min:0|max:'.(count($question->options) - 1)]);
 
         return response()->json(['correct' => (int) $data['answer_index'] === $question->correct_index, 'correct_index' => $question->correct_index, 'explanation' => $question->explanation]);
     }

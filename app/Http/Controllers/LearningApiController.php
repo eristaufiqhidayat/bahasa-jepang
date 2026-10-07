@@ -37,7 +37,7 @@ class LearningApiController extends Controller
     public function answer(Request $r, Question $question)
     {
         abort_unless($question->lesson->status === 'published', 404);
-        $data = $r->validate(['answer_index' => 'required|integer|between:0,3']);
+        $data = $r->validate(['answer_index' => 'required|integer|min:0|max:'.(count($question->options) - 1)]);
 
         return ['correct' => (int) $data['answer_index'] === $question->correct_index, 'correct_index' => $question->correct_index, 'explanation' => $question->explanation];
     }

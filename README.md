@@ -43,7 +43,7 @@ Buat database `bahasa_jepang` dengan charset `utf8mb4` dan collation `utf8mb4_un
 
 1. Masuk panel → Pelajaran → Tambah. Slug contoh: `salam-pagi`, urutan 1, status draft.
 2. Isi penjelasan Indonesia, contoh Jepang, romaji, arti, durasi, dan audio jika tersedia. Isi materi berupa teks biasa, bukan HTML.
-3. Tambahkan kosakata dan soal lalu pilih pelajaran induknya. Soal memiliki empat pilihan dan satu kunci jawaban.
+3. Tambahkan kosakata dan soal lalu pilih pelajaran induknya. Soal memiliki tiga atau empat pilihan dan satu kunci jawaban.
 4. Pilih jenis mendengarkan hanya setelah audio tersedia. Tambahkan pembahasan.
 5. Periksa arti, bunyi, dan konteks bersama pengajar bahasa Jepang. Publikasikan dengan status published.
 6. Edit/hapus melalui daftar. Menghapus pelajaran juga menghapus kosakata, soal, dan audio terkait.
@@ -104,3 +104,16 @@ php artisan optimize
 ```
 
 Perubahan halaman belajar tidak menambah tabel. Tidak perlu mengulang seeder atau membuat ulang akun admin. Untuk hosting yang mematikan `proc_open`, jika menginstal dependensi gunakan `composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts`, lalu `php artisan package:discover --ansi`.
+
+## Memasukkan kosakata dan latihan persis dari mockup
+
+```bash
+git pull origin main
+php artisan db:seed --class=MockupMaterialSeeder --force
+php artisan optimize:clear
+php artisan optimize
+```
+
+Seeder menambahkan sembilan kosakata mockup (ありがとう, おはようございます, みず, コーヒー, おちゃ, ともだち, せんせい, がっこう, えき) dengan kategori Sapaan/Minuman/Orang/Tempat, serta lima soal mockup dengan tiga pilihan dan pembahasan. Materi contoh sebelumnya tetap tersedia. Kosakata yang sudah ada dipakai kembali; kategori bawaan awal disesuaikan. Materi hasil edit admin dan audio tidak ditimpa. Seeder dapat diulang tanpa duplikasi.
+
+Untuk database baru, `php artisan migrate --seed` juga memasukkan paket ini. Total data contoh menjadi 27 kosakata dan 13 soal, termasuk sembilan kata/lima soal dari mockup. Status pelajaran tetap mengikuti data yang ada. Coba melalui **Pratinjau halaman belajar** atau publikasikan pelajaran salam, perkenalan, dan minuman agar kata/soalnya tampil publik.
