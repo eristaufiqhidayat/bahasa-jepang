@@ -117,3 +117,7 @@ php artisan optimize
 Seeder menambahkan sembilan kosakata mockup (ありがとう, おはようございます, みず, コーヒー, おちゃ, ともだち, せんせい, がっこう, えき) dengan kategori Sapaan/Minuman/Orang/Tempat, serta lima soal mockup dengan tiga pilihan dan pembahasan. Materi contoh sebelumnya tetap tersedia. Kosakata yang sudah ada dipakai kembali; kategori bawaan awal disesuaikan. Materi hasil edit admin dan audio tidak ditimpa. Seeder dapat diulang tanpa duplikasi.
 
 Untuk database baru, `php artisan migrate --seed` juga memasukkan paket ini. Total data contoh menjadi 27 kosakata dan 13 soal, termasuk sembilan kata/lima soal dari mockup. Status pelajaran tetap mengikuti data yang ada. Coba melalui **Pratinjau halaman belajar** atau publikasikan pelajaran salam, perkenalan, dan minuman agar kata/soalnya tampil publik.
+
+## Aplikasi Flutter
+
+Source aplikasi Android/iOS/web tersedia di folder `flutter/`. Lihat `flutter/README.md` untuk menjalankan aplikasi, konfigurasi API, dan build.
