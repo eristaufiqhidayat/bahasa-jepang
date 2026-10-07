@@ -35,6 +35,7 @@ class LearningWebController extends Controller
 
         $data['tracks'] = CourseTrack::orderBy('position')->get();
         $data['templates'] = VirtualTestTemplate::where(fn ($q) => $q->where('status', 'published')->orWhere('mode', 'blueprint'))->get()->makeHidden(['question_ids']);
+        $data['chat_base'] = url('belajar/tanya-materi');
         $data['exam_base'] = url('belajar/virtual-tests');
 
         return view('learning.app', compact('data', 'preview'));

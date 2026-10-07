@@ -136,3 +136,9 @@ php artisan optimize
 ```
 
 Seeder dapat diulang tanpa menimpa edit admin atau menggandakan data. Progres lama tetap dibaca pada browser yang sama. Detail isi data, pengelolaan admin, batas cakupan, dan cara kerja tes: [docs/UPGRADE-JLPT.md](docs/UPGRADE-JLPT.md).
+
+## Tanya Materi tanpa AI
+
+Menu chat teks mencari bank jawaban fondasi, kosakata published, Bab 1–10 dan dasar N4 Bab 26–30. Setiap jawaban mencantumkan sumber, tersedia kuota 20 pertanyaan/hari per sesi browser, riwayat dan laporan jawaban keliru. Admin mengelola FAQ/sinonim, antrean pertanyaan belum terjawab dan laporan. Tidak membutuhkan API key atau biaya API AI. Bank ini belum mencakup semua N5/N4; jawaban awal perlu tinjauan pengajar.
+
+Aktivasi hosting dan cara pengelolaan: [docs/TANYA-MATERI.md](docs/TANYA-MATERI.md). Setelah pull dan migrate, jalankan `JlptCurriculumSeeder` lalu `MaterialChatSeeder`. Seeder tidak menimpa koreksi admin.

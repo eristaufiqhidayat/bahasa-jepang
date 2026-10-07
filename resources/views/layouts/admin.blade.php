@@ -12,7 +12,7 @@
 <span>あ</span> Belajar Jepang</a>
 <p class="muted">Panel materi & kurikulum</p>
 <nav>
-<a href="{{ route('dashboard') }}">Ringkasan</a>@foreach(\App\Support\MaterialTypes::all() as $key=>$nav)<a class="{{ request()->is('admin/'.$key.'*')?'active':'' }}" href="{{ route('materials.index',$key) }}">{{ $nav['label'] }}</a>@endforeach<a href="{{ route('virtual-tests.index') }}">Virtual test</a></nav>
+<a href="{{ route('dashboard') }}">Ringkasan</a>@foreach(\App\Support\MaterialTypes::all() as $key=>$nav)<a class="{{ request()->is('admin/'.$key.'*')?'active':'' }}" href="{{ route('materials.index',$key) }}">{{ $nav['label'] }}</a>@endforeach<a href="{{ route('virtual-tests.index') }}">Virtual test</a><a href="{{ route('material-answers.index') }}">Tanya Materi & laporan</a></nav>
 <form method="post" action="{{ route('logout') }}">@csrf<button class="secondary">Keluar</button>
 </form>
 </aside>

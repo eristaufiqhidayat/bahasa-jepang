@@ -1,0 +1,735 @@
+[
+  {
+    "slug": "fondasi-mulai",
+    "question": "Bagaimana mulai belajar bahasa Jepang?",
+    "answer": "Mulai dari hiragana, lalu katakana. Latih bunyi sambil membaca kosakata pendek. Setelah itu pelajari salam, angka, dan kalimat sederhana di Bab 1. Gunakan menu Huruf dan Kosakata sebelum latihan N5.",
+    "keywords": [
+      "mulai belajar",
+      "urutan belajar",
+      "belajar dari nol"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-hiragana",
+    "question": "Apa itu hiragana?",
+    "answer": "Hiragana adalah aksara fonetis Jepang untuk menulis kata dan unsur tata bahasa. Contoh: あ dibaca a dan ありがとう dibaca arigatou. Buka menu Huruf, pilih Hiragana, lalu dengarkan bunyinya.",
+    "keywords": [
+      "hiragana",
+      "ひらがな"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-katakana",
+    "question": "Apa itu katakana?",
+    "answer": "Katakana adalah aksara fonetis yang antara lain dipakai untuk kata serapan dan nama asing. Contoh: コーヒー (koohii), kopi. Buka menu Huruf dan pilih Katakana.",
+    "keywords": [
+      "katakana",
+      "カタカナ"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-kanji",
+    "question": "Apa itu kanji?",
+    "answer": "Kanji adalah karakter yang membawa makna dan dapat memiliki beberapa cara baca. Contoh: 日 berarti hari atau matahari, dengan bacaan yang bergantung pada kata. Pelajari kanji bersama kosakata, jangan menganggap satu karakter selalu memiliki satu bacaan.",
+    "keywords": [
+      "kanji",
+      "漢字"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-romaji",
+    "question": "Apa itu romaji?",
+    "answer": "Romaji menuliskan bunyi Jepang dengan huruf Latin, misalnya watashi. Pakai sebagai bantuan awal, lalu biasakan membaca kana. Di menu Kosakata, kamu dapat mematikan tampilan Romaji.",
+    "keywords": [
+      "romaji",
+      "romaji latin"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-salam",
+    "question": "Bagaimana mengucapkan salam dalam bahasa Jepang?",
+    "answer": "おはようございます (ohayou gozaimasu) adalah salam pagi yang sopan; こんにちは (konnichiwa) digunakan pada siang hari; こんばんは (konbanwa) adalah salam malam. Pada dua salam terakhir, は dibaca wa.",
+    "keywords": [
+      "salam jepang",
+      "ucapan salam",
+      "salam pagi"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-kenalan",
+    "question": "Bagaimana memperkenalkan diri dalam bahasa Jepang?",
+    "answer": "Contoh perkenalan: はじめまして。わたしはエリスです。よろしくお願いします。Artinya: Salam kenal. Saya Eris. Senang berkenalan dengan Anda. Pelajari struktur は dan です di Bab 1.",
+    "keywords": [
+      "memperkenalkan diri",
+      "perkenalan diri"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-angka",
+    "question": "Bagaimana membaca angka satu sampai sepuluh?",
+    "answer": "1 いち (ichi), 2 に (ni), 3 さん (san), 4 よん (yon), 5 ご (go), 6 ろく (roku), 7 なな (nana), 8 はち (hachi), 9 きゅう (kyuu), 10 じゅう (juu). Bacaan 4, 7, dan 9 bisa berubah menurut ungkapan atau pencacah; misalnya pukul 4 adalah よじ.",
+    "keywords": [
+      "angka satu sampai sepuluh",
+      "angka 1 10",
+      "membaca angka"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-bunyi",
+    "question": "Bagaimana membaca vokal panjang dalam bahasa Jepang?",
+    "answer": "Vokal panjang diucapkan lebih lama dan dapat membedakan arti. Dalam katakana sering ditulis dengan ー, misalnya コーヒー (koohii). Jangan memendekkan dua vokal panjang pada kata ini. Dengarkan audio kosakata dan ulangi perlahan.",
+    "keywords": [
+      "vokal panjang",
+      "bunyi panjang"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-tsu",
+    "question": "Apa fungsi huruf っ kecil?",
+    "answer": "っ kecil (sokuon) menandai jeda singkat sebelum konsonan berikutnya. Contoh: きって (kitte), perangko. Huruf ini berbeda dari つ ukuran biasa yang dibaca tsu.",
+    "keywords": [
+      "っ kecil",
+      "tsu kecil",
+      "sokuon"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-yoon",
+    "question": "Apa itu kombinasi ゃ ゅ ょ kecil?",
+    "answer": "ゃ, ゅ, dan ょ kecil bergabung dengan kana tertentu menjadi satu bunyi gabungan, misalnya きゃ (kya), しゅ (shu), dan ちょ (cho). Ukuran kecil membedakannya dari や, ゆ, よ yang dibaca terpisah.",
+    "keywords": [
+      "yoon",
+      "ya yu yo kecil",
+      "ゃ ゅ ょ"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "fondasi-cakupan",
+    "question": "Materi apa yang dapat ditanyakan di chat ini?",
+    "answer": "Chat ini mencari jawaban yang sudah ditulis dalam database Japantest, tanpa AI. Bank awal mencakup huruf, kosakata pemula, Bab 1–10, serta dasar N4 Bab 26–30. Pilih tingkat dan ajukan satu topik per pertanyaan. Materi belum mencakup semua N5/N4. Jawaban disertai sumber; gunakan tombol laporan bila ada kekeliruan.",
+    "keywords": [
+      "cakupan chat",
+      "materi chat",
+      "bisa tanya apa"
+    ],
+    "chapter": null,
+    "level": "foundation",
+    "source_label": "Japantest · Fondasi"
+  },
+  {
+    "slug": "bab-1-konsep",
+    "question": "Apa fungsi partikel は?",
+    "answer": "は menandai topik yang dibicarakan. Ketika menjadi partikel, は dibaca wa. Pola A は B です berarti “A adalah B” dalam bentuk sopan. Contoh: わたしはエリスです。Saya Eris. は bukan penanda subjek untuk setiap situasi; di bab awal, gunakan untuk memperkenalkan topik.",
+    "keywords": [
+      "wa",
+      "は",
+      "partikel wa",
+      "fungsi は"
+    ],
+    "chapter": 1,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 1"
+  },
+  {
+    "slug": "bab-1-contoh",
+    "question": "Apa contoh kalimat Bab 1?",
+    "answer": "わたしはエリスです。\nArtinya: Saya Eris.\nMemperkenalkan identitas dan menanyakan profesi secara sopan. は menandai topik; です mengakhiri pernyataan nominal.",
+    "keywords": [
+      "contoh bab 1",
+      "kalimat bab 1"
+    ],
+    "chapter": 1,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 1"
+  },
+  {
+    "slug": "bab-1-latihan",
+    "question": "Bagaimana belajar materi Bab 1?",
+    "answer": "Memperkenalkan identitas dan menanyakan profesi secara sopan. は menandai topik; です mengakhiri pernyataan nominal.\nFokus pola: は・です・か・も・の.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 1",
+      "materi bab 1"
+    ],
+    "chapter": 1,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 1"
+  },
+  {
+    "slug": "bab-2-konsep",
+    "question": "Apa perbedaan これ それ あれ dan この その あの?",
+    "answer": "これ・それ・あれ dipakai berdiri sendiri untuk menunjuk benda: ini, itu dekat lawan bicara, dan itu jauh dari kedua pihak. この・その・あの harus diikuti nomina, misalnya この本 (buku ini). Contoh: これは本です。Ini buku. この本はわたしのです。Buku ini milik saya.",
+    "keywords": [
+      "これ",
+      "kore",
+      "sore",
+      "are",
+      "kono",
+      "sono",
+      "ano",
+      "kata tunjuk benda"
+    ],
+    "chapter": 2,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 2"
+  },
+  {
+    "slug": "bab-2-contoh",
+    "question": "Apa contoh kalimat Bab 2?",
+    "answer": "このノートはわたしのです。\nArtinya: Buku catatan ini milik saya.\nMembedakan penunjuk yang berdiri sendiri dan penunjuk yang harus diikuti nama benda; menunjukkan pemilik.",
+    "keywords": [
+      "contoh bab 2",
+      "kalimat bab 2"
+    ],
+    "chapter": 2,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 2"
+  },
+  {
+    "slug": "bab-2-latihan",
+    "question": "Bagaimana belajar materi Bab 2?",
+    "answer": "Membedakan penunjuk yang berdiri sendiri dan penunjuk yang harus diikuti nama benda; menunjukkan pemilik.\nFokus pola: これ・それ・あれ; この・その・あの; の.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 2",
+      "materi bab 2"
+    ],
+    "chapter": 2,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 2"
+  },
+  {
+    "slug": "bab-3-konsep",
+    "question": "Apa perbedaan ここ そこ あそこ?",
+    "answer": "ここ menunjuk tempat dekat pembicara, そこ dekat lawan bicara, dan あそこ jauh dari kedua pihak. Gunakan どこ untuk bertanya “di mana”. Contoh: 受付はどこですか。Resepsionis ada di mana?",
+    "keywords": [
+      "ここ",
+      "koko",
+      "soko",
+      "asoko",
+      "doko",
+      "kata tunjuk tempat"
+    ],
+    "chapter": 3,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 3"
+  },
+  {
+    "slug": "bab-3-contoh",
+    "question": "Apa contoh kalimat Bab 3?",
+    "answer": "受付は二階です。\nArtinya: Resepsionis berada di lantai dua.\nMenanyakan dan menjelaskan lokasi fasilitas, asal, dan tempat kegiatan.",
+    "keywords": [
+      "contoh bab 3",
+      "kalimat bab 3"
+    ],
+    "chapter": 3,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 3"
+  },
+  {
+    "slug": "bab-3-latihan",
+    "question": "Bagaimana belajar materi Bab 3?",
+    "answer": "Menanyakan dan menjelaskan lokasi fasilitas, asal, dan tempat kegiatan.\nFokus pola: ここ・そこ・あそこ; どこ; どちら.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 3",
+      "materi bab 3"
+    ],
+    "chapter": 3,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 3"
+  },
+  {
+    "slug": "bab-4-konsep",
+    "question": "Apa perbedaan ます ません ました ませんでした?",
+    "answer": "Pada bentuk sopan kata kerja, ます dipakai untuk kebiasaan atau waktu mendatang; ません adalah bentuk negatifnya. ました menunjukkan kejadian lampau dan ませんでした adalah negatif lampau. Contoh: 勉強します (belajar), 勉強しません (tidak belajar), 勉強しました (sudah belajar), 勉強しませんでした (tidak belajar pada waktu lampau).",
+    "keywords": [
+      "masu",
+      "masen",
+      "mashita",
+      "masendeshita",
+      "ます",
+      "ません",
+      "bentuk sopan kata kerja"
+    ],
+    "chapter": 4,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 4"
+  },
+  {
+    "slug": "bab-4-contoh",
+    "question": "Apa contoh kalimat Bab 4?",
+    "answer": "会議は九時からです。\nArtinya: Rapat dimulai pukul sembilan.\nMenyebut waktu serta membedakan tindakan sopan nonlampau dan lampau.",
+    "keywords": [
+      "contoh bab 4",
+      "kalimat bab 4"
+    ],
+    "chapter": 4,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 4"
+  },
+  {
+    "slug": "bab-4-latihan",
+    "question": "Bagaimana belajar materi Bab 4?",
+    "answer": "Menyebut waktu serta membedakan tindakan sopan nonlampau dan lampau.\nFokus pola: 〜時; 〜分; ます・ません・ました; から・まで.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 4",
+      "materi bab 4"
+    ],
+    "chapter": 4,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 4"
+  },
+  {
+    "slug": "bab-5-konsep",
+    "question": "Apa fungsi partikel へ untuk perjalanan?",
+    "answer": "へ menandai arah atau tujuan perjalanan dan dibaca e sebagai partikel. Contoh: 学校へ行きます。Pergi ke sekolah. Alat transportasi dapat memakai で: 電車で学校へ行きます。Pergi ke sekolah dengan kereta. Berjalan kaki memakai ungkapan 歩いて.",
+    "keywords": [
+      "へ",
+      "partikel e",
+      "arah perjalanan",
+      "tujuan perjalanan"
+    ],
+    "chapter": 5,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 5"
+  },
+  {
+    "slug": "bab-5-contoh",
+    "question": "Apa contoh kalimat Bab 5?",
+    "answer": "電車で学校へ行きます。\nArtinya: Saya pergi ke sekolah dengan kereta.\nMengungkap tujuan, sarana perjalanan, dan orang yang pergi bersama.",
+    "keywords": [
+      "contoh bab 5",
+      "kalimat bab 5"
+    ],
+    "chapter": 5,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 5"
+  },
+  {
+    "slug": "bab-5-latihan",
+    "question": "Bagaimana belajar materi Bab 5?",
+    "answer": "Mengungkap tujuan, sarana perjalanan, dan orang yang pergi bersama.\nFokus pola: へ・で・と; いつ.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 5",
+      "materi bab 5"
+    ],
+    "chapter": 5,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 5"
+  },
+  {
+    "slug": "bab-6-konsep",
+    "question": "Apa fungsi partikel を?",
+    "answer": "を menandai objek langsung kata kerja dan dibaca o sebagai partikel. Contoh: 本を読みます。Membaca buku. Tempat berlangsungnya kegiatan ditandai で: 図書館で本を読みます。Membaca buku di perpustakaan.",
+    "keywords": [
+      "を",
+      "partikel wo",
+      "partikel o",
+      "objek langsung"
+    ],
+    "chapter": 6,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 6"
+  },
+  {
+    "slug": "bab-6-contoh",
+    "question": "Apa contoh kalimat Bab 6?",
+    "answer": "図書館で本を読みます。\nArtinya: Saya membaca buku di perpustakaan.\nMenjelaskan objek tindakan, lokasi kegiatan, dan ajakan sopan.",
+    "keywords": [
+      "contoh bab 6",
+      "kalimat bab 6"
+    ],
+    "chapter": 6,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 6"
+  },
+  {
+    "slug": "bab-6-latihan",
+    "question": "Bagaimana belajar materi Bab 6?",
+    "answer": "Menjelaskan objek tindakan, lokasi kegiatan, dan ajakan sopan.\nFokus pola: を; 場所で; ませんか・ましょう.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 6",
+      "materi bab 6"
+    ],
+    "chapter": 6,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 6"
+  },
+  {
+    "slug": "bab-7-konsep",
+    "question": "Apa perbedaan あげます dan もらいます?",
+    "answer": "あげます berarti memberi, sedangkan もらいます berarti menerima. Pemberi menggunakan pola penerima に benda を あげます. Penerima menggunakan pola pemberi に/から benda を もらいます. Contoh: 友達にペンをもらいました。Saya menerima pena dari teman.",
+    "keywords": [
+      "あげます",
+      "もらいます",
+      "agemasu",
+      "moraimasu",
+      "memberi menerima"
+    ],
+    "chapter": 7,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 7"
+  },
+  {
+    "slug": "bab-7-contoh",
+    "question": "Apa contoh kalimat Bab 7?",
+    "answer": "友達にペンをもらいました。\nArtinya: Saya menerima pena dari teman.\nMenjelaskan alat dan arah pemberian; membedakan penerima dengan pemberi.",
+    "keywords": [
+      "contoh bab 7",
+      "kalimat bab 7"
+    ],
+    "chapter": 7,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 7"
+  },
+  {
+    "slug": "bab-7-latihan",
+    "question": "Bagaimana belajar materi Bab 7?",
+    "answer": "Menjelaskan alat dan arah pemberian; membedakan penerima dengan pemberi.\nFokus pola: 道具で; あげます・もらいます; もう.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 7",
+      "materi bab 7"
+    ],
+    "chapter": 7,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 7"
+  },
+  {
+    "slug": "bab-8-konsep",
+    "question": "Apa perbedaan kata sifat い dan な?",
+    "answer": "Kata sifat い umumnya mempertahankan い sebelum nomina, seperti 大きい家 (rumah besar). Kata sifat な membutuhkan な sebelum nomina, seperti 静かな町 (kota yang tenang). Dalam predikat sopan: 大きいです dan 静かです. Jangan menentukan kelompok hanya dari huruf akhir: きれい adalah kata sifat な.",
+    "keywords": [
+      "kata sifat",
+      "adjektiva",
+      "i keiyoushi",
+      "na keiyoushi",
+      "い形容詞",
+      "な形容詞"
+    ],
+    "chapter": 8,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 8"
+  },
+  {
+    "slug": "bab-8-contoh",
+    "question": "Apa contoh kalimat Bab 8?",
+    "answer": "ここは静かな町です。\nArtinya: Ini kota yang tenang.\nMembedakan kata sifat い dan な serta bentuk yang menerangkan kata benda.",
+    "keywords": [
+      "contoh bab 8",
+      "kalimat bab 8"
+    ],
+    "chapter": 8,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 8"
+  },
+  {
+    "slug": "bab-8-latihan",
+    "question": "Bagaimana belajar materi Bab 8?",
+    "answer": "Membedakan kata sifat い dan な serta bentuk yang menerangkan kata benda.\nFokus pola: い形容詞・な形容詞; とても・あまり.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 8",
+      "materi bab 8"
+    ],
+    "chapter": 8,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 8"
+  },
+  {
+    "slug": "bab-9-konsep",
+    "question": "Mengapa 好き menggunakan が?",
+    "answer": "Pada pola dasar A は B が好きです, A adalah orang yang dibicarakan dan B adalah hal yang disukai. Contoh: わたしはコーヒーが好きです。Saya suka kopi. 好き bukan kata kerja “menyukai”, melainkan kata sifat な dalam pola ini.",
+    "keywords": [
+      "好き",
+      "suki",
+      "ga suki",
+      "menyatakan kesukaan"
+    ],
+    "chapter": 9,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 9"
+  },
+  {
+    "slug": "bab-9-contoh",
+    "question": "Apa contoh kalimat Bab 9?",
+    "answer": "時間がありませんから、行きません。\nArtinya: Karena tidak ada waktu, saya tidak pergi.\nMenyatakan kesukaan, kemampuan, pemahaman, dan alasan dalam kalimat sederhana.",
+    "keywords": [
+      "contoh bab 9",
+      "kalimat bab 9"
+    ],
+    "chapter": 9,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 9"
+  },
+  {
+    "slug": "bab-9-latihan",
+    "question": "Bagaimana belajar materi Bab 9?",
+    "answer": "Menyatakan kesukaan, kemampuan, pemahaman, dan alasan dalam kalimat sederhana.\nFokus pola: 好き・上手・分かります; が; から.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 9",
+      "materi bab 9"
+    ],
+    "chapter": 9,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 9"
+  },
+  {
+    "slug": "bab-10-konsep",
+    "question": "Apa perbedaan あります dan います?",
+    "answer": "あります menyatakan keberadaan benda tidak hidup, sedangkan います digunakan untuk manusia dan hewan. Pola dasar: tempat に benda/orang が あります/います. Contoh: 机の下に猫がいます。Ada kucing di bawah meja.",
+    "keywords": [
+      "あります",
+      "います",
+      "arimasu",
+      "imasu",
+      "keberadaan benda"
+    ],
+    "chapter": 10,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 10"
+  },
+  {
+    "slug": "bab-10-contoh",
+    "question": "Apa contoh kalimat Bab 10?",
+    "answer": "机の下に猫がいます。\nArtinya: Ada kucing di bawah meja.\nMembedakan keberadaan benda dan makhluk hidup, lalu menjelaskan posisi.",
+    "keywords": [
+      "contoh bab 10",
+      "kalimat bab 10"
+    ],
+    "chapter": 10,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 10"
+  },
+  {
+    "slug": "bab-10-latihan",
+    "question": "Bagaimana belajar materi Bab 10?",
+    "answer": "Membedakan keberadaan benda dan makhluk hidup, lalu menjelaskan posisi.\nFokus pola: あります・います; に; 位置の.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 10",
+      "materi bab 10"
+    ],
+    "chapter": 10,
+    "level": "N5",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo I · Bab 10"
+  },
+  {
+    "slug": "bab-26-konsep",
+    "question": "Apa fungsi んです?",
+    "answer": "んです memberi atau meminta penjelasan yang terkait konteks. Hubungkan dengan bentuk biasa; nomina dan kata sifat な memakai なんです. Contoh: 頭が痛いんです。Kepala saya sakit (sebagai penjelasan keadaan). Pola ini bukan pengganti です untuk semua kalimat.",
+    "keywords": [
+      "んです",
+      "n desu",
+      "ndesu",
+      "penjelasan konteks"
+    ],
+    "chapter": 26,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 26"
+  },
+  {
+    "slug": "bab-26-contoh",
+    "question": "Apa contoh kalimat Bab 26?",
+    "answer": "頭が痛いんです。\nArtinya: Kepala saya sakit (sebagai penjelasan).\nMemberi penjelasan menurut konteks dan meminta bantuan atau saran dengan sopan.",
+    "keywords": [
+      "contoh bab 26",
+      "kalimat bab 26"
+    ],
+    "chapter": 26,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 26"
+  },
+  {
+    "slug": "bab-26-latihan",
+    "question": "Bagaimana belajar materi Bab 26?",
+    "answer": "Memberi penjelasan menurut konteks dan meminta bantuan atau saran dengan sopan.\nFokus pola: んです; ていただけませんか; たらいいですか.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 26",
+      "materi bab 26"
+    ],
+    "chapter": 26,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 26"
+  },
+  {
+    "slug": "bab-27-konsep",
+    "question": "Apa itu bentuk potensial?",
+    "answer": "Bentuk potensial menyatakan kemampuan. Kelompok I: ubah bunyi akhir u menjadi e + る, misalnya 書く → 書ける. Kelompok II: hilangkan る dan tambah られる, misalnya 食べる → 食べられる. する → できる dan 来る → 来られる. Bentuk sopannya memakai ます, misalnya 書けます.",
+    "keywords": [
+      "bentuk potensial",
+      "kemampuan",
+      "kanoukei",
+      "可能形"
+    ],
+    "chapter": 27,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 27"
+  },
+  {
+    "slug": "bab-27-contoh",
+    "question": "Apa contoh kalimat Bab 27?",
+    "answer": "ここから山が見えます。\nArtinya: Dari sini gunung terlihat.\nMembedakan dapat melakukan secara sengaja dengan sesuatu yang terlihat atau terdengar.",
+    "keywords": [
+      "contoh bab 27",
+      "kalimat bab 27"
+    ],
+    "chapter": 27,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 27"
+  },
+  {
+    "slug": "bab-27-latihan",
+    "question": "Bagaimana belajar materi Bab 27?",
+    "answer": "Membedakan dapat melakukan secara sengaja dengan sesuatu yang terlihat atau terdengar.\nFokus pola: 可能形; 見える・聞こえる; しか〜ない.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 27",
+      "materi bab 27"
+    ],
+    "chapter": 27,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 27"
+  },
+  {
+    "slug": "bab-28-konsep",
+    "question": "Bagaimana menggunakan ながら?",
+    "answer": "Bentuk akar ます + ながら menyatakan dua kegiatan yang dilakukan oleh orang yang sama secara bersamaan. Kegiatan utama berada di bagian akhir kalimat. Contoh: 音楽を聞きながら、料理します。Saya memasak sambil mendengarkan musik.",
+    "keywords": [
+      "ながら",
+      "nagara",
+      "sambil melakukan"
+    ],
+    "chapter": 28,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 28"
+  },
+  {
+    "slug": "bab-28-contoh",
+    "question": "Apa contoh kalimat Bab 28?",
+    "answer": "音楽を聞きながら、料理します。\nArtinya: Saya memasak sambil mendengarkan musik.\nMenghubungkan kegiatan bersamaan dan menyusun beberapa alasan.",
+    "keywords": [
+      "contoh bab 28",
+      "kalimat bab 28"
+    ],
+    "chapter": 28,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 28"
+  },
+  {
+    "slug": "bab-28-latihan",
+    "question": "Bagaimana belajar materi Bab 28?",
+    "answer": "Menghubungkan kegiatan bersamaan dan menyusun beberapa alasan.\nFokus pola: ながら; ています（習慣）; し.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 28",
+      "materi bab 28"
+    ],
+    "chapter": 28,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 28"
+  },
+  {
+    "slug": "bab-29-konsep",
+    "question": "Apa arti kata kerja intransitif dengan ています?",
+    "answer": "Kata kerja intransitif + ています dapat menggambarkan keadaan hasil perubahan yang masih berlangsung. Contoh: 窓が開いています。Jendelanya terbuka. 開く adalah intransitif; fokusnya keadaan jendela. Bandingkan dengan tindakan seseorang membuka jendela memakai 開ける.",
+    "keywords": [
+      "intransitif",
+      "jidoushi",
+      "自動詞",
+      "keadaan hasil"
+    ],
+    "chapter": 29,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 29"
+  },
+  {
+    "slug": "bab-29-contoh",
+    "question": "Apa contoh kalimat Bab 29?",
+    "answer": "窓が開いています。\nArtinya: Jendela dalam keadaan terbuka.\nMembaca keadaan hasil perubahan dan menyatakan penyelesaian atau penyesalan menurut konteks.",
+    "keywords": [
+      "contoh bab 29",
+      "kalimat bab 29"
+    ],
+    "chapter": 29,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 29"
+  },
+  {
+    "slug": "bab-29-latihan",
+    "question": "Bagaimana belajar materi Bab 29?",
+    "answer": "Membaca keadaan hasil perubahan dan menyatakan penyelesaian atau penyesalan menurut konteks.\nFokus pola: 自動詞ています; てしまう.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 29",
+      "materi bab 29"
+    ],
+    "chapter": 29,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 29"
+  },
+  {
+    "slug": "bab-30-konsep",
+    "question": "Apa perbedaan てある dan ておく?",
+    "answer": "てある menggambarkan keadaan hasil tindakan yang dilakukan dengan suatu maksud, misalnya 窓が開けてあります。Jendela sudah dibuka (dengan sengaja). ておく menyatakan persiapan atau tindakan untuk kebutuhan berikutnya: 会議の前に資料を印刷しておきます。Saya mencetak dokumen sebelum rapat sebagai persiapan.",
+    "keywords": [
+      "てある",
+      "ておく",
+      "te aru",
+      "te oku",
+      "persiapan tindakan"
+    ],
+    "chapter": 30,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 30"
+  },
+  {
+    "slug": "bab-30-contoh",
+    "question": "Apa contoh kalimat Bab 30?",
+    "answer": "会議の前に資料を印刷しておきます。\nArtinya: Saya akan mencetak dokumen terlebih dahulu sebelum rapat.\nMembedakan keadaan hasil tindakan sengaja dan tindakan persiapan.",
+    "keywords": [
+      "contoh bab 30",
+      "kalimat bab 30"
+    ],
+    "chapter": 30,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 30"
+  },
+  {
+    "slug": "bab-30-latihan",
+    "question": "Bagaimana belajar materi Bab 30?",
+    "answer": "Membedakan keadaan hasil tindakan sengaja dan tindakan persiapan.\nFokus pola: てある; ておく.\nBaca contoh pada materi, ubah satu unsur kalimat, lalu kerjakan latihan bab tersebut. Chat ini tidak mengambil kunci jawaban virtual test.",
+    "keywords": [
+      "belajar bab 30",
+      "materi bab 30"
+    ],
+    "chapter": 30,
+    "level": "N4",
+    "source_label": "Japantest · Rangkuman konsep Minna no Nihongo II · Bab 30"
+  }
+]

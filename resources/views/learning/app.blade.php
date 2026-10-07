@@ -11,6 +11,7 @@
         <button data-nav="learn"><i data-lucide="book-open" aria-hidden="true"></i>Belajar</button>
         <button data-nav="practice"><i data-lucide="list-checks" aria-hidden="true"></i>Latihan</button>
         <button data-nav="exam"><i data-lucide="timer" aria-hidden="true"></i>Virtual Test</button>
+        <button data-nav="chat"><span aria-hidden="true">?</span>Tanya Materi</button>
         <button data-nav="progress"><i data-lucide="chart-no-axes-column" aria-hidden="true"></i>Profil</button>
       </nav>
       <a class="textbtn" href="{{ route('dashboard') }}" target="_blank" rel="noopener">Panel admin ↗</a><div class="rail-note"><strong>Belajar Minna no Nihongo</strong><p style="margin-top:6px">Fondasi yang kuat. Jalur bertahap hingga N1 dan bahasa Jepang profesional.</p></div>

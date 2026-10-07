@@ -10,6 +10,7 @@
   const progress = {done: [], known: [], scores: [], romaji: true, target: 10, ...stored};
   for (const field of ['done', 'known', 'scores']) if (!Array.isArray(progress[field])) progress[field] = [];
   const state = {page: 'home', level: 'foundation', learnView: 'current', lessonId: null, script: 'hiragana', search: '', category: 'Semua', practiceView: 'current', practiceLesson: '', qi: 0, selected: null, feedback: null, busy: false, exam: null, examIndex: 0, examBusy: false, examDeadline: 0};
+  const chatState = {loaded: false, loading: false, busy: false, level: 'foundation', lessonId: null, messages: [], quota: null, draft: '', error: '', pending: null, reporting: null};
   let generation = 0, timer = null, audioPlayer = null;
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
   const title = (small, big, desc = '') => `<div class="stack"><span class="eyebrow">${esc(small)}</span><h1>${esc(big)}</h1>${desc ? `<p class="muted">${esc(desc)}</p>` : ''}</div>`;
@@ -42,7 +43,7 @@
     const u = new SpeechSynthesisUtterance(text); u.lang = 'ja-JP'; u.rate = .8; speechSynthesis.speak(u);
     toast('Menggunakan suara Jepang sintetis perangkat.');
   }
-  function go(page) { generation++; state.busy = false; state.page = page; render(); }
+  function go(page) { generation++; state.busy = false; state.page = page; render(); if (page === 'chat' && !chatState.loaded) loadChat(); }
   function lessonCards(list) {
     return list.map(l => `<article class="panel stack"><div class="row"><span class="tag">${esc(levelOf(l) === 'foundation' ? 'Pemula Haru' : levelOf(l))} · ${l.duration_minutes} menit</span><small>${progress.done.includes(l.id) ? '✓ Dipelajari' : ''}</small></div><h2>${esc(l.title)}</h2><p class="muted">${esc(l.summary)}</p>${l.japanese ? `<p class="jp" lang="ja">${esc(l.japanese)}</p>` : ''}${l.review_status === 'needs_japanese_teacher_review' ? '<small>Materi awal · perlu tinjauan pengajar</small>' : ''}<button class="btn primary" data-lesson="${l.id}">Buka materi →</button></article>`).join('') || '<section class="panel"><p class="empty">Materi jalur ini sedang disiapkan oleh pengajar.</p></section>';
   }
@@ -59,7 +60,7 @@
   function learn() {
     const tabs = `<div class="tabs"><button data-learn-view="current" class="${state.learnView === 'current' ? 'active' : ''}">Materi Haru</button><button data-learn-view="track" class="${state.learnView === 'track' ? 'active' : ''}">Jalur ${esc(track().name)}</button><button data-learn-view="all" class="${state.learnView === 'all' ? 'active' : ''}">Semua materi</button></div>`;
     const l = data.lessons.find(l => l.id === state.lessonId);
-    if (l) return `${tabs}${title('Belajar · ' + (l.chapter ? 'Bab ' + l.chapter : 'Pemula'), l.title, l.summary)}<div class="grid2"><section class="panel stack"><div class="row"><span class="tag">${esc(levelOf(l))} · ${l.duration_minutes} menit</span><button class="textbtn" data-back-lessons>← Semua materi</button></div>${l.patterns?.length ? `<div class="tabs">${l.patterns.map(p => `<span class="badge">${esc(p)}</span>`).join('')}</div>` : ''}<div class="lesson-example"><p class="jp" lang="ja">${esc(l.japanese)}</p>${romaji(l.romaji)}<p>${esc(l.translation)}</p></div><p class="lesson-text">${esc(l.content)}</p><div class="quick-links"><button class="btn" data-lesson-audio="${l.id}">▶ Dengarkan contoh</button><button class="btn soft" data-complete="${l.id}">${progress.done.includes(l.id) ? '✓ Sudah dipelajari' : 'Tandai dipelajari'}</button></div><button class="btn primary" data-lesson-practice="${l.id}">Latihan materi ini →</button>${l.review_status === 'needs_japanese_teacher_review' ? '<div class="notice">Rangkuman dan contoh orisinal Japantest, masih memerlukan tinjauan pengajar.</div>' : ''}${l.source_reference ? `<small>Acuan konsep: Minna no Nihongo ${l.chapter <= 25 ? 'I' : 'II'} · Bab ${l.chapter}. Pemetaan tingkat bersifat editorial.</small>` : ''}</section><section class="stack"><h2>Kosakata materi</h2>${data.words.filter(w => w.lesson_id === l.id).map(wordCard).join('') || '<section class="panel"><p class="muted">Kosakata khusus bab ini akan dilengkapi pengajar. Kata pemula tetap tersedia di menu Kosakata.</p>' + button('Buka Kosakata', 'words') + '</section>'}</section></div>`;
+    if (l) return `${tabs}${title('Belajar · ' + (l.chapter ? 'Bab ' + l.chapter : 'Pemula'), l.title, l.summary)}<div class="grid2"><section class="panel stack"><div class="row"><span class="tag">${esc(levelOf(l))} · ${l.duration_minutes} menit</span><button class="textbtn" data-back-lessons>← Semua materi</button></div>${l.patterns?.length ? `<div class="tabs">${l.patterns.map(p => `<span class="badge">${esc(p)}</span>`).join('')}</div>` : ''}<div class="lesson-example"><p class="jp" lang="ja">${esc(l.japanese)}</p>${romaji(l.romaji)}<p>${esc(l.translation)}</p></div><p class="lesson-text">${esc(l.content)}</p><div class="quick-links"><button class="btn" data-lesson-audio="${l.id}">▶ Dengarkan contoh</button><button class="btn soft" data-complete="${l.id}">${progress.done.includes(l.id) ? '✓ Sudah dipelajari' : 'Tandai dipelajari'}</button></div><div class="quick-links"><button class="btn primary" data-lesson-practice="${l.id}">Latihan materi ini →</button><button class="btn" data-chat-lesson="${l.id}">Tanyakan materi ini</button></div>${l.review_status === 'needs_japanese_teacher_review' ? '<div class="notice">Rangkuman dan contoh orisinal Japantest, masih memerlukan tinjauan pengajar.</div>' : ''}${l.source_reference ? `<small>Acuan konsep: Minna no Nihongo ${l.chapter <= 25 ? 'I' : 'II'} · Bab ${l.chapter}. Pemetaan tingkat bersifat editorial.</small>` : ''}</section><section class="stack"><h2>Kosakata materi</h2>${data.words.filter(w => w.lesson_id === l.id).map(wordCard).join('') || '<section class="panel"><p class="muted">Kosakata khusus bab ini akan dilengkapi pengajar. Kata pemula tetap tersedia di menu Kosakata.</p>' + button('Buka Kosakata', 'words') + '</section>'}</section></div>`;
     const list = state.learnView === 'current' ? currentLessons() : state.learnView === 'all' ? data.lessons : data.lessons.filter(l => levelOf(l) === state.level);
     return `${tabs}${title('Belajar', state.learnView === 'current' ? 'Materi Haru yang sudah kamu kenal.' : state.learnView === 'all' ? 'Semua materi belajar.' : track().name, `${list.length} materi tersedia. Pilih satu bab, pahami konsepnya, lalu coba latihan.`)}<div class="grid2">${lessonCards(list)}</div>`;
   }
@@ -151,6 +152,50 @@
     catch (e) { try { localStorage.removeItem(attemptKey); } catch (_) {} toast('Tes tidak dapat dipulihkan: ' + e.message); }
     finally { state.examBusy = false; render(); }
   }
+  function chat() {
+    const c = chatState, lesson = data.lessons.find(l => l.id === c.lessonId);
+    const examples = lesson?.chapter ? ['Apa contoh kalimat Bab ' + lesson.chapter + '?', 'Bagaimana belajar materi Bab ' + lesson.chapter + '?'] : c.level === 'N4' ? ['Apa fungsi んです?', 'Apa itu bentuk potensial?', 'Bagaimana menggunakan ながら?'] : c.level === 'N5' ? ['Apa fungsi partikel は?', 'Apa perbedaan あります dan います?', 'Apa perbedaan kata sifat い dan な?'] : ['Apa itu hiragana?', 'Bagaimana mulai belajar bahasa Jepang?', 'Apa arti コーヒー (koohii)?'];
+    return `${title('Tanya Materi · tanpa AI', 'Ada yang belum dipahami?', 'Cari jawaban dari bank materi Japantest. Ajukan satu topik per pertanyaan; tersedia Fondasi, Bab 1–10 (N5), dan dasar Bab 26–30 (N4).')}<section class="panel stack"><div class="row"><label>Tingkat <select id="chat-level">${['foundation','N5','N4'].map(l => `<option value="${l}" ${c.level === l ? 'selected' : ''}>${l === 'foundation' ? 'Fondasi / pemula' : l}</option>`).join('')}</select></label><span class="tag" id="chat-quota">${c.quota ? c.quota.remaining + ' / ' + c.quota.limit + ' pertanyaan tersisa hari ini' : 'Memuat kuota…'}</span></div>${lesson ? `<div class="row"><span>Sumber dipilih: ${esc(lesson.title)}</span><button class="textbtn" data-clear-chat-lesson>Semua materi tingkat ini</button></div>` : ''}<small>Kuota diperbarui pukul 00.00 WIB per sesi browser. Pertanyaan, jawaban, dan laporan disimpan di server serta dapat ditinjau pengajar. Jangan kirim data pribadi.</small><div class="quick-links">${examples.map(q => `<button class="btn soft" data-chat-example="${esc(q)}" ${c.busy || c.loading || c.quota?.remaining === 0 ? 'disabled' : ''}>${esc(q)}</button>`).join('')}</div></section><section class="stack chat-history" aria-label="Riwayat tanya materi" aria-live="polite">${c.loading ? '<p role="status">Memuat riwayat…</p>' : ''}${c.messages.map(m => {
+      const r = m.response;
+      return `<article class="panel stack chat-message"><div class="chat-question"><small>Pertanyaanmu · ${esc(m.level === 'foundation' ? 'Fondasi' : m.level)}</small><p>${esc(m.question)}</p></div><div class="chat-answer"><strong>${r.matched ? 'Jawaban dari bank materi' : 'Mari cari materi terkait'}</strong><p class="lesson-text">${esc(r.answer)}</p></div>${r.source ? `<div class="row"><span class="tag">Sumber: ${esc(r.source.label)}</span>${r.source.lesson_id ? `<button class="textbtn" data-lesson="${r.source.lesson_id}">Buka materi sumber →</button>` : button('Buka Huruf', 'kana')}</div>${r.review_status !== 'reviewed' ? '<small>Jawaban awal · masih memerlukan tinjauan pengajar.</small>' : '<small>Sudah ditinjau pengajar.</small>'}` : ''}${r.suggestions?.length ? `<div class="quick-links">${r.suggestions.filter(q => q.question !== m.question).map(q => `<button class="btn" data-chat-example="${esc(q.question)}" ${c.busy || c.quota?.remaining === 0 ? 'disabled' : ''}>${esc(q.question)}</button>`).join('')}</div>` : ''}${(r.related_lessons || []).map(l => `<button class="textbtn" data-lesson="${l.lesson_id}">${esc(l.title)} →</button>`).join('')}${m.reported ? '<small role="status">Laporan sudah diterima pengajar.</small>' : `<details><summary>Laporkan jawaban keliru</summary><form class="stack chat-report" data-chat-report="${esc(m.id)}"><label>Bagian yang perlu diperbaiki<textarea name="reason" minlength="5" maxlength="2000" rows="2" required placeholder="Jelaskan kekeliruan atau materi yang kurang…"></textarea></label><button class="btn" ${c.reporting ? 'disabled' : ''}>${c.reporting === m.id ? 'Mengirim…' : 'Kirim laporan'}</button></form></details>`}</article>`;
+    }).join('') || (!c.loading ? '<p class="muted">Belum ada percakapan. Pilih contoh pertanyaan atau tulis pertanyaanmu.</p>' : '')}</section><form id="chat-form" class="panel stack"><label for="chat-question">Pertanyaan tentang materi<textarea id="chat-question" name="question" minlength="2" maxlength="1000" rows="3" required placeholder="Contoh: Apa fungsi partikel wa?">${esc(c.draft)}</textarea></label>${c.error ? `<p class="chat-error" role="alert">${esc(c.error)}</p>` : ''}<div class="row"><small>Jawaban ditampilkan apa adanya dari database. Jika belum cocok, pertanyaan masuk antrean pengajar.</small><button class="btn primary" ${c.busy || c.loading || !c.loaded || c.quota?.remaining === 0 ? 'disabled' : ''}>${c.busy ? 'Mencari jawaban…' : 'Kirim pertanyaan'}</button></div></form>`;
+  }
+  async function loadChat() {
+    if (chatState.loading) return;
+    chatState.loading = true; if (state.page === 'chat') render();
+    try { const r = await request(data.chat_base); chatState.messages = r.messages; chatState.quota = r.quota; chatState.loaded = true; chatState.error = ''; }
+    catch (e) { chatState.error = e.message; }
+    finally { chatState.loading = false; if (state.page === 'chat') render(); }
+  }
+  function uuid() {
+    if (window.crypto?.randomUUID) return crypto.randomUUID();
+    return '10000000-1000-4000-8000-100000000000'.replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
+  }
+  async function askChat(question) {
+    const c = chatState;
+    if (c.busy || c.loading || !c.loaded || c.quota?.remaining === 0) return;
+    question = question.trim(); if (question.length < 2) return;
+    const body = {question, level: c.level, lesson_id: c.lessonId};
+    const signature = JSON.stringify(body);
+    if (c.pending?.signature !== signature) c.pending = {signature, body: {...body, request_id: uuid()}};
+    c.draft = question; c.busy = true; c.error = ''; if (state.page === 'chat') render();
+    try {
+      const r = await request(data.chat_base, c.pending.body);
+      c.messages = [...c.messages.filter(m => m.id !== r.message.id), r.message].slice(-10); c.quota = r.quota; c.draft = ''; c.pending = null;
+    } catch (e) { await loadChat(); c.error = e.message; }
+    finally { c.busy = false; if (state.page === 'chat') { render(); root.querySelector('#chat-question')?.focus(); } }
+  }
+  root.addEventListener('submit', async e => {
+    const form = e.target;
+    if (form.id === 'chat-form') { e.preventDefault(); askChat(form.elements.question.value); return; }
+    if (!form.dataset.chatReport) return;
+    e.preventDefault(); if (chatState.reporting) return;
+    const id = form.dataset.chatReport, reason = form.elements.reason.value;
+    chatState.reporting = id; form.querySelector('button').disabled = true;
+    try { await request(data.chat_base + '/' + id + '/report', {reason}); const m = chatState.messages.find(m => m.id === id); if (m) m.reported = true; toast('Laporan disimpan untuk diperiksa pengajar.'); chatState.reporting = null; if (state.page === 'chat') render(); }
+    catch (err) { toast(err.message); }
+    finally { chatState.reporting = null; if (form.isConnected) form.querySelector('button').disabled = false; }
+  });
   function profile() {
     const total = progress.scores.reduce((n, s) => n + s.total, 0), right = progress.scores.reduce((n, s) => n + s.score, 0);
     return `${title('Profil · Pelajar Haru', 'Lihat kemajuanmu.', 'Progres Huruf, Kosakata, dan Belajar tetap tersimpan pada browser ini.')}<div class="skills"><section class="skill"><small>Materi dipelajari</small><strong>${completed()} / ${data.lessons.length}</strong></section><section class="skill"><small>Kosakata dikenal</small><strong>${countKnown()} / ${data.words.length}</strong></section><section class="skill"><small>Latihan dijawab</small><strong>${total}</strong></section><section class="skill"><small>Akurasi latihan</small><strong>${total ? Math.round(right / total * 100) + '%' : 'Belum ada'}</strong></section></div><div class="grid2"><section class="panel stack"><h2>Preferensi belajar</h2><label><input type="checkbox" data-setting="romaji" ${progress.romaji ? 'checked' : ''}> Tampilkan romaji</label><label>Target harian <select id="daily-target">${[5,10,15,20].map(n => `<option value="${n}" ${progress.target === n ? 'selected' : ''}>${n} menit</option>`).join('')}</select></label><p class="muted">Target adalah pengaturan; durasi belajar belum dilacak otomatis.</p>${button('Lanjutkan belajar', 'learn', 'primary')}${button('Reset progres belajar', 'reset')}<small>Progres belajar lokal belum disinkronkan ke akun. Jawaban virtual test tersimpan pada sesi browser di server.</small></section><section class="panel stack"><h2>Riwayat latihan</h2>${progress.scores.slice(-5).reverse().map(s => `<div class="list-row"><span class="number">${s.score === s.total ? '✓' : '↻'}</span><div class="grow">${esc(s.title || 'Kuis Haru')}<br><small>${new Date(s.date).toLocaleDateString('id-ID')} · ${s.score}/${s.total} benar</small></div></div>`).join('') || '<p class="empty">Belum ada latihan dijawab.</p>'}<h3>Materi selesai</h3>${data.lessons.filter(l => progress.done.includes(l.id)).map(l => `<button class="textbtn" data-lesson="${l.id}">✓ ${esc(l.title)}</button>`).join('') || '<p class="muted">Mulai satu pelajaran untuk melihat progres.</p>'}${button('Riwayat virtual test', 'exam')}</section></div>`;
@@ -158,7 +203,7 @@
   function render() {
     picker.value = state.level;
     root.querySelectorAll('[data-nav]').forEach(b => { b.classList.toggle('active', b.dataset.nav === state.page); if (b.dataset.nav === state.page) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
-    out.innerHTML = ({home, path, learn, kana, words, practice, exam, progress: profile})[state.page]();
+    out.innerHTML = ({home, path, learn, kana, words, practice, exam, chat, progress: profile})[state.page]();
   }
   function clearQuestion() { generation++; state.selected = null; state.feedback = null; state.busy = false; }
   let modalFocus = null;
@@ -174,9 +219,10 @@
     if (e.key === 'Escape') closeKana();
     if (e.key === 'Tab') { const bs = modal.querySelectorAll('button'); if (e.shiftKey && document.activeElement === bs[0]) { e.preventDefault(); bs[bs.length - 1].focus(); } else if (!e.shiftKey && document.activeElement === bs[bs.length - 1]) { e.preventDefault(); bs[0].focus(); } }
   });
-  root.addEventListener('input', e => { if (e.target.id === 'word-search') { state.search = e.target.value; root.querySelector('#word-results').innerHTML = wordResults(); } });
+  root.addEventListener('input', e => { if (e.target.id === 'chat-question') chatState.draft = e.target.value; if (e.target.id === 'word-search') { state.search = e.target.value; root.querySelector('#word-results').innerHTML = wordResults(); } });
   root.addEventListener('change', e => {
     const t = e.target;
+    if (t.id === 'chat-level') { chatState.level = t.value; chatState.lessonId = null; render(); }
     if (t.dataset.setting === 'romaji') { progress.romaji = t.checked; persist(); render(); }
     if (t.id === 'word-category') { state.category = t.value; root.querySelector('#word-results').innerHTML = wordResults(); }
     if (t.id === 'daily-target') { progress.target = +t.value; persist(); render(); }
@@ -187,6 +233,9 @@
     const b = e.target.closest('button'); if (!b || b.disabled) return; const d = b.dataset;
     if (d.nav) { go(d.nav); return; }
     if (d.track) { state.level = d.track; state.learnView = 'track'; state.lessonId = null; state.practiceView = 'track'; state.practiceLesson = ''; state.qi = 0; clearQuestion(); go('learn'); return; }
+    if (d.chatLesson) { const l = data.lessons.find(l => l.id === +d.chatLesson); if (!['foundation','N5','N4'].includes(levelOf(l))) { toast('Chat tersedia untuk Fondasi, N5, dan N4.'); return; } chatState.lessonId = l.id; chatState.level = levelOf(l); go('chat'); return; }
+    if ('clearChatLesson' in d) { chatState.lessonId = null; render(); return; }
+    if (d.chatExample) { askChat(d.chatExample); return; }
     if (d.lesson) { state.lessonId = +d.lesson; go('learn'); return; }
     if (d.learnView) { state.learnView = d.learnView; state.lessonId = null; render(); return; }
     if ('backLessons' in d) { state.lessonId = null; render(); return; }
@@ -208,7 +257,7 @@
     if (d.examIndex != null) { state.examIndex = +d.examIndex; render(); return; }
     if ('examAudio' in d) { const q = state.exam.questions[state.examIndex]; play('', q.audio_url); return; }
     const action = d.action;
-    if (['home','path','learn','kana','words','practice','exam','progress'].includes(action)) { go(action); return; }
+    if (['home','path','learn','kana','words','practice','exam','chat','progress'].includes(action)) { go(action); return; }
     if (action === 'check') check();
     if (action === 'next-question') { state.qi++; clearQuestion(); render(); }
     if (action === 'finish-test') finishTest();

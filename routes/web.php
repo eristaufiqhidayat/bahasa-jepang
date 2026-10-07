@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LearningWebController;
+use App\Http\Controllers\MaterialAnswerAdminController;
+use App\Http\Controllers\MaterialChatController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\VirtualTestAdminController;
 use App\Http\Controllers\VirtualTestController;
@@ -11,6 +13,11 @@ Route::get('/', [LearningWebController::class, 'index'])->name('learning.home');
 Route::get('/belajar', [LearningWebController::class, 'index'])->name('learning');
 Route::get('/belajar/audio/{type}/{id}', [LearningWebController::class, 'audio'])->whereNumber('id')->name('learning.audio');
 Route::post('/belajar/questions/{question}/answer', [LearningWebController::class, 'answer'])->middleware('throttle:60,1');
+Route::prefix('belajar/tanya-materi')->middleware('throttle:30,1')->group(function () {
+    Route::get('/', [MaterialChatController::class, 'history']);
+    Route::post('/', [MaterialChatController::class, 'ask']);
+    Route::post('/{message}/report', [MaterialChatController::class, 'report']);
+});
 Route::prefix('belajar/virtual-tests')->middleware('throttle:120,1')->group(function () {
     Route::post('/templates/{template}/start', [VirtualTestController::class, 'start']);
     Route::get('/attempts/{attempt}', [VirtualTestController::class, 'show']);
@@ -29,6 +36,8 @@ Route::middleware('guest')->group(function () {
 Route::post('/logout', [AuthController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', [MaterialController::class, 'dashboard'])->name('dashboard');
+    Route::resource('material-answers', MaterialAnswerAdminController::class)->except('show');
+    Route::post('/chat-reports/{report}/resolve', [MaterialAnswerAdminController::class, 'resolve'])->name('material-chat.resolve');
     Route::resource('virtual-tests', VirtualTestAdminController::class)->except('show');
     Route::get('/{type}', [MaterialController::class, 'index'])->name('materials.index');
     Route::get('/{type}/create', [MaterialController::class, 'create'])->name('materials.create');
