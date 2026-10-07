@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Character;
+use App\Models\CourseTrack;
 use App\Models\Lesson;
 use App\Models\Question;
+use App\Models\VirtualTestTemplate;
 use App\Models\Vocabulary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -30,6 +32,10 @@ class LearningWebController extends Controller
         $words = $lessons->flatMap(fn ($l) => $l->vocabularies)->map(fn ($v) => [...$v->toArray(), 'audio_url' => $audio($v, 'vocabularies')])->values();
         $questions = $lessons->flatMap(fn ($l) => $l->questions)->map(fn ($q) => [...$q->toArray(), 'lesson_title' => $q->lesson->title, 'audio_url' => $audio($q, 'questions')])->values();
         $data = ['preview' => $preview, 'answer_base' => url($preview ? 'pratinjau/questions' : 'belajar/questions'), 'lessons' => $lessons->map(fn ($l) => [...$l->toArray(), 'audio_url' => $audio($l, 'lessons'), 'vocabularies' => $words->where('lesson_id', $l->id)->values()])->values(), 'words' => $words, 'questions' => $questions, 'characters' => Character::orderBy('position')->orderBy('id')->get()->map(fn ($c) => [...$c->toArray(), 'audio_url' => $audio($c, 'characters')])];
+
+        $data['tracks'] = CourseTrack::orderBy('position')->get();
+        $data['templates'] = VirtualTestTemplate::where(fn ($q) => $q->where('status', 'published')->orWhere('mode', 'blueprint'))->get()->makeHidden(['question_ids']);
+        $data['exam_base'] = url('belajar/virtual-tests');
 
         return view('learning.app', compact('data', 'preview'));
     }

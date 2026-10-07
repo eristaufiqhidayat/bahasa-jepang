@@ -8,6 +8,6 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->call(MockupMaterialSeeder::class);
+        $this->call(JlptCurriculumSeeder::class);
     }
 }

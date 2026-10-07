@@ -140,12 +140,12 @@ class MaterialsTest extends TestCase
     public function test_seed_is_repeatable_and_preserves_edits(): void
     {
         $this->seed();
-        $this->assertDatabaseCount('lessons', 4);
+        $this->assertDatabaseCount('lessons', 54);
         $this->assertDatabaseCount('characters', 92);
         $l = Lesson::first();
         $l->update(['title' => 'Diperbarui']);
         $this->seed();
-        $this->assertDatabaseCount('lessons', 4);
+        $this->assertDatabaseCount('lessons', 54);
         $this->assertEquals('Diperbarui', $l->fresh()->title);
     }
 

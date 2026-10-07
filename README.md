@@ -86,7 +86,7 @@ Tes menggunakan SQLite in-memory; mencakup otorisasi admin, CRUD seluruh jenis, 
 
 ## Halaman belajar web sesuai mockup Haru
 
-- Buka `/` atau `/belajar` untuk halaman pengguna: Beranda, Belajar, Huruf, Kosakata, Latihan, Profil.
+- Buka `/` atau `/belajar` untuk halaman pengguna: Beranda, Belajar, Huruf, Kosakata, Latihan, Kurikulum, Virtual Test, Profil.
 - Tampilan hijau, kartu materi, sidebar desktop, dan navigasi bawah HP mengikuti mockup HTML.
 - Materi mengambil database. Hanya pelajaran `published` beserta kosakata dan soalnya tampil publik; huruf tampil independen.
 - Data contoh tetap draft. Login `/login`, buka `/admin`, pilih **Pratinjau halaman belajar** untuk mencoba draft tanpa menerbitkannya. Setelah diperiksa, edit pelajaran dan pilih `published`.
@@ -103,7 +103,7 @@ php artisan optimize:clear
 php artisan optimize
 ```
 
-Perubahan halaman belajar tidak menambah tabel. Tidak perlu mengulang seeder atau membuat ulang akun admin. Untuk hosting yang mematikan `proc_open`, jika menginstal dependensi gunakan `composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts`, lalu `php artisan package:discover --ansi`.
+Untuk upgrade kurikulum 7 Oktober 2026, gunakan langkah migrasi dan seeder pada bagian Upgrade kurikulum di bawah. Akun admin tetap digunakan. Untuk hosting yang mematikan `proc_open`, jika menginstal dependensi gunakan `composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts`, lalu `php artisan package:discover --ansi`.
 
 ## Memasukkan kosakata dan latihan persis dari mockup
 
@@ -121,3 +121,18 @@ Untuk database baru, `php artisan migrate --seed` juga memasukkan paket ini. Tot
 ## Aplikasi Flutter
 
 Source aplikasi Android/iOS/web tersedia di folder `flutter/`. Lihat `flutter/README.md` untuk menjalankan aplikasi, konfigurasi API, dan build.
+
+
+## Upgrade kurikulum dan virtual test (7 Oktober 2026)
+
+Tampilan Laravel mengikuti mockup gabungan Haru/Japantest tanpa menghapus Huruf dan Kosakata. Rangkuman 50 bab dan 77 soal tambahan dimasukkan ke database berdasarkan pemetaan N5/N4. Mini virtual test N5/N4 tersedia dengan 10 soal/8 menit, timer server, simpan jawaban, pemulihan reload, hasil dan pembahasan. N3–N1 dan Profesional tetap jalur pengembangan; simulasi JLPT penuh belum tersedia karena bank soal bertinjau dan audio belum lengkap.
+
+```bash
+git pull origin main
+php artisan optimize:clear
+php artisan migrate --force
+php artisan db:seed --class=JlptCurriculumSeeder --force
+php artisan optimize
+```
+
+Seeder dapat diulang tanpa menimpa edit admin atau menggandakan data. Progres lama tetap dibaca pada browser yang sama. Detail isi data, pengelolaan admin, batas cakupan, dan cara kerja tes: [docs/UPGRADE-JLPT.md](docs/UPGRADE-JLPT.md).

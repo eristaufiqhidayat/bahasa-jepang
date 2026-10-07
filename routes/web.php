@@ -3,12 +3,20 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LearningWebController;
 use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\VirtualTestAdminController;
+use App\Http\Controllers\VirtualTestController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LearningWebController::class, 'index'])->name('learning.home');
 Route::get('/belajar', [LearningWebController::class, 'index'])->name('learning');
 Route::get('/belajar/audio/{type}/{id}', [LearningWebController::class, 'audio'])->whereNumber('id')->name('learning.audio');
 Route::post('/belajar/questions/{question}/answer', [LearningWebController::class, 'answer'])->middleware('throttle:60,1');
+Route::prefix('belajar/virtual-tests')->middleware('throttle:120,1')->group(function () {
+    Route::post('/templates/{template}/start', [VirtualTestController::class, 'start']);
+    Route::get('/attempts/{attempt}', [VirtualTestController::class, 'show']);
+    Route::post('/attempts/{attempt}/answers', [VirtualTestController::class, 'save']);
+    Route::post('/attempts/{attempt}/finish', [VirtualTestController::class, 'finish']);
+});
 Route::middleware(['auth', 'admin'])->prefix('pratinjau')->group(function () {
     Route::get('/', [LearningWebController::class, 'preview'])->name('learning.preview');
     Route::get('/audio/{type}/{id}', [LearningWebController::class, 'previewAudio'])->whereNumber('id')->name('learning.preview.audio');
@@ -21,6 +29,7 @@ Route::middleware('guest')->group(function () {
 Route::post('/logout', [AuthController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', [MaterialController::class, 'dashboard'])->name('dashboard');
+    Route::resource('virtual-tests', VirtualTestAdminController::class)->except('show');
     Route::get('/{type}', [MaterialController::class, 'index'])->name('materials.index');
     Route::get('/{type}/create', [MaterialController::class, 'create'])->name('materials.create');
     Route::post('/{type}', [MaterialController::class, 'store'])->name('materials.store');

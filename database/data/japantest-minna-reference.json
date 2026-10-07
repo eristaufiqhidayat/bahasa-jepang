@@ -1,0 +1,5079 @@
+{
+  "schema_version": "japantest.reference.v1",
+  "title": "Referensi kurikulum Minna no Nihongo I-II untuk Japantest",
+  "created_date": "2026-10-07",
+  "status": "editorial_draft",
+  "sources": [
+    {
+      "id": "minna-i-2nd-id",
+      "title": "Minna no Nihongo Shokyu I, edisi kedua, Terjemahan dan Keterangan Tata Bahasa Bahasa Indonesia",
+      "attachment": "pdfcoffee.com_minna-no-nihongo-1-indonesia-edition-dikompresi-pdf-free.pdf",
+      "pdf_pages": 199,
+      "toc_pdf_pages": [
+        14,
+        21
+      ],
+      "chapters": [
+        1,
+        25
+      ]
+    },
+    {
+      "id": "minna-ii-2nd-id",
+      "title": "Minna no Nihongo Shokyu II, edisi kedua, Terjemahan dan Keterangan Tata Bahasa Bahasa Indonesia",
+      "attachment": "pdfcoffee.com_minna-no-nihongo-ii-edisi-2-terjemahan-keterangan-tata-bahasapdf-pdf-free.pdf",
+      "pdf_pages": 180,
+      "toc_pdf_pages": [
+        16,
+        23
+      ],
+      "chapters": [
+        26,
+        50
+      ]
+    }
+  ],
+  "web_references": [
+    {
+      "url": "https://www.jlpt.jp/e/guideline/testsections.html",
+      "purpose": "Struktur, waktu, dan jenis item ujian"
+    },
+    {
+      "url": "https://www.jlpt.jp/e/faq/index.html",
+      "purpose": "Tidak ada daftar resmi grammar/kanji/kosakata dan skor berskala"
+    },
+    {
+      "url": "https://www.jlpt.jp/sp/e/guideline/results.html",
+      "purpose": "Bagian penilaian dan ambang resmi"
+    },
+    {
+      "url": "https://www.3anet.co.jp/en/faq.html",
+      "purpose": "Urutan seri elementary dan intermediate"
+    }
+  ],
+  "scope": {
+    "coverage": "Fondasi dan materi elementary Bab 1-50; usulan jalur N5/N4 dengan beberapa topik jembatan",
+    "not_covered": [
+      "Kurikulum lengkap N3",
+      "Kurikulum lengkap N2",
+      "Kurikulum lengkap N1",
+      "Sertifikasi kompetensi profesional"
+    ],
+    "source_method": "OCR seluruh 379 halaman untuk navigasi; daftar isi dan bagian grammar diperiksa dengan teks OCR dan halaman sumber. Salah OCR tidak diadopsi sebagai kalimat belajar.",
+    "mapping_policy": "Nomor bab bukan level JLPT. Tingkat ditentukan oleh konsep, beban kanji, panjang teks, distraktor, dan kecepatan/kompleksitas audio.",
+    "original_content": "Ringkasan, contoh kalimat, bacaan, naskah audio, dan soal disusun baru berdasarkan konsep.",
+    "publication_policy": "Semua konten tetap draft sampai ditinjau guru; audio script bukan rekaman."
+  },
+  "lessons": [
+    {
+      "id": "mnn-01",
+      "chapter": 1,
+      "title": "Identitas dan perkenalan",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "は・です・か・も・の"
+      ],
+      "summary_id": "Memperkenalkan identitas dan menanyakan profesi secara sopan. は menandai topik; です mengakhiri pernyataan nominal.",
+      "objective": "Memperkenalkan identitas dan menanyakan profesi secara sopan.",
+      "example_ja": "わたしはエリスです。",
+      "example_id": "Saya Eris.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 1,
+        "pdf_pages": [
+          30,
+          35
+        ],
+        "printed_pages": [
+          10,
+          15
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-01"
+      ]
+    },
+    {
+      "id": "mnn-02",
+      "chapter": 2,
+      "title": "Benda dan kepemilikan",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "これ・それ・あれ",
+        "この・その・あの",
+        "の"
+      ],
+      "summary_id": "Membedakan penunjuk yang berdiri sendiri dan penunjuk yang harus diikuti nama benda; menunjukkan pemilik.",
+      "objective": "Membedakan penunjuk yang berdiri sendiri dan penunjuk yang harus diikuti nama benda; menunjukkan pemilik.",
+      "example_ja": "このノートはわたしのです。",
+      "example_id": "Buku catatan ini milik saya.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 2,
+        "pdf_pages": [
+          36,
+          41
+        ],
+        "printed_pages": [
+          16,
+          21
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-01"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-02"
+      ]
+    },
+    {
+      "id": "mnn-03",
+      "chapter": 3,
+      "title": "Tempat dan lokasi",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "ここ・そこ・あそこ",
+        "どこ",
+        "どちら"
+      ],
+      "summary_id": "Menanyakan dan menjelaskan lokasi fasilitas, asal, dan tempat kegiatan.",
+      "objective": "Menanyakan dan menjelaskan lokasi fasilitas, asal, dan tempat kegiatan.",
+      "example_ja": "受付は二階です。",
+      "example_id": "Resepsionis berada di lantai dua.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 3,
+        "pdf_pages": [
+          42,
+          47
+        ],
+        "printed_pages": [
+          22,
+          27
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-02"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-03"
+      ]
+    },
+    {
+      "id": "mnn-04",
+      "chapter": 4,
+      "title": "Waktu dan rutinitas",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "〜時",
+        "〜分",
+        "ます・ません・ました",
+        "から・まで"
+      ],
+      "summary_id": "Menyebut waktu serta membedakan tindakan sopan nonlampau dan lampau.",
+      "objective": "Menyebut waktu serta membedakan tindakan sopan nonlampau dan lampau.",
+      "example_ja": "会議は九時からです。",
+      "example_id": "Rapat dimulai pukul sembilan.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 4,
+        "pdf_pages": [
+          48,
+          53
+        ],
+        "printed_pages": [
+          28,
+          33
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-03"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-04"
+      ]
+    },
+    {
+      "id": "mnn-05",
+      "chapter": 5,
+      "title": "Perjalanan dan transportasi",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "へ・で・と",
+        "いつ"
+      ],
+      "summary_id": "Mengungkap tujuan, sarana perjalanan, dan orang yang pergi bersama.",
+      "objective": "Mengungkap tujuan, sarana perjalanan, dan orang yang pergi bersama.",
+      "example_ja": "電車で学校へ行きます。",
+      "example_id": "Saya pergi ke sekolah dengan kereta.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 5,
+        "pdf_pages": [
+          54,
+          59
+        ],
+        "printed_pages": [
+          34,
+          39
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-04"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-05"
+      ]
+    },
+    {
+      "id": "mnn-06",
+      "chapter": 6,
+      "title": "Kegiatan dan ajakan",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "を",
+        "場所で",
+        "ませんか・ましょう"
+      ],
+      "summary_id": "Menjelaskan objek tindakan, lokasi kegiatan, dan ajakan sopan.",
+      "objective": "Menjelaskan objek tindakan, lokasi kegiatan, dan ajakan sopan.",
+      "example_ja": "図書館で本を読みます。",
+      "example_id": "Saya membaca buku di perpustakaan.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 6,
+        "pdf_pages": [
+          60,
+          65
+        ],
+        "printed_pages": [
+          40,
+          45
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-05"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-06"
+      ]
+    },
+    {
+      "id": "mnn-07",
+      "chapter": 7,
+      "title": "Alat, memberi, dan menerima",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "道具で",
+        "あげます・もらいます",
+        "もう"
+      ],
+      "summary_id": "Menjelaskan alat dan arah pemberian; membedakan penerima dengan pemberi.",
+      "objective": "Menjelaskan alat dan arah pemberian; membedakan penerima dengan pemberi.",
+      "example_ja": "友達にペンをもらいました。",
+      "example_id": "Saya menerima pena dari teman.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 7,
+        "pdf_pages": [
+          66,
+          71
+        ],
+        "printed_pages": [
+          46,
+          51
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-06"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-07"
+      ]
+    },
+    {
+      "id": "mnn-08",
+      "chapter": 8,
+      "title": "Sifat benda dan orang",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "い形容詞・な形容詞",
+        "とても・あまり"
+      ],
+      "summary_id": "Membedakan kata sifat い dan な serta bentuk yang menerangkan kata benda.",
+      "objective": "Membedakan kata sifat い dan な serta bentuk yang menerangkan kata benda.",
+      "example_ja": "ここは静かな町です。",
+      "example_id": "Ini kota yang tenang.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 8,
+        "pdf_pages": [
+          72,
+          77
+        ],
+        "printed_pages": [
+          52,
+          57
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-07"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-08"
+      ]
+    },
+    {
+      "id": "mnn-09",
+      "chapter": 9,
+      "title": "Kesukaan, kemampuan, dan alasan",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "好き・上手・分かります",
+        "が",
+        "から"
+      ],
+      "summary_id": "Menyatakan kesukaan, kemampuan, pemahaman, dan alasan dalam kalimat sederhana.",
+      "objective": "Menyatakan kesukaan, kemampuan, pemahaman, dan alasan dalam kalimat sederhana.",
+      "example_ja": "時間がありませんから、行きません。",
+      "example_id": "Karena tidak ada waktu, saya tidak pergi.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 9,
+        "pdf_pages": [
+          78,
+          83
+        ],
+        "printed_pages": [
+          58,
+          63
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-08"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-09"
+      ]
+    },
+    {
+      "id": "mnn-10",
+      "chapter": 10,
+      "title": "Keberadaan dan posisi",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "あります・います",
+        "に",
+        "位置の"
+      ],
+      "summary_id": "Membedakan keberadaan benda dan makhluk hidup, lalu menjelaskan posisi.",
+      "objective": "Membedakan keberadaan benda dan makhluk hidup, lalu menjelaskan posisi.",
+      "example_ja": "机の下に猫がいます。",
+      "example_id": "Ada kucing di bawah meja.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 10,
+        "pdf_pages": [
+          84,
+          89
+        ],
+        "printed_pages": [
+          64,
+          69
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-09"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-10"
+      ]
+    },
+    {
+      "id": "mnn-11",
+      "chapter": 11,
+      "title": "Jumlah dan durasi",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "助数詞",
+        "期間",
+        "〜に〜回",
+        "だけ"
+      ],
+      "summary_id": "Menghitung benda dan orang serta mengungkap durasi dan frekuensi kegiatan.",
+      "objective": "Menghitung benda dan orang serta mengungkap durasi dan frekuensi kegiatan.",
+      "example_ja": "りんごを三つ買いました。",
+      "example_id": "Saya membeli tiga apel.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 11,
+        "pdf_pages": [
+          90,
+          95
+        ],
+        "printed_pages": [
+          70,
+          75
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-10"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-11"
+      ]
+    },
+    {
+      "id": "mnn-12",
+      "chapter": 12,
+      "title": "Lampau dan perbandingan",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "かった・でした",
+        "より",
+        "いちばん"
+      ],
+      "summary_id": "Mengubah kata sifat ke lampau dan membandingkan pilihan dengan konteks yang jelas.",
+      "objective": "Mengubah kata sifat ke lampau dan membandingkan pilihan dengan konteks yang jelas.",
+      "example_ja": "昨日は暑かったです。",
+      "example_id": "Kemarin panas.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 12,
+        "pdf_pages": [
+          96,
+          101
+        ],
+        "printed_pages": [
+          76,
+          81
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-11"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-12"
+      ]
+    },
+    {
+      "id": "mnn-13",
+      "chapter": 13,
+      "title": "Keinginan dan tujuan pergi",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "ほしい",
+        "〜たい",
+        "〜に行きます"
+      ],
+      "summary_id": "Menyatakan keinginan sendiri dan tujuan pergi melakukan suatu kegiatan.",
+      "objective": "Menyatakan keinginan sendiri dan tujuan pergi melakukan suatu kegiatan.",
+      "example_ja": "来年、日本へ行きたいです。",
+      "example_id": "Tahun depan saya ingin pergi ke Jepang.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 13,
+        "pdf_pages": [
+          102,
+          107
+        ],
+        "printed_pages": [
+          82,
+          87
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-12"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-13"
+      ]
+    },
+    {
+      "id": "mnn-14",
+      "chapter": 14,
+      "title": "Permintaan dan tindakan berlangsung",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "て形",
+        "てください",
+        "ています"
+      ],
+      "summary_id": "Membentuk て dan menggunakannya untuk permintaan serta tindakan yang sedang berlangsung.",
+      "objective": "Membentuk て dan menggunakannya untuk permintaan serta tindakan yang sedang berlangsung.",
+      "example_ja": "ここに名前を書いてください。",
+      "example_id": "Silakan tulis nama di sini.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 14,
+        "pdf_pages": [
+          108,
+          113
+        ],
+        "printed_pages": [
+          88,
+          93
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-13"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-14"
+      ]
+    },
+    {
+      "id": "mnn-15",
+      "chapter": 15,
+      "title": "Izin, larangan, dan keadaan",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "てもいい",
+        "てはいけない",
+        "ています"
+      ],
+      "summary_id": "Meminta izin dan memahami larangan; membaca ています sesuai konteks kegiatan atau keadaan.",
+      "objective": "Meminta izin dan memahami larangan; membaca ています sesuai konteks kegiatan atau keadaan.",
+      "example_ja": "ここで写真を撮ってもいいですか。",
+      "example_id": "Bolehkah mengambil foto di sini?",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 15,
+        "pdf_pages": [
+          114,
+          119
+        ],
+        "printed_pages": [
+          94,
+          99
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-14"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-15"
+      ]
+    },
+    {
+      "id": "mnn-16",
+      "chapter": 16,
+      "title": "Urutan kegiatan dan gabungan sifat",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "て、て",
+        "てから",
+        "くて・で"
+      ],
+      "summary_id": "Menghubungkan tindakan berurutan serta sifat; てから menegaskan kegiatan pertama selesai dahulu.",
+      "objective": "Menghubungkan tindakan berurutan serta sifat; てから menegaskan kegiatan pertama selesai dahulu.",
+      "example_ja": "手を洗ってから、料理をします。",
+      "example_id": "Setelah mencuci tangan, saya memasak.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 16,
+        "pdf_pages": [
+          120,
+          125
+        ],
+        "printed_pages": [
+          100,
+          105
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-15"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-16"
+      ]
+    },
+    {
+      "id": "mnn-17",
+      "chapter": 17,
+      "title": "Larangan halus dan kewajiban",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "ない形",
+        "ないでください",
+        "なければならない",
+        "なくてもいい"
+      ],
+      "summary_id": "Membedakan jangan melakukan, wajib melakukan, dan tidak perlu melakukan.",
+      "objective": "Membedakan jangan melakukan, wajib melakukan, dan tidak perlu melakukan.",
+      "example_ja": "ここに荷物を置かないでください。",
+      "example_id": "Jangan letakkan barang di sini.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 17,
+        "pdf_pages": [
+          126,
+          131
+        ],
+        "printed_pages": [
+          106,
+          111
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-16"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-17"
+      ]
+    },
+    {
+      "id": "mnn-18",
+      "chapter": 18,
+      "title": "Kemampuan, hobi, dan sebelum",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "辞書形",
+        "ことができます",
+        "前に"
+      ],
+      "summary_id": "Memakai bentuk kamus untuk kemampuan dan nominalisasi kegiatan serta urutan sebelum.",
+      "objective": "Memakai bentuk kamus untuk kemampuan dan nominalisasi kegiatan serta urutan sebelum.",
+      "example_ja": "泳ぐことができます。",
+      "example_id": "Saya bisa berenang.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 18,
+        "pdf_pages": [
+          132,
+          137
+        ],
+        "printed_pages": [
+          112,
+          117
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-17"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-18"
+      ]
+    },
+    {
+      "id": "mnn-19",
+      "chapter": 19,
+      "title": "Pengalaman dan kegiatan contoh",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "た形",
+        "たことがあります",
+        "たり〜たり",
+        "なります"
+      ],
+      "summary_id": "Menyatakan pengalaman, menyebut kegiatan sebagai contoh, dan menjelaskan perubahan.",
+      "objective": "Menyatakan pengalaman, menyebut kegiatan sebagai contoh, dan menjelaskan perubahan.",
+      "example_ja": "富士山を見たことがあります。",
+      "example_id": "Saya pernah melihat Gunung Fuji.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 19,
+        "pdf_pages": [
+          138,
+          143
+        ],
+        "printed_pages": [
+          118,
+          123
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-18"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-19"
+      ]
+    },
+    {
+      "id": "mnn-20",
+      "chapter": 20,
+      "title": "Bentuk biasa dan sopan",
+      "suggested_jlpt_level": "N5",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "普通形",
+        "丁寧形"
+      ],
+      "summary_id": "Mengubah bentuk sopan menjadi biasa dan menyesuaikan register dengan lawan bicara.",
+      "objective": "Mengubah bentuk sopan menjadi biasa dan menyesuaikan register dengan lawan bicara.",
+      "example_ja": "昨日、映画を見た。",
+      "example_id": "Kemarin saya menonton film.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 20,
+        "pdf_pages": [
+          144,
+          149
+        ],
+        "printed_pages": [
+          124,
+          129
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-19"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-20"
+      ]
+    },
+    {
+      "id": "mnn-21",
+      "chapter": 21,
+      "title": "Pendapat dan kutipan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "普通形と思います",
+        "と言います",
+        "でしょう"
+      ],
+      "summary_id": "Menyampaikan pendapat dan mengutip ucapan dengan penanda yang sesuai.",
+      "objective": "Menyampaikan pendapat dan mengutip ucapan dengan penanda yang sesuai.",
+      "example_ja": "明日は晴れると思います。",
+      "example_id": "Saya pikir besok cerah.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 21,
+        "pdf_pages": [
+          150,
+          155
+        ],
+        "printed_pages": [
+          130,
+          135
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-20"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-21"
+      ]
+    },
+    {
+      "id": "mnn-22",
+      "chapter": 22,
+      "title": "Klausa penerang benda",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "普通形＋名詞"
+      ],
+      "summary_id": "Menerangkan orang atau benda dengan klausa yang langsung mendahului kata benda.",
+      "objective": "Menerangkan orang atau benda dengan klausa yang langsung mendahului kata benda.",
+      "example_ja": "昨日買った靴は青いです。",
+      "example_id": "Sepatu yang saya beli kemarin berwarna biru.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 22,
+        "pdf_pages": [
+          156,
+          161
+        ],
+        "printed_pages": [
+          136,
+          141
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-21"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-22"
+      ]
+    },
+    {
+      "id": "mnn-23",
+      "chapter": 23,
+      "title": "Waktu dan hubungan otomatis",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "とき",
+        "辞書形と"
+      ],
+      "summary_id": "Menjelaskan waktu tindakan serta akibat umum atau otomatis dengan と.",
+      "objective": "Menjelaskan waktu tindakan serta akibat umum atau otomatis dengan と.",
+      "example_ja": "このボタンを押すと、ドアが開きます。",
+      "example_id": "Jika tombol ini ditekan, pintu terbuka.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 23,
+        "pdf_pages": [
+          162,
+          167
+        ],
+        "printed_pages": [
+          142,
+          147
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-22"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-23"
+      ]
+    },
+    {
+      "id": "mnn-24",
+      "chapter": 24,
+      "title": "Memberi dan menerima bantuan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "くれます",
+        "てあげる・てもらう・てくれる"
+      ],
+      "summary_id": "Mengenali pelaku, penerima manfaat, dan sudut pandang dalam bantuan.",
+      "objective": "Mengenali pelaku, penerima manfaat, dan sudut pandang dalam bantuan.",
+      "example_ja": "友達がわたしを手伝ってくれました。",
+      "example_id": "Teman membantu saya.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 24,
+        "pdf_pages": [
+          168,
+          173
+        ],
+        "printed_pages": [
+          148,
+          153
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-23"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-24"
+      ]
+    },
+    {
+      "id": "mnn-25",
+      "chapter": 25,
+      "title": "Pengandaian dan konsesi",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "たら",
+        "ても",
+        "もし"
+      ],
+      "summary_id": "Membedakan syarat dengan hasil yang tetap berlaku walaupun syarat tertentu terjadi.",
+      "objective": "Membedakan syarat dengan hasil yang tetap berlaku walaupun syarat tertentu terjadi.",
+      "example_ja": "雨が降っても、行きます。",
+      "example_id": "Walaupun hujan, saya akan pergi.",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 25,
+        "pdf_pages": [
+          174,
+          179
+        ],
+        "printed_pages": [
+          154,
+          159
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-24"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-25"
+      ]
+    },
+    {
+      "id": "mnn-26",
+      "chapter": 26,
+      "title": "Penjelasan alasan dan permintaan sopan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "んです",
+        "ていただけませんか",
+        "たらいいですか"
+      ],
+      "summary_id": "Memberi penjelasan menurut konteks dan meminta bantuan atau saran dengan sopan.",
+      "objective": "Memberi penjelasan menurut konteks dan meminta bantuan atau saran dengan sopan.",
+      "example_ja": "頭が痛いんです。",
+      "example_id": "Kepala saya sakit (sebagai penjelasan).",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 26,
+        "pdf_pages": [
+          30,
+          35
+        ],
+        "printed_pages": [
+          8,
+          13
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-25"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-26"
+      ]
+    },
+    {
+      "id": "mnn-27",
+      "chapter": 27,
+      "title": "Kemampuan potensial dan persepsi",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "可能形",
+        "見える・聞こえる",
+        "しか〜ない"
+      ],
+      "summary_id": "Membedakan dapat melakukan secara sengaja dengan sesuatu yang terlihat atau terdengar.",
+      "objective": "Membedakan dapat melakukan secara sengaja dengan sesuatu yang terlihat atau terdengar.",
+      "example_ja": "ここから山が見えます。",
+      "example_id": "Dari sini gunung terlihat.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 27,
+        "pdf_pages": [
+          36,
+          41
+        ],
+        "printed_pages": [
+          14,
+          19
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-26"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-27"
+      ]
+    },
+    {
+      "id": "mnn-28",
+      "chapter": 28,
+      "title": "Kegiatan bersamaan dan alasan jamak",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "ながら",
+        "ています（習慣）",
+        "し"
+      ],
+      "summary_id": "Menghubungkan kegiatan bersamaan dan menyusun beberapa alasan.",
+      "objective": "Menghubungkan kegiatan bersamaan dan menyusun beberapa alasan.",
+      "example_ja": "音楽を聞きながら、料理します。",
+      "example_id": "Saya memasak sambil mendengarkan musik.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 28,
+        "pdf_pages": [
+          42,
+          47
+        ],
+        "printed_pages": [
+          20,
+          25
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-27"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-28"
+      ]
+    },
+    {
+      "id": "mnn-29",
+      "chapter": 29,
+      "title": "Keadaan hasil dan penyesalan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "自動詞ています",
+        "てしまう"
+      ],
+      "summary_id": "Membaca keadaan hasil perubahan dan menyatakan penyelesaian atau penyesalan menurut konteks.",
+      "objective": "Membaca keadaan hasil perubahan dan menyatakan penyelesaian atau penyesalan menurut konteks.",
+      "example_ja": "窓が開いています。",
+      "example_id": "Jendela dalam keadaan terbuka.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 29,
+        "pdf_pages": [
+          48,
+          53
+        ],
+        "printed_pages": [
+          26,
+          31
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-28"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-29"
+      ]
+    },
+    {
+      "id": "mnn-30",
+      "chapter": 30,
+      "title": "Hasil tindakan dan persiapan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "てある",
+        "ておく"
+      ],
+      "summary_id": "Membedakan keadaan hasil tindakan sengaja dan tindakan persiapan.",
+      "objective": "Membedakan keadaan hasil tindakan sengaja dan tindakan persiapan.",
+      "example_ja": "会議の前に資料を印刷しておきます。",
+      "example_id": "Saya akan mencetak dokumen terlebih dahulu sebelum rapat.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 30,
+        "pdf_pages": [
+          54,
+          59
+        ],
+        "printed_pages": [
+          32,
+          37
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-29"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-30"
+      ]
+    },
+    {
+      "id": "mnn-31",
+      "chapter": 31,
+      "title": "Niat dan rencana",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "意向形",
+        "ようと思う",
+        "つもり",
+        "予定"
+      ],
+      "summary_id": "Membedakan kehendak, niat, dan jadwal yang direncanakan.",
+      "objective": "Membedakan kehendak, niat, dan jadwal yang direncanakan.",
+      "example_ja": "週末は家で休むつもりです。",
+      "example_id": "Saya berniat beristirahat di rumah pada akhir pekan.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 31,
+        "pdf_pages": [
+          60,
+          65
+        ],
+        "printed_pages": [
+          38,
+          43
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-30"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-31"
+      ]
+    },
+    {
+      "id": "mnn-32",
+      "chapter": 32,
+      "title": "Saran dan kemungkinan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "たほうがいい",
+        "ないほうがいい",
+        "でしょう・かもしれない"
+      ],
+      "summary_id": "Memberi saran dan membedakan tingkat kepastian dalam perkiraan.",
+      "objective": "Memberi saran dan membedakan tingkat kepastian dalam perkiraan.",
+      "example_ja": "今日は早く寝たほうがいいです。",
+      "example_id": "Sebaiknya tidur lebih awal hari ini.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 32,
+        "pdf_pages": [
+          66,
+          71
+        ],
+        "printed_pages": [
+          44,
+          49
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-31"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-32"
+      ]
+    },
+    {
+      "id": "mnn-33",
+      "chapter": 33,
+      "title": "Perintah, larangan, dan arti tanda",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "命令形",
+        "辞書形な",
+        "という意味",
+        "と伝える"
+      ],
+      "summary_id": "Memahami tanda dan perintah menurut situasi, tanpa menganggapnya register sopan umum.",
+      "objective": "Memahami tanda dan perintah menurut situasi, tanpa menganggapnya register sopan umum.",
+      "example_ja": "「入るな」は、入ってはいけないという意味です。",
+      "example_id": "“Jangan masuk” berarti tidak boleh masuk.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 33,
+        "pdf_pages": [
+          72,
+          77
+        ],
+        "printed_pages": [
+          50,
+          55
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-32"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-33"
+      ]
+    },
+    {
+      "id": "mnn-34",
+      "chapter": 34,
+      "title": "Petunjuk dan urutan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "とおりに",
+        "あとで",
+        "ないで"
+      ],
+      "summary_id": "Mengikuti petunjuk atau contoh, lalu menjelaskan urutan dan tindakan yang tidak dilakukan.",
+      "objective": "Mengikuti petunjuk atau contoh, lalu menjelaskan urutan dan tindakan yang tidak dilakukan.",
+      "example_ja": "説明のとおりに、入力してください。",
+      "example_id": "Silakan masukkan data sesuai penjelasan.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 34,
+        "pdf_pages": [
+          78,
+          83
+        ],
+        "printed_pages": [
+          56,
+          61
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-33"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-34"
+      ]
+    },
+    {
+      "id": "mnn-35",
+      "chapter": 35,
+      "title": "Syarat dan rekomendasi",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "ば形",
+        "なら",
+        "疑問詞〜ばいい"
+      ],
+      "summary_id": "Membentuk syarat dan memberi saran berdasarkan topik yang diajukan.",
+      "objective": "Membentuk syarat dan memberi saran berdasarkan topik yang diajukan.",
+      "example_ja": "安ければ、買います。",
+      "example_id": "Jika murah, saya akan membelinya.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 35,
+        "pdf_pages": [
+          84,
+          89
+        ],
+        "printed_pages": [
+          62,
+          67
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-34"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-35"
+      ]
+    },
+    {
+      "id": "mnn-36",
+      "chapter": 36,
+      "title": "Tujuan dan perubahan kemampuan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "ように",
+        "ようになる",
+        "ようにする"
+      ],
+      "summary_id": "Membedakan tujuan kemampuan, perubahan keadaan, dan usaha atau kebiasaan sengaja.",
+      "objective": "Membedakan tujuan kemampuan, perubahan keadaan, dan usaha atau kebiasaan sengaja.",
+      "example_ja": "毎日練習して、日本語が話せるようになりました。",
+      "example_id": "Setelah berlatih setiap hari, saya menjadi bisa berbicara bahasa Jepang.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 36,
+        "pdf_pages": [
+          90,
+          95
+        ],
+        "printed_pages": [
+          68,
+          73
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-35"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-36"
+      ]
+    },
+    {
+      "id": "mnn-37",
+      "chapter": 37,
+      "title": "Kalimat pasif",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "受身形",
+        "に・によって"
+      ],
+      "summary_id": "Mengenali penerima tindakan dan pelaku, serta membedakan pasif langsung dengan konteks gangguan.",
+      "objective": "Mengenali penerima tindakan dan pelaku, serta membedakan pasif langsung dengan konteks gangguan.",
+      "example_ja": "わたしは先生にほめられました。",
+      "example_id": "Saya dipuji guru.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 37,
+        "pdf_pages": [
+          96,
+          101
+        ],
+        "printed_pages": [
+          74,
+          79
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-36"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-37"
+      ]
+    },
+    {
+      "id": "mnn-38",
+      "chapter": 38,
+      "title": "Nominalisasi kegiatan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "のは",
+        "のが",
+        "のを"
+      ],
+      "summary_id": "Menjadikan klausa sebagai frasa nominal untuk menyebut sifat, kesukaan, atau objek tindakan.",
+      "objective": "Menjadikan klausa sebagai frasa nominal untuk menyebut sifat, kesukaan, atau objek tindakan.",
+      "example_ja": "朝、歩くのが好きです。",
+      "example_id": "Saya suka berjalan kaki pada pagi hari.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 38,
+        "pdf_pages": [
+          102,
+          107
+        ],
+        "printed_pages": [
+          80,
+          85
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-37"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-38"
+      ]
+    },
+    {
+      "id": "mnn-39",
+      "chapter": 39,
+      "title": "Sebab dan alasan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "て・なくて",
+        "ので"
+      ],
+      "summary_id": "Menghubungkan sebab dengan hasil atau perasaan dan memakai ので untuk alasan yang sesuai konteks.",
+      "objective": "Menghubungkan sebab dengan hasil atau perasaan dan memakai ので untuk alasan yang sesuai konteks.",
+      "example_ja": "電車が遅れたので、会議に遅れました。",
+      "example_id": "Karena kereta terlambat, saya terlambat ke rapat.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 39,
+        "pdf_pages": [
+          108,
+          113
+        ],
+        "printed_pages": [
+          86,
+          91
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-38"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-39"
+      ]
+    },
+    {
+      "id": "mnn-40",
+      "chapter": 40,
+      "title": "Pertanyaan di dalam kalimat",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "疑問詞〜か",
+        "かどうか",
+        "てみる"
+      ],
+      "summary_id": "Memasukkan pertanyaan informasi atau ya/tidak ke dalam kalimat serta menyatakan mencoba.",
+      "objective": "Memasukkan pertanyaan informasi atau ya/tidak ke dalam kalimat serta menyatakan mencoba.",
+      "example_ja": "会議が何時に始まるか、知っていますか。",
+      "example_id": "Apakah Anda tahu pukul berapa rapat dimulai?",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 40,
+        "pdf_pages": [
+          114,
+          119
+        ],
+        "printed_pages": [
+          92,
+          97
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-39"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-40"
+      ]
+    },
+    {
+      "id": "mnn-41",
+      "chapter": 41,
+      "title": "Bantuan dengan register sopan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "いただく",
+        "くださる",
+        "やる",
+        "ていただく"
+      ],
+      "summary_id": "Menyesuaikan ungkapan pemberian dan bantuan menurut peran pemberi, penerima, dan hubungan sosial.",
+      "objective": "Menyesuaikan ungkapan pemberian dan bantuan menurut peran pemberi, penerima, dan hubungan sosial.",
+      "example_ja": "先生に作文を見ていただきました。",
+      "example_id": "Saya menerima bantuan guru untuk memeriksa karangan saya.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 41,
+        "pdf_pages": [
+          120,
+          125
+        ],
+        "printed_pages": [
+          98,
+          103
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-40"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-41"
+      ]
+    },
+    {
+      "id": "mnn-42",
+      "chapter": 42,
+      "title": "Tujuan dan kegunaan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "ために",
+        "のに",
+        "数量も・は"
+      ],
+      "summary_id": "Membedakan tujuan sengaja dan kegunaan; untuk kegunaan, のに bukan konsesi.",
+      "objective": "Membedakan tujuan sengaja dan kegunaan; untuk kegunaan, のに bukan konsesi.",
+      "example_ja": "日本で働くために、日本語を勉強しています。",
+      "example_id": "Saya belajar bahasa Jepang untuk bekerja di Jepang.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 42,
+        "pdf_pages": [
+          126,
+          131
+        ],
+        "printed_pages": [
+          104,
+          109
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-41"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-42"
+      ]
+    },
+    {
+      "id": "mnn-43",
+      "chapter": 43,
+      "title": "Kesan dan pergi-kembali",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "そうです（様態）",
+        "てきます"
+      ],
+      "summary_id": "Menyatakan kesan dari pengamatan dan kegiatan pergi melakukan sesuatu lalu kembali.",
+      "objective": "Menyatakan kesan dari pengamatan dan kegiatan pergi melakukan sesuatu lalu kembali.",
+      "example_ja": "このケーキはおいしそうです。",
+      "example_id": "Kue ini tampaknya enak.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 43,
+        "pdf_pages": [
+          132,
+          137
+        ],
+        "printed_pages": [
+          110,
+          115
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-42"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-43"
+      ]
+    },
+    {
+      "id": "mnn-44",
+      "chapter": 44,
+      "title": "Kelebihan dan kemudahan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": false,
+      "patterns": [
+        "すぎる",
+        "やすい・にくい",
+        "く・にする"
+      ],
+      "summary_id": "Menyatakan melakukan berlebihan, kemudahan/kesulitan, serta perubahan yang disengaja.",
+      "objective": "Menyatakan melakukan berlebihan, kemudahan/kesulitan, serta perubahan yang disengaja.",
+      "example_ja": "このアプリは使いやすいです。",
+      "example_id": "Aplikasi ini mudah digunakan.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 44,
+        "pdf_pages": [
+          138,
+          143
+        ],
+        "printed_pages": [
+          116,
+          121
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-43"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-44"
+      ]
+    },
+    {
+      "id": "mnn-45",
+      "chapter": 45,
+      "title": "Situasi dan hasil tak terduga",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "場合は",
+        "のに（逆接）"
+      ],
+      "summary_id": "Membedakan petunjuk menurut keadaan dan kontras hasil yang tidak sesuai harapan.",
+      "objective": "Membedakan petunjuk menurut keadaan dan kontras hasil yang tidak sesuai harapan.",
+      "example_ja": "予約したのに、席がありませんでした。",
+      "example_id": "Padahal sudah memesan, tidak ada tempat duduk.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 45,
+        "pdf_pages": [
+          144,
+          149
+        ],
+        "printed_pages": [
+          122,
+          127
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-44"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-45"
+      ]
+    },
+    {
+      "id": "mnn-46",
+      "chapter": 46,
+      "title": "Tahap kegiatan dan dugaan beralasan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "ところ",
+        "たばかり",
+        "はず"
+      ],
+      "summary_id": "Membedakan akan melakukan, sedang melakukan, baru selesai, dan dugaan berdasarkan alasan.",
+      "objective": "Membedakan akan melakukan, sedang melakukan, baru selesai, dan dugaan berdasarkan alasan.",
+      "example_ja": "今、昼ご飯を食べているところです。",
+      "example_id": "Sekarang saya sedang makan siang.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 46,
+        "pdf_pages": [
+          150,
+          155
+        ],
+        "printed_pages": [
+          128,
+          133
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-45"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-46"
+      ]
+    },
+    {
+      "id": "mnn-47",
+      "chapter": 47,
+      "title": "Kabar dan kesimpulan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "そうです（伝聞）",
+        "ようです",
+        "音・匂いがする"
+      ],
+      "summary_id": "Membedakan kabar dari sumber dengan dugaan berdasarkan bukti; jangan menyamakan dua そうです.",
+      "objective": "Membedakan kabar dari sumber dengan dugaan berdasarkan bukti; jangan menyamakan dua そうです.",
+      "example_ja": "天気予報によると、明日は雨が降るそうです。",
+      "example_id": "Menurut prakiraan cuaca, katanya besok akan turun hujan.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 47,
+        "pdf_pages": [
+          156,
+          161
+        ],
+        "printed_pages": [
+          134,
+          139
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-46"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-47"
+      ]
+    },
+    {
+      "id": "mnn-48",
+      "chapter": 48,
+      "title": "Kausatif dan izin melakukan",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "使役形",
+        "させていただけませんか"
+      ],
+      "summary_id": "Membedakan menyuruh dan membiarkan menurut konteks serta meminta izin melakukan tindakan sendiri.",
+      "objective": "Membedakan menyuruh dan membiarkan menurut konteks serta meminta izin melakukan tindakan sendiri.",
+      "example_ja": "先生は学生に作文を書かせました。",
+      "example_id": "Guru menyuruh siswa menulis karangan.",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 48,
+        "pdf_pages": [
+          162,
+          167
+        ],
+        "printed_pages": [
+          140,
+          145
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-47"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-48"
+      ]
+    },
+    {
+      "id": "mnn-49",
+      "chapter": 49,
+      "title": "Menghormati tindakan orang lain",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "尊敬語",
+        "お〜になる",
+        "いらっしゃる"
+      ],
+      "summary_id": "Memilih bentuk hormat untuk tindakan lawan bicara atau pihak yang dihormati, bukan menaikkan diri sendiri.",
+      "objective": "Memilih bentuk hormat untuk tindakan lawan bicara atau pihak yang dihormati, bukan menaikkan diri sendiri.",
+      "example_ja": "先生はもうお帰りになりました。",
+      "example_id": "Guru sudah pulang (ungkapan hormat).",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 49,
+        "pdf_pages": [
+          168,
+          173
+        ],
+        "printed_pages": [
+          146,
+          151
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-48"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-49"
+      ]
+    },
+    {
+      "id": "mnn-50",
+      "chapter": 50,
+      "title": "Merendahkan tindakan sendiri",
+      "suggested_jlpt_level": "N4",
+      "level_basis": "Pemetaan editorial sementara; bukan daftar atau kesetaraan JLPT resmi",
+      "bridge_to_next_level": true,
+      "patterns": [
+        "謙譲語",
+        "お〜する",
+        "伺う・申す・参る"
+      ],
+      "summary_id": "Memilih bentuk rendah hati untuk tindakan diri atau pihak sendiri dengan memperhatikan tujuan dan lawan bicara.",
+      "objective": "Memilih bentuk rendah hati untuk tindakan diri atau pihak sendiri dengan memperhatikan tujuan dan lawan bicara.",
+      "example_ja": "明日、先生の研究室に伺います。",
+      "example_id": "Besok saya akan mengunjungi ruang penelitian guru (ungkapan rendah hati).",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 50,
+        "pdf_pages": [
+          174,
+          179
+        ],
+        "printed_pages": [
+          152,
+          157
+        ]
+      },
+      "content_status": "draft",
+      "review_status": "needs_japanese_teacher_review",
+      "prerequisites": [
+        "mnn-49"
+      ],
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "listening"
+      ],
+      "question_ids": [
+        "mnn-g-50"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "mnn-g-01",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-01"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "わたし（　）エリスです。",
+      "choices": [
+        "を",
+        "に",
+        "で",
+        "は"
+      ],
+      "correct_index": 3,
+      "explanation_id": "は menandai topik pembicaraan: saya.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 1,
+        "pdf_pages": [
+          30,
+          35
+        ],
+        "printed_pages": [
+          10,
+          15
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-02",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-02"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "（　）ノートはわたしのです。",
+      "choices": [
+        "ここ",
+        "こちら",
+        "この",
+        "これ"
+      ],
+      "correct_index": 2,
+      "explanation_id": "この langsung menerangkan ノート. これ berdiri sendiri sebagai kata ganti benda.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 2,
+        "pdf_pages": [
+          36,
+          41
+        ],
+        "printed_pages": [
+          16,
+          21
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-03",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-03"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "A：受付は（　）ですか。B：二階です。",
+      "choices": [
+        "いくつ",
+        "どこ",
+        "だれ",
+        "いつ"
+      ],
+      "correct_index": 1,
+      "explanation_id": "どこ menanyakan tempat; jawabannya 二階, lantai dua.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 3,
+        "pdf_pages": [
+          42,
+          47
+        ],
+        "printed_pages": [
+          22,
+          27
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-04",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-04"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "きのう、九時から五時まで（　）。",
+      "choices": [
+        "働きました",
+        "働きます",
+        "働くでしょう",
+        "働きましょう"
+      ],
+      "correct_index": 0,
+      "explanation_id": "きのう menunjukkan waktu lampau; tindakan yang telah dilakukan memakai 働きました.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 4,
+        "pdf_pages": [
+          48,
+          53
+        ],
+        "printed_pages": [
+          28,
+          33
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-05",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-05"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "電車（　）学校へ行きます。",
+      "choices": [
+        "に",
+        "を",
+        "が",
+        "で"
+      ],
+      "correct_index": 3,
+      "explanation_id": "で menandai sarana transportasi; tujuan sekolah memakai へ.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 5,
+        "pdf_pages": [
+          54,
+          59
+        ],
+        "printed_pages": [
+          34,
+          39
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-06",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-06"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "図書館で本（　）読みます。",
+      "choices": [
+        "と",
+        "へ",
+        "を",
+        "に"
+      ],
+      "correct_index": 2,
+      "explanation_id": "本 merupakan objek langsung dari 読みます, sehingga memakai を.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 6,
+        "pdf_pages": [
+          60,
+          65
+        ],
+        "printed_pages": [
+          40,
+          45
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-07",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-07"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "友達にペンを（　）。ペンは今、わたしのです。",
+      "choices": [
+        "泳ぎました",
+        "もらいました",
+        "あげました",
+        "読みました"
+      ],
+      "correct_index": 1,
+      "explanation_id": "もらいました berarti menerima; pena sekarang milik pembicara.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 7,
+        "pdf_pages": [
+          66,
+          71
+        ],
+        "printed_pages": [
+          46,
+          51
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-08",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-08"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "ここは（　）町です。",
+      "choices": [
+        "静かな",
+        "静かい",
+        "静かでの",
+        "静かの"
+      ],
+      "correct_index": 0,
+      "explanation_id": "静か adalah kata sifat な; sebelum kata benda menjadi 静かな.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 8,
+        "pdf_pages": [
+          72,
+          77
+        ],
+        "printed_pages": [
+          52,
+          57
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-09",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-09"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "時間がありません（　）、行きません。",
+      "choices": [
+        "まで",
+        "だけ",
+        "より",
+        "から"
+      ],
+      "correct_index": 3,
+      "explanation_id": "から menghubungkan alasan tidak mempunyai waktu dengan keputusan tidak pergi.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 9,
+        "pdf_pages": [
+          78,
+          83
+        ],
+        "printed_pages": [
+          58,
+          63
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-10",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-10"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "机の下に猫が（　）。",
+      "choices": [
+        "なります",
+        "できます",
+        "います",
+        "あります"
+      ],
+      "correct_index": 2,
+      "explanation_id": "Kucing adalah makhluk hidup sehingga keberadaannya memakai います.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 10,
+        "pdf_pages": [
+          84,
+          89
+        ],
+        "printed_pages": [
+          64,
+          69
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-11",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-11"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "りんごを（　）買いました。",
+      "choices": [
+        "三階",
+        "三つ",
+        "三人",
+        "三時"
+      ],
+      "correct_index": 1,
+      "explanation_id": "三つ dipakai untuk tiga benda secara umum; 人 menghitung orang, 時 waktu, dan 階 lantai.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 11,
+        "pdf_pages": [
+          90,
+          95
+        ],
+        "printed_pages": [
+          70,
+          75
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-12",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-12"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "昨日はとても（　）です。",
+      "choices": [
+        "暑かった",
+        "暑いでした",
+        "暑くでした",
+        "暑かったでした"
+      ],
+      "correct_index": 0,
+      "explanation_id": "Lampau kata sifat い: 暑い menjadi 暑かった, lalu dapat diikuti です.",
+      "difficulty": "basic",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 12,
+        "pdf_pages": [
+          96,
+          101
+        ],
+        "printed_pages": [
+          76,
+          81
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-13",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-13"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "来年、日本へ（　）です。",
+      "choices": [
+        "行くたい",
+        "行ってたい",
+        "行ったい",
+        "行きたい"
+      ],
+      "correct_index": 3,
+      "explanation_id": "Keinginan memakai bentuk sebelum ます + たい: 行きます menjadi 行きたい.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 13,
+        "pdf_pages": [
+          102,
+          107
+        ],
+        "printed_pages": [
+          82,
+          87
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-14",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-14"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "ここに名前を（　）ください。",
+      "choices": [
+        "書く",
+        "書いた",
+        "書いて",
+        "書きます"
+      ],
+      "correct_index": 2,
+      "explanation_id": "Permintaan memakai bentuk て + ください; 書く menjadi 書いて.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 14,
+        "pdf_pages": [
+          108,
+          113
+        ],
+        "printed_pages": [
+          88,
+          93
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-15",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-15"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "ここで写真を撮って（　）いいですか。",
+      "choices": [
+        "を",
+        "も",
+        "が",
+        "に"
+      ],
+      "correct_index": 1,
+      "explanation_id": "て + もいいですか merupakan pola untuk meminta izin.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 15,
+        "pdf_pages": [
+          114,
+          119
+        ],
+        "printed_pages": [
+          94,
+          99
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-16",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-16"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "手を洗って（　）、料理をします。",
+      "choices": [
+        "から",
+        "より",
+        "まで",
+        "だけ"
+      ],
+      "correct_index": 0,
+      "explanation_id": "てから menyatakan urutan setelah tindakan pertama selesai.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 16,
+        "pdf_pages": [
+          120,
+          125
+        ],
+        "printed_pages": [
+          100,
+          105
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-17",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-17"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "ここに荷物を（　）でください。",
+      "choices": [
+        "置くない",
+        "置きない",
+        "置いたない",
+        "置かない"
+      ],
+      "correct_index": 3,
+      "explanation_id": "Bentuk negatif 置く adalah 置かない; ないでください berarti jangan melakukan.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 17,
+        "pdf_pages": [
+          126,
+          131
+        ],
+        "printed_pages": [
+          106,
+          111
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-18",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-18"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "わたしは（　）ことができます。",
+      "choices": [
+        "泳ぎます",
+        "泳いだ",
+        "泳ぐ",
+        "泳いで"
+      ],
+      "correct_index": 2,
+      "explanation_id": "Pola kemampuan ini memakai kata kerja bentuk kamus + ことができます.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 18,
+        "pdf_pages": [
+          132,
+          137
+        ],
+        "printed_pages": [
+          112,
+          117
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-19",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-19"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "富士山を（　）ことがあります。",
+      "choices": [
+        "見て",
+        "見た",
+        "見る",
+        "見ます"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Pengalaman pernah melakukan memakai bentuk た + ことがあります.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 19,
+        "pdf_pages": [
+          138,
+          143
+        ],
+        "printed_pages": [
+          118,
+          123
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-20",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-20"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "友達との会話で「昨日、映画を見ました」を普通形にすると？",
+      "choices": [
+        "昨日、映画を見た。",
+        "昨日、映画を見ます。",
+        "昨日、映画を見ない。",
+        "昨日、映画を見よう。"
+      ],
+      "correct_index": 0,
+      "explanation_id": "見ました adalah lampau positif; bentuk biasanya 見た.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 20,
+        "pdf_pages": [
+          144,
+          149
+        ],
+        "printed_pages": [
+          124,
+          129
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-21",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-21"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "明日は晴れる（　）思います。",
+      "choices": [
+        "を",
+        "へ",
+        "まで",
+        "と"
+      ],
+      "correct_index": 3,
+      "explanation_id": "Pendapat memakai bentuk biasa + と + 思います.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 21,
+        "pdf_pages": [
+          150,
+          155
+        ],
+        "printed_pages": [
+          130,
+          135
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-22",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-22"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "昨日（　）靴は青いです。",
+      "choices": [
+        "買ってますの",
+        "買いますの",
+        "買った",
+        "買いました"
+      ],
+      "correct_index": 2,
+      "explanation_id": "Klausa penerang memakai bentuk biasa langsung sebelum kata benda: 昨日買った靴.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 22,
+        "pdf_pages": [
+          156,
+          161
+        ],
+        "printed_pages": [
+          136,
+          141
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-23",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-23"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "このボタンを（　）と、ドアが開きます。",
+      "choices": [
+        "押したで",
+        "押す",
+        "押して",
+        "押します"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Hubungan otomatis ini memakai bentuk kamus + と: 押すと.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 23,
+        "pdf_pages": [
+          162,
+          167
+        ],
+        "printed_pages": [
+          142,
+          147
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-24",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-24"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "友達がわたしを手伝って（　）。自分が助けを受けたことを表します。",
+      "choices": [
+        "くれました",
+        "あげました",
+        "もらいました",
+        "いました"
+      ],
+      "correct_index": 0,
+      "explanation_id": "友達 adalah pelaku, sedangkan pembicara menerima manfaat, sehingga memakai てくれました.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 24,
+        "pdf_pages": [
+          168,
+          173
+        ],
+        "printed_pages": [
+          148,
+          153
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-25",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-25"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "雨が降って（　）、行きます。",
+      "choices": [
+        "から",
+        "より",
+        "まで",
+        "も"
+      ],
+      "correct_index": 3,
+      "explanation_id": "ても menandai konsesi: tetap pergi meskipun hujan.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-i-2nd-id",
+        "chapter": 25,
+        "pdf_pages": [
+          174,
+          179
+        ],
+        "printed_pages": [
+          154,
+          159
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-26",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-26"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "A：どうしたんですか。B：頭が痛い（　）。",
+      "choices": [
+        "つもりです",
+        "ためです",
+        "んです",
+        "ことです"
+      ],
+      "correct_index": 2,
+      "explanation_id": "んです memberi penjelasan keadaan sebagai jawaban atas どうしたんですか.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 26,
+        "pdf_pages": [
+          30,
+          35
+        ],
+        "printed_pages": [
+          8,
+          13
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-27",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-27"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "ここから山が（　）。",
+      "choices": [
+        "見ましたか",
+        "見えます",
+        "見せます",
+        "見ますか"
+      ],
+      "correct_index": 1,
+      "explanation_id": "見えます menyatakan terlihat karena keadaan atau posisi, bukan sengaja melihat.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 27,
+        "pdf_pages": [
+          36,
+          41
+        ],
+        "printed_pages": [
+          14,
+          19
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-28",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-28"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "音楽を（　）ながら、料理します。",
+      "choices": [
+        "聞き",
+        "聞く",
+        "聞いて",
+        "聞いた"
+      ],
+      "correct_index": 0,
+      "explanation_id": "ながら melekat pada bentuk sebelum ます: 聞きます menjadi 聞きながら.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 28,
+        "pdf_pages": [
+          42,
+          47
+        ],
+        "printed_pages": [
+          20,
+          25
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-29",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-29"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "窓が（　）います。今、風が入っています。",
+      "choices": [
+        "開けて",
+        "開いた",
+        "開きます",
+        "開いて"
+      ],
+      "correct_index": 3,
+      "explanation_id": "窓が開いています memakai kata kerja intransitif 開く untuk keadaan jendela terbuka.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 29,
+        "pdf_pages": [
+          48,
+          53
+        ],
+        "printed_pages": [
+          26,
+          31
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-30",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-30"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "会議の前に資料を印刷して（　）。",
+      "choices": [
+        "いますか",
+        "みましたか",
+        "おきます",
+        "あります"
+      ],
+      "correct_index": 2,
+      "explanation_id": "ておきます menyatakan tindakan yang dilakukan lebih dahulu untuk persiapan.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 30,
+        "pdf_pages": [
+          54,
+          59
+        ],
+        "printed_pages": [
+          32,
+          37
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-31",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-31"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "週末は家で（　）つもりです。",
+      "choices": [
+        "休んだで",
+        "休む",
+        "休んで",
+        "休みます"
+      ],
+      "correct_index": 1,
+      "explanation_id": "つもりです untuk niat memakai bentuk kamus atau bentuk ない.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 31,
+        "pdf_pages": [
+          60,
+          65
+        ],
+        "printed_pages": [
+          38,
+          43
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-32",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-32"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "疲れていますから、早く（　）ほうがいいです。",
+      "choices": [
+        "寝た",
+        "寝て",
+        "寝ます",
+        "寝るの"
+      ],
+      "correct_index": 0,
+      "explanation_id": "Saran positif di pola ini memakai bentuk た + ほうがいいです.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 32,
+        "pdf_pages": [
+          66,
+          71
+        ],
+        "printed_pages": [
+          44,
+          49
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-33",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-33"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "「入るな」はどんな意味ですか。",
+      "choices": [
+        "入ってもいいです。",
+        "もう入りました。",
+        "入ってください。",
+        "入ってはいけません。"
+      ],
+      "correct_index": 3,
+      "explanation_id": "Kata kerja bentuk kamus + な adalah larangan kuat.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 33,
+        "pdf_pages": [
+          72,
+          77
+        ],
+        "printed_pages": [
+          50,
+          55
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-34",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-34"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "説明（　）とおりに、入力してください。",
+      "choices": [
+        "へ",
+        "で",
+        "の",
+        "を"
+      ],
+      "correct_index": 2,
+      "explanation_id": "Kata benda + のとおりに menyatakan sesuai penjelasan atau petunjuk.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 34,
+        "pdf_pages": [
+          78,
+          83
+        ],
+        "printed_pages": [
+          56,
+          61
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-35",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-35"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "このパソコンが（　）、買います。",
+      "choices": [
+        "安かったば",
+        "安ければ",
+        "安いならばで",
+        "安くてば"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Syarat kata sifat い: 安い menjadi 安ければ.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 35,
+        "pdf_pages": [
+          84,
+          89
+        ],
+        "printed_pages": [
+          62,
+          67
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-36",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-36"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "毎日練習して、日本語が話せる（　）なりました。",
+      "choices": [
+        "ように",
+        "ために",
+        "ことに",
+        "ながら"
+      ],
+      "correct_index": 0,
+      "explanation_id": "話せるようになりました menyatakan perubahan kemampuan menjadi bisa berbicara.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 36,
+        "pdf_pages": [
+          90,
+          95
+        ],
+        "printed_pages": [
+          68,
+          73
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-37",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-37"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "わたしは先生に（　）。自分がほめてもらったことを受身で表します。",
+      "choices": [
+        "ほめました",
+        "ほめていました",
+        "ほめさせました",
+        "ほめられました"
+      ],
+      "correct_index": 3,
+      "explanation_id": "Subjek menerima pujian dari guru, sehingga memakai bentuk pasif ほめられました.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 37,
+        "pdf_pages": [
+          96,
+          101
+        ],
+        "printed_pages": [
+          74,
+          79
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-38",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-38"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "朝、歩く（　）が好きです。",
+      "choices": [
+        "と",
+        "へ",
+        "の",
+        "に"
+      ],
+      "correct_index": 2,
+      "explanation_id": "の menominalkan 歩く sehingga kegiatan berjalan dapat menjadi objek kesukaan.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 38,
+        "pdf_pages": [
+          102,
+          107
+        ],
+        "printed_pages": [
+          80,
+          85
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-39",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-39"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "電車が遅れた（　）、会議に遅れました。",
+      "choices": [
+        "より",
+        "ので",
+        "のに",
+        "まで"
+      ],
+      "correct_index": 1,
+      "explanation_id": "ので memberikan sebab; のに akan menyatakan kontras yang tidak sesuai kalimat ini.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 39,
+        "pdf_pages": [
+          108,
+          113
+        ],
+        "printed_pages": [
+          86,
+          91
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-40",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-40"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "会議が何時に始まる（　）、知っていますか。",
+      "choices": [
+        "か",
+        "が",
+        "を",
+        "に"
+      ],
+      "correct_index": 0,
+      "explanation_id": "Pertanyaan berunsur kata tanya memakai 〜か untuk menjadi klausa pertanyaan tidak langsung.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 40,
+        "pdf_pages": [
+          114,
+          119
+        ],
+        "printed_pages": [
+          92,
+          97
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-41",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-41"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "先生に作文を見て（　）。先生への敬意を表す言い方です。",
+      "choices": [
+        "くださいました",
+        "やりました",
+        "あげました",
+        "いただきました"
+      ],
+      "correct_index": 3,
+      "explanation_id": "先生に menunjukkan pihak pemberi bantuan, pembicara menerima, sehingga memakai いただきました.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 41,
+        "pdf_pages": [
+          120,
+          125
+        ],
+        "printed_pages": [
+          98,
+          103
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-42",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-42"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "日本で働く（　）、日本語を勉強しています。",
+      "choices": [
+        "ばかり",
+        "ところに",
+        "ために",
+        "ながら"
+      ],
+      "correct_index": 2,
+      "explanation_id": "ために menunjukkan tujuan sengaja, yaitu bekerja di Jepang.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 42,
+        "pdf_pages": [
+          126,
+          131
+        ],
+        "printed_pages": [
+          104,
+          109
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-43",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-43"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "このケーキは（　）そうです。まだ食べていません。",
+      "choices": [
+        "おいしくて",
+        "おいし",
+        "おいしい",
+        "おいしかった"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Kesan berdasarkan tampilan memakai pangkal kata sifat い + そう: おいしそう.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 43,
+        "pdf_pages": [
+          132,
+          137
+        ],
+        "printed_pages": [
+          110,
+          115
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-44",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-44"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "このアプリは（　）やすいです。",
+      "choices": [
+        "使い",
+        "使う",
+        "使って",
+        "使った"
+      ],
+      "correct_index": 0,
+      "explanation_id": "やすい melekat pada pangkal ます: 使います menjadi 使いやすい.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 44,
+        "pdf_pages": [
+          138,
+          143
+        ],
+        "printed_pages": [
+          116,
+          121
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-45",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-45"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "予約した（　）、席がありませんでした。",
+      "choices": [
+        "ために",
+        "とおりに",
+        "ながら",
+        "のに"
+      ],
+      "correct_index": 3,
+      "explanation_id": "のに menyatakan kontras: sudah reservasi, tetapi hasilnya tidak sesuai harapan.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 45,
+        "pdf_pages": [
+          144,
+          149
+        ],
+        "printed_pages": [
+          122,
+          127
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-46",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-46"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "今、昼ご飯を食べている（　）です。",
+      "choices": [
+        "予定",
+        "ため",
+        "ところ",
+        "つもり"
+      ],
+      "correct_index": 2,
+      "explanation_id": "ているところ menekankan tahap sedang berlangsung, bukan rencana sebelum tindakan.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 46,
+        "pdf_pages": [
+          150,
+          155
+        ],
+        "printed_pages": [
+          128,
+          133
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-47",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-47"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "天気予報によると、明日は雨が（　）そうです。聞いた情報を伝えます。",
+      "choices": [
+        "降れば",
+        "降る",
+        "降り",
+        "降って"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Kabar dari sumber memakai bentuk biasa + そうです; kesan tampak akan hujan memakai 降りそうです.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 47,
+        "pdf_pages": [
+          156,
+          161
+        ],
+        "printed_pages": [
+          134,
+          139
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-48",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-48"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "先生は学生に作文を（　）。",
+      "choices": [
+        "書かせました",
+        "書かれました",
+        "書いていました",
+        "書きましたか"
+      ],
+      "correct_index": 0,
+      "explanation_id": "Kausatif 書かせました menyatakan guru menyuruh siswa menulis; に menunjukkan pelaku menulis.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 48,
+        "pdf_pages": [
+          162,
+          167
+        ],
+        "printed_pages": [
+          140,
+          145
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-49",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-49"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "先生はもう（　）。先生の動作を尊敬語で表します。",
+      "choices": [
+        "帰りました",
+        "お帰りしました",
+        "帰ってやりました",
+        "お帰りになりました"
+      ],
+      "correct_index": 3,
+      "explanation_id": "お帰りになりました menghormati tindakan guru. 帰りました sopan tetapi bukan bentuk hormat khusus yang diminta.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 49,
+        "pdf_pages": [
+          168,
+          173
+        ],
+        "printed_pages": [
+          146,
+          151
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "mnn-g-50",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-50"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "grammar_form_selection",
+      "stem_ja": "明日、わたしは先生の研究室に（　）。自分の動作を謙譲語で表します。",
+      "choices": [
+        "おいでになります",
+        "お越しになります",
+        "伺います",
+        "いらっしゃいます"
+      ],
+      "correct_index": 2,
+      "explanation_id": "伺います adalah bentuk rendah hati untuk pergi/mengunjungi. Pilihan lain menghormati tindakan orang lain.",
+      "difficulty": "intermediate_in_track",
+      "source_reference": {
+        "source_id": "minna-ii-2nd-id",
+        "chapter": 50,
+        "pdf_pages": [
+          174,
+          179
+        ],
+        "printed_pages": [
+          152,
+          157
+        ]
+      },
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false
+    },
+    {
+      "id": "n5-x-01",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-04",
+        "mnn-05"
+      ],
+      "section": "vocabulary",
+      "skill": "vocabulary",
+      "item_type": "kanji_reading",
+      "stem_ja": "「学校」の読み方はどれですか。",
+      "choices": [
+        "がこう",
+        "がっこう",
+        "かっこう",
+        "がこお"
+      ],
+      "correct_index": 1,
+      "explanation_id": "学校 dibaca がっこう. Perhatikan っ yang menandai konsonan rangkap.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "id": "n5-x-02",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-05",
+        "mnn-10"
+      ],
+      "section": "vocabulary",
+      "skill": "vocabulary",
+      "item_type": "orthography",
+      "stem_ja": "「やま」の漢字はどれですか。",
+      "choices": [
+        "川",
+        "田",
+        "山",
+        "木"
+      ],
+      "correct_index": 2,
+      "explanation_id": "山 berarti gunung dan dibaca やま dalam kata ini.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "id": "n5-x-03",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-06",
+        "mnn-13"
+      ],
+      "section": "vocabulary",
+      "skill": "vocabulary",
+      "item_type": "contextual_expression",
+      "stem_ja": "のどがかわきました。（　）を飲みます。",
+      "choices": [
+        "水",
+        "本",
+        "靴",
+        "机"
+      ],
+      "correct_index": 0,
+      "explanation_id": "Konteks haus dan minum membutuhkan 水, air.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          6,
+          13
+        ]
+      }
+    },
+    {
+      "id": "n5-x-04",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-08",
+        "mnn-12"
+      ],
+      "section": "vocabulary",
+      "skill": "vocabulary",
+      "item_type": "paraphrase",
+      "stem_ja": "「このかばんは高いです」と同じ意味はどれですか。",
+      "choices": [
+        "このかばんは安いです。",
+        "このかばんの値段は高いです。",
+        "このかばんは軽いです。",
+        "このかばんは小さいです。"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Dalam konteks tas, 高い merujuk pada harga mahal, bukan ringan atau kecil.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          8,
+          12
+        ]
+      }
+    },
+    {
+      "id": "n4-x-01",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-31",
+        "mnn-45"
+      ],
+      "section": "vocabulary",
+      "skill": "vocabulary",
+      "item_type": "kanji_reading",
+      "stem_ja": "「予約」の読み方はどれですか。",
+      "choices": [
+        "よやく",
+        "ゆやく",
+        "ようやく",
+        "よやっく"
+      ],
+      "correct_index": 0,
+      "explanation_id": "予約 dibaca よやく dan berarti reservasi.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          31,
+          45
+        ]
+      }
+    },
+    {
+      "id": "n4-x-02",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-30",
+        "mnn-31"
+      ],
+      "section": "vocabulary",
+      "skill": "vocabulary",
+      "item_type": "orthography",
+      "stem_ja": "「じゅんび」の漢字はどれですか。",
+      "choices": [
+        "順番",
+        "準備",
+        "全部",
+        "予定"
+      ],
+      "correct_index": 1,
+      "explanation_id": "準備 berarti persiapan; 順番 berarti urutan dan 予定 berarti rencana/jadwal.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          30,
+          31
+        ]
+      }
+    },
+    {
+      "id": "n4-x-03",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-39"
+      ],
+      "section": "vocabulary",
+      "skill": "vocabulary",
+      "item_type": "contextual_expression",
+      "stem_ja": "電車が（　）ので、会議に遅れました。",
+      "choices": [
+        "間に合った",
+        "遅れた",
+        "始めた",
+        "選んだ"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Kereta terlambat, 遅れた, menjadi sebab pembicara terlambat rapat.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          39
+        ]
+      }
+    },
+    {
+      "id": "n4-x-04",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-27",
+        "mnn-44"
+      ],
+      "section": "vocabulary",
+      "skill": "vocabulary",
+      "item_type": "paraphrase",
+      "stem_ja": "「この問題は簡単です」と同じ意味はどれですか。",
+      "choices": [
+        "この問題は難しいです。",
+        "この問題は長いです。",
+        "この問題はやさしいです。",
+        "この問題は新しいです。"
+      ],
+      "correct_index": 2,
+      "explanation_id": "簡単 berarti mudah; dalam konteks soal dapat diparafrasakan dengan やさしい.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          27,
+          44
+        ]
+      }
+    },
+    {
+      "id": "n4-x-05",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-31",
+        "mnn-39"
+      ],
+      "section": "vocabulary",
+      "skill": "vocabulary",
+      "item_type": "usage",
+      "stem_ja": "「間に合う」の使い方が正しい文はどれですか。",
+      "choices": [
+        "早く出たので、電車に間に合いました。",
+        "水を間に合いました。",
+        "日本語を間に合いました。",
+        "部屋が間に合いました。"
+      ],
+      "correct_index": 0,
+      "explanation_id": "電車に間に合う berarti tiba tepat waktu untuk mengejar kereta.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          31,
+          39
+        ]
+      }
+    },
+    {
+      "id": "n5-x-05",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-06"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "sentence_composition",
+      "stem_ja": "文を作って、★に入るものを選んでください。わたしは［　］［　］［★］［　］。",
+      "choices": [
+        "で",
+        "本",
+        "図書館",
+        "を読みます"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Urutan: 図書館 → で → 本 → を読みます. Slot ketiga (★) adalah 本.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          6
+        ]
+      },
+      "ordered_fragments": [
+        "図書館",
+        "で",
+        "本",
+        "を読みます"
+      ]
+    },
+    {
+      "id": "n5-x-06",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-06",
+        "mnn-13"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "text_grammar",
+      "stem_ja": "［1］に入るものはどれですか。",
+      "choices": [
+        "いっしょに",
+        "でも",
+        "まだ",
+        "あまり"
+      ],
+      "correct_index": 0,
+      "explanation_id": "Ajakan ませんか sesuai dengan いっしょに, bersama-sama.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          6,
+          13
+        ]
+      },
+      "passage_ja": "土曜日に公園へ行きます。［1］行きませんか。公園でお弁当を食べましょう。"
+    },
+    {
+      "id": "n4-x-06",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-28",
+        "mnn-42"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "sentence_composition",
+      "stem_ja": "文を作って、★に入るものを選んでください。健康の［　］［　］［★］［　］。",
+      "choices": [
+        "毎日",
+        "ために",
+        "います",
+        "歩いて"
+      ],
+      "correct_index": 3,
+      "explanation_id": "Urutan: ために → 毎日 → 歩いて → います. ★ adalah 歩いて.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          28,
+          42
+        ]
+      },
+      "ordered_fragments": [
+        "ために",
+        "毎日",
+        "歩いて",
+        "います"
+      ]
+    },
+    {
+      "id": "n4-x-07",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-28",
+        "mnn-39"
+      ],
+      "section": "grammar_reading",
+      "skill": "grammar",
+      "item_type": "text_grammar",
+      "stem_ja": "［1］に入るものはどれですか。",
+      "choices": [
+        "しかし",
+        "だから",
+        "例えば",
+        "それとも"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Terlambat tidur menjadi alasan untuk bangun lambat; だから menghubungkan akibat.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          28,
+          39
+        ]
+      },
+      "passage_ja": "昨夜は仕事が多くて、寝るのが遅くなりました。［1］今朝はいつもより遅く起きました。"
+    },
+    {
+      "id": "n5-x-07",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-04",
+        "mnn-05"
+      ],
+      "section": "grammar_reading",
+      "skill": "reading",
+      "item_type": "short_passage",
+      "stem_ja": "この人は月曜日から金曜日まで、どうやって学校へ行きますか。",
+      "choices": [
+        "歩いて",
+        "バスで",
+        "電車で",
+        "自転車で"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Teks secara langsung menyebut バスで学校へ行きます.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          4,
+          5
+        ]
+      },
+      "passage_ja": "わたしは月曜日から金曜日まで、バスで学校へ行きます。バスは家の前から七時半に出ます。学校まで三十分かかります。土曜日は学校へ行きません。"
+    },
+    {
+      "id": "n5-x-08",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-04",
+        "mnn-06",
+        "mnn-10"
+      ],
+      "section": "grammar_reading",
+      "skill": "reading",
+      "item_type": "mid_size_passage",
+      "stem_ja": "日曜日に友達は何時に来ますか。",
+      "choices": [
+        "十一時",
+        "十二時",
+        "午後一時",
+        "午後三時"
+      ],
+      "correct_index": 2,
+      "explanation_id": "Telepon teman menyebutkan kunjungan pukul 午後一時, satu siang.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          4,
+          6,
+          10
+        ]
+      },
+      "passage_ja": "日曜日、わたしは家で本を読みます。友達は午後一時に来ます。二人で昼ご飯を作って、食べます。家の近くに公園がありますから、ご飯のあとで公園へ行きます。公園で写真を撮ります。午後四時に家へ帰ります。夕方は日本語を勉強します。夜はテレビを見ません。九時に寝ます。"
+    },
+    {
+      "id": "n5-x-09",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-03",
+        "mnn-04"
+      ],
+      "section": "grammar_reading",
+      "skill": "reading",
+      "item_type": "information_retrieval",
+      "stem_ja": "土曜日の十時に本を借りたいです。どこへ行きますか。",
+      "choices": [
+        "中央図書館",
+        "西図書館",
+        "南図書館",
+        "どこにも行けません"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Sabtu pukul 10 hanya 西図書館 yang sudah buka. 中央 buka pukul 11; 南 tutup.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          3,
+          4
+        ]
+      },
+      "passage_ja": "図書館の土曜日の時間\n中央図書館：十一時〜十八時\n西図書館：九時〜十六時\n南図書館：休み"
+    },
+    {
+      "id": "n4-x-08",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-39",
+        "mnn-45"
+      ],
+      "section": "grammar_reading",
+      "skill": "reading",
+      "item_type": "short_passage",
+      "stem_ja": "なぜ受付は二階に移りましたか。",
+      "choices": [
+        "一階を工事しているから",
+        "二階が広くなったから",
+        "人が少ないから",
+        "昨日予約したから"
+      ],
+      "correct_index": 0,
+      "explanation_id": "Pengumuman menyebut 工事, pekerjaan renovasi, sebagai alasan pemindahan.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          39,
+          45
+        ]
+      },
+      "passage_ja": "一階の工事が始まったので、今週から受付は二階に移りました。来週の金曜日まで二階の受付をご利用ください。"
+    },
+    {
+      "id": "n4-x-09",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-22",
+        "mnn-28",
+        "mnn-36"
+      ],
+      "section": "grammar_reading",
+      "skill": "reading",
+      "item_type": "mid_size_passage",
+      "stem_ja": "筆者がこの店にまた行きたいと思っている理由はどれですか。",
+      "choices": [
+        "駅の中にあるから",
+        "いつも無料だから",
+        "静かに勉強できて、店員も親切だから",
+        "店員が日本語を勉強しているから"
+      ],
+      "correct_index": 2,
+      "explanation_id": "Alasan eksplisit: 学習しやすい lingkungan tenang dan 店員 ramah; bukan gratis atau berada di stasiun.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          22,
+          28,
+          36
+        ]
+      },
+      "passage_ja": "駅から少し歩いたところに、新しい喫茶店ができました。先週の日曜日、友達と初めて行きました。店の中は静かで、机も広かったので、日本語の勉強がしやすかったです。分からない言葉があったとき、店員さんが親切に教えてくれました。飲み物の値段は少し高かったですが、三時間ゆっくり勉強できました。友達も気に入ったようです。来週もこの店で勉強したいと思っています。"
+    },
+    {
+      "id": "n4-x-10",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-31",
+        "mnn-35",
+        "mnn-45"
+      ],
+      "section": "grammar_reading",
+      "skill": "reading",
+      "item_type": "information_retrieval",
+      "stem_ja": "平日の十八時半に資料を受け取りたい人は、どうすればいいですか。",
+      "choices": [
+        "予約なしで一階に行く",
+        "当日の十七時までに予約して、二階に行く",
+        "土曜日の受付まで待つ",
+        "十八時半に電話だけする"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Layanan setelah 18 mensyaratkan reservasi sebelum17 pada hari yang sama dan pengambilan di lantai2.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": false,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          31,
+          35,
+          45
+        ]
+      },
+      "passage_ja": "資料の受け取り\n通常受付：平日九時〜十八時、一階\n夜間受付：平日十八時〜二十時、二階\n夜間受付は当日の十七時までに電話予約が必要です。\n土日は受け取りができません。"
+    },
+    {
+      "id": "n5-x-10",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-14",
+        "mnn-16"
+      ],
+      "section": "listening",
+      "skill": "listening",
+      "item_type": "task_based",
+      "stem_ja": "男の人は最初に何をしますか。",
+      "choices": [
+        "本を出す",
+        "名前を書く",
+        "水を飲む"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Petunjuk pertama adalah menulis nama; buku dikeluarkan setelahnya.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": true,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          14,
+          16
+        ]
+      },
+      "audio_script_ja": "女：この紙に名前を書いてください。そのあとで、本を出してください。男：はい、分かりました。",
+      "audio_asset_id": null,
+      "audio_status": "needs_recording_and_review",
+      "illustration_description": null,
+      "transcript_policy": "hidden_until_answer_or_completion",
+      "playback_mode": "training_replay_allowed; full_test_controlled_by_session"
+    },
+    {
+      "id": "n5-x-11",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-04"
+      ],
+      "section": "listening",
+      "skill": "listening",
+      "item_type": "key_points",
+      "stem_ja": "二人は何時に会いますか。",
+      "choices": [
+        "九時",
+        "九時半",
+        "十時"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Awalnya sembilan, tetapi ditunda tiga puluh menit menjadi sembilan tiga puluh.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": true,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          4
+        ]
+      },
+      "audio_script_ja": "男：明日は九時に会いましょう。女：九時は少し早いです。三十分あとでもいいですか。男：はい、九時半にしましょう。",
+      "audio_asset_id": null,
+      "audio_status": "needs_recording_and_review",
+      "illustration_description": null,
+      "transcript_policy": "hidden_until_answer_or_completion",
+      "playback_mode": "training_replay_allowed; full_test_controlled_by_session"
+    },
+    {
+      "id": "n5-x-12",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-14"
+      ],
+      "section": "listening",
+      "skill": "listening",
+      "item_type": "verbal_expression",
+      "stem_ja": "教室のドアを開けてもらいたいです。何と言いますか。",
+      "choices": [
+        "ドアを開けてください。",
+        "ドアを開けません。",
+        "ドアがありません。"
+      ],
+      "correct_index": 0,
+      "explanation_id": "Permintaan membuka pintu memakai ドアを開けてください.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": true,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          14
+        ]
+      },
+      "audio_script_ja": "教室のドアが閉まっています。あなたは荷物を持っています。友達にドアを開けてもらいたいです。何と言いますか。",
+      "audio_asset_id": null,
+      "audio_status": "needs_recording_and_review",
+      "illustration_description": "Situasi sesuai naskah; ilustrasi orisinal perlu dibuat dan ditinjau",
+      "transcript_policy": "hidden_until_answer_or_completion",
+      "playback_mode": "training_replay_allowed; full_test_controlled_by_session"
+    },
+    {
+      "id": "n5-x-13",
+      "level": "N5",
+      "lesson_ids": [
+        "mnn-01",
+        "mnn-07"
+      ],
+      "section": "listening",
+      "skill": "listening",
+      "item_type": "quick_response",
+      "stem_ja": "何と言いますか。",
+      "choices": [
+        "はい、そうです。",
+        "どういたしまして。",
+        "いただきます。"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Respons yang sesuai untuk ucapan terima kasih adalah どういたしまして.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": true,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          1,
+          7
+        ]
+      },
+      "audio_script_ja": "どうもありがとうございます。",
+      "audio_asset_id": null,
+      "audio_status": "needs_recording_and_review",
+      "illustration_description": null,
+      "transcript_policy": "hidden_until_answer_or_completion",
+      "playback_mode": "training_replay_allowed; full_test_controlled_by_session"
+    },
+    {
+      "id": "n4-x-11",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-30",
+        "mnn-34"
+      ],
+      "section": "listening",
+      "skill": "listening",
+      "item_type": "task_based",
+      "stem_ja": "男の人はまず何をしますか。",
+      "choices": [
+        "資料を印刷する",
+        "受付に電話する",
+        "二階へ行く"
+      ],
+      "correct_index": 1,
+      "explanation_id": "Sebelum mencetak dokumen, diminta menelepon resepsionis terlebih dahulu.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": true,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          30,
+          34
+        ]
+      },
+      "audio_script_ja": "女：会議の前に資料を印刷しておいてください。でも、その前に受付に電話して、人数を確認してください。男：分かりました。先に電話します。",
+      "audio_asset_id": null,
+      "audio_status": "needs_recording_and_review",
+      "illustration_description": null,
+      "transcript_policy": "hidden_until_answer_or_completion",
+      "playback_mode": "training_replay_allowed; full_test_controlled_by_session"
+    },
+    {
+      "id": "n4-x-12",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-31",
+        "mnn-39"
+      ],
+      "section": "listening",
+      "skill": "listening",
+      "item_type": "key_points",
+      "stem_ja": "女の人はいつ帰りますか。",
+      "choices": [
+        "今日の午後",
+        "明日の朝",
+        "明日の夕方"
+      ],
+      "correct_index": 2,
+      "explanation_id": "Rencana sore ini diubah menjadi besok sore karena urusan pagi.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": true,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          31,
+          39
+        ]
+      },
+      "audio_script_ja": "男：今日の午後、帰る予定ですか。女：そのつもりでしたが、明日の朝に用事ができました。帰るのは明日の夕方になります。",
+      "audio_asset_id": null,
+      "audio_status": "needs_recording_and_review",
+      "illustration_description": null,
+      "transcript_policy": "hidden_until_answer_or_completion",
+      "playback_mode": "training_replay_allowed; full_test_controlled_by_session"
+    },
+    {
+      "id": "n4-x-13",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-41"
+      ],
+      "section": "listening",
+      "skill": "listening",
+      "item_type": "verbal_expression",
+      "stem_ja": "道を教えてくれた人に何と言いますか。",
+      "choices": [
+        "教えてくださって、ありがとうございます。",
+        "教えないでください。",
+        "道を知りません。"
+      ],
+      "correct_index": 0,
+      "explanation_id": "Ungkapan ini berterima kasih atas bantuan orang yang memberi petunjuk.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": true,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          41
+        ]
+      },
+      "audio_script_ja": "駅までの道が分からなくて、近くの人が教えてくれました。その人に何と言いますか。",
+      "audio_asset_id": null,
+      "audio_status": "needs_recording_and_review",
+      "illustration_description": "Situasi sesuai naskah; ilustrasi orisinal perlu dibuat dan ditinjau",
+      "transcript_policy": "hidden_until_answer_or_completion",
+      "playback_mode": "training_replay_allowed; full_test_controlled_by_session"
+    },
+    {
+      "id": "n4-x-14",
+      "level": "N4",
+      "lesson_ids": [
+        "mnn-24",
+        "mnn-41"
+      ],
+      "section": "listening",
+      "skill": "listening",
+      "item_type": "quick_response",
+      "stem_ja": "友達が「ちょっと手伝ってくれない？」と言いました。何と言いますか。",
+      "choices": [
+        "うん、いいよ。",
+        "手伝ってもらった。",
+        "手伝いすぎた。"
+      ],
+      "correct_index": 0,
+      "explanation_id": "Respons langsung menyetujui permintaan adalah うん、いいよ.",
+      "difficulty": "basic_in_track",
+      "authorship": "original_japantest_draft",
+      "review_status": "needs_japanese_teacher_review",
+      "requires_audio": true,
+      "eligible_for_full_virtual_test": false,
+      "source_reference": {
+        "basis": "Konsep dari pelajaran terkait; teks dan soal dibuat baru",
+        "chapters": [
+          24,
+          41
+        ]
+      },
+      "audio_script_ja": "ちょっと手伝ってくれない？",
+      "audio_asset_id": null,
+      "audio_status": "needs_recording_and_review",
+      "illustration_description": null,
+      "transcript_policy": "hidden_until_answer_or_completion",
+      "playback_mode": "training_replay_allowed; full_test_controlled_by_session"
+    }
+  ],
+  "virtual_test_blueprints": {
+    "N5": {
+      "level": "N5",
+      "status": "blueprint_not_ready_to_publish",
+      "sections": [
+        {
+          "id": "vocabulary",
+          "name_id": "Kosakata",
+          "minutes": 20,
+          "target_items_editorial": 25,
+          "required_item_types": [
+            "kanji_reading",
+            "orthography",
+            "contextual_expression",
+            "paraphrase"
+          ]
+        },
+        {
+          "id": "grammar_reading",
+          "name_id": "Tata bahasa dan membaca",
+          "minutes": 40,
+          "target_items_editorial": 25,
+          "required_item_types": [
+            "grammar_form_selection",
+            "sentence_composition",
+            "text_grammar",
+            "short_passage",
+            "mid_size_passage",
+            "information_retrieval"
+          ]
+        },
+        {
+          "id": "listening",
+          "name_id": "Menyimak",
+          "minutes": 30,
+          "target_items_editorial": 20,
+          "required_item_types": [
+            "task_based",
+            "key_points",
+            "verbal_expression",
+            "quick_response"
+          ]
+        }
+      ],
+      "question_count_basis": "Target editorial Japantest; bukan jumlah soal resmi JLPT",
+      "scoring": "Akurasi per skill/jenis soal, jumlah benar dan rekomendasi; tanpa konversi raw accuracy ke skor resmi 180",
+      "official_score_reference": {
+        "total": 180,
+        "overall_pass_mark": 80,
+        "language_reading_min": 38,
+        "language_reading_max": 120,
+        "listening_min": 19,
+        "listening_max": 60
+      },
+      "draft_question_count": 33,
+      "eligible_question_count": 0,
+      "release_gates": [
+        "Semua soal terpilih ditinjau guru bahasa Jepang",
+        "Semua jenis soal tercakup dan kuota terpenuhi",
+        "Level dan beban bacaan/kanji divalidasi, furigana ditentukan",
+        "Audio Jepang direkam, volume/kecepatan dan kunci diverifikasi",
+        "Ilustrasi soal verbal_expression tersedia",
+        "Distraktor memiliki satu kunci jelas; uji coba item",
+        "Timer sesi, simpan jawaban dan pemulihan koneksi diuji"
+      ],
+      "full_test_behavior": [
+        "Timer terpisah per sesi berdasarkan waktu resmi",
+        "Jawaban dapat ditinjau hanya dalam sesi aktif",
+        "Sesi selesai dikunci; tidak kembali ke sesi sebelumnya",
+        "Tidak ada pembahasan/kunci sebelum seluruh ujian diselesaikan",
+        "Audio dikontrol sesi; transkrip hanya sesudah ujian",
+        "Sesi audio belum lengkap tidak diterbitkan sebagai ujian penuh"
+      ]
+    },
+    "N4": {
+      "level": "N4",
+      "status": "blueprint_not_ready_to_publish",
+      "sections": [
+        {
+          "id": "vocabulary",
+          "name_id": "Kosakata",
+          "minutes": 25,
+          "target_items_editorial": 30,
+          "required_item_types": [
+            "kanji_reading",
+            "orthography",
+            "contextual_expression",
+            "paraphrase",
+            "usage"
+          ]
+        },
+        {
+          "id": "grammar_reading",
+          "name_id": "Tata bahasa dan membaca",
+          "minutes": 55,
+          "target_items_editorial": 30,
+          "required_item_types": [
+            "grammar_form_selection",
+            "sentence_composition",
+            "text_grammar",
+            "short_passage",
+            "mid_size_passage",
+            "information_retrieval"
+          ]
+        },
+        {
+          "id": "listening",
+          "name_id": "Menyimak",
+          "minutes": 35,
+          "target_items_editorial": 20,
+          "required_item_types": [
+            "task_based",
+            "key_points",
+            "verbal_expression",
+            "quick_response"
+          ]
+        }
+      ],
+      "question_count_basis": "Target editorial Japantest; bukan jumlah soal resmi JLPT",
+      "scoring": "Akurasi per skill/jenis soal, jumlah benar dan rekomendasi; tanpa konversi raw accuracy ke skor resmi 180",
+      "official_score_reference": {
+        "total": 180,
+        "overall_pass_mark": 90,
+        "language_reading_min": 38,
+        "language_reading_max": 120,
+        "listening_min": 19,
+        "listening_max": 60
+      },
+      "draft_question_count": 44,
+      "eligible_question_count": 0,
+      "release_gates": [
+        "Semua soal terpilih ditinjau guru bahasa Jepang",
+        "Semua jenis soal tercakup dan kuota terpenuhi",
+        "Level dan beban bacaan/kanji divalidasi, furigana ditentukan",
+        "Audio Jepang direkam, volume/kecepatan dan kunci diverifikasi",
+        "Ilustrasi soal verbal_expression tersedia",
+        "Distraktor memiliki satu kunci jelas; uji coba item",
+        "Timer sesi, simpan jawaban dan pemulihan koneksi diuji"
+      ],
+      "full_test_behavior": [
+        "Timer terpisah per sesi berdasarkan waktu resmi",
+        "Jawaban dapat ditinjau hanya dalam sesi aktif",
+        "Sesi selesai dikunci; tidak kembali ke sesi sebelumnya",
+        "Tidak ada pembahasan/kunci sebelum seluruh ujian diselesaikan",
+        "Audio dikontrol sesi; transkrip hanya sesudah ujian",
+        "Sesi audio belum lengkap tidak diterbitkan sebagai ujian penuh"
+      ]
+    }
+  }
+}

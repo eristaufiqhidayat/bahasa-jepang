@@ -53,8 +53,18 @@ class MaterialController extends Controller
             'lessons' => ['title' => 'required|string|max:255', 'slug' => ['required', 'alpha_dash', 'max:255', Rule::unique('lessons')->ignore($id)], 'summary' => 'required|string|max:2000', 'content' => 'required|string|max:50000', 'japanese' => 'nullable|string|max:255', 'romaji' => 'nullable|string|max:255', 'translation' => 'nullable|string|max:5000', 'position' => 'required|integer|min:1|max:10000', 'duration_minutes' => 'required|integer|min:1|max:120', 'status' => 'required|in:draft,published'],
             'vocabularies' => ['lesson_id' => 'required|exists:lessons,id', 'japanese' => 'required|string|max:255', 'reading' => 'nullable|string|max:255', 'romaji' => 'required|string|max:255', 'meaning' => 'required|string|max:255', 'category' => 'required|string|max:255', 'example' => 'nullable|string|max:5000', 'example_translation' => 'nullable|string|max:5000'],
             'characters' => ['script' => 'required|in:hiragana,katakana', 'symbol' => ['required', 'string', 'max:10', Rule::unique('characters')->where('script', request('script'))->ignore($id)], 'romaji' => 'required|string|max:30', 'group' => 'required|string|max:255', 'position' => 'required|integer|min:1|max:10000'],
-            'questions' => ['lesson_id' => 'required|exists:lessons,id', 'prompt' => 'required|string|max:5000', 'type' => 'required|in:meaning,reading,listening', 'option_0' => 'required|string|max:255', 'option_1' => 'required|string|max:255', 'option_2' => 'required|string|max:255', 'option_3' => 'nullable|string|max:255', 'correct_index' => 'required|integer|between:0,3', 'explanation' => 'required|string|max:5000', 'position' => 'required|integer|min:1|max:10000'],
+            'questions' => ['lesson_id' => 'required|exists:lessons,id', 'prompt' => 'required|string|max:5000', 'type' => 'required|in:meaning,reading,grammar,listening', 'option_0' => 'required|string|max:255', 'option_1' => 'required|string|max:255', 'option_2' => 'required|string|max:255', 'option_3' => 'nullable|string|max:255', 'correct_index' => 'required|integer|between:0,3', 'explanation' => 'required|string|max:5000', 'position' => 'required|integer|min:1|max:10000'],
         };
+
+        if (in_array($type, ['lessons', 'questions'])) {
+            $rules += ['level' => 'nullable|in:foundation,N5,N4,N3,N2,N1,pro', 'review_status' => 'nullable|in:unreviewed,needs_japanese_teacher_review,reviewed'];
+        }
+        if ($type === 'lessons') {
+            $rules += ['chapter' => 'nullable|integer|min:1|max:1000', 'patterns' => 'nullable|string|max:2000'];
+        }
+        if ($type === 'questions') {
+            $rules += ['skill' => 'nullable|in:vocabulary,grammar,reading,listening', 'section' => 'nullable|in:vocabulary,grammar_reading,listening', 'item_type' => 'nullable|string|max:100', 'audio_script' => 'nullable|string|max:5000'];
+        }
 
         return $rules + ['audio' => 'nullable|file|mimes:mp3,wav,ogg,m4a|max:10240', 'remove_audio' => 'nullable|boolean'];
     }
@@ -64,6 +74,9 @@ class MaterialController extends Controller
         $config = MaterialTypes::get($type);
         $item = $id ? $config['model']::findOrFail($id) : new $config['model'];
         $data = $r->validate($this->rules($type, $id));
+        if ($type === 'lessons' && array_key_exists('patterns', $data)) {
+            $data['patterns'] = array_values(array_filter(array_map('trim', explode(',', $data['patterns'] ?? ''))));
+        }
         if ($type === 'questions') {
             $data['options'] = array_map(fn ($i) => $data['option_'.$i], range(0, 2));
             if (isset($data['option_3']) && trim($data['option_3']) !== '') {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Character;
+use App\Models\CourseTrack;
 use App\Models\Lesson;
 use App\Models\Question;
 use App\Models\Vocabulary;
@@ -10,16 +11,23 @@ use Illuminate\Http\Request;
 
 class LearningApiController extends Controller
 {
-    public function lessons()
+    public function tracks()
     {
-        return Lesson::where('status', 'published')->orderBy('position')->orderBy('id')->paginate(20);
+        return CourseTrack::orderBy('position')->get();
+    }
+
+    public function lessons(Request $request)
+    {
+        $filter = $request->validate(['level' => 'nullable|in:foundation,N5,N4,N3,N2,N1,pro']);
+
+        return Lesson::when($filter['level'] ?? null, fn ($q, $level) => $level === 'foundation' ? $q->where(fn ($q) => $q->whereNull('level')->orWhere('level', 'foundation')) : $q->where('level', $level))->where('status', 'published')->orderBy('position')->orderBy('id')->paginate(20);
     }
 
     public function lesson(Lesson $lesson)
     {
         abort_unless($lesson->status === 'published', 404);
 
-        return $lesson->load('vocabularies', 'questions');
+        return $lesson->load(['vocabularies', 'questions' => fn ($q) => $q->where(fn ($q) => $q->where('type', '!=', 'listening')->orWhereNotNull('audio_path'))]);
     }
 
     public function characters(Request $r)

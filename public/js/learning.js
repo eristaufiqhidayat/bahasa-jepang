@@ -1,45 +1,220 @@
-const data=window.learningData;
-const $=s=>document.querySelector(s);let state={done:[],known:[],scores:[],romaji:true,target:10};try{Object.assign(state,JSON.parse(localStorage.getItem('haru-learning-v1'+(data?.preview?'-preview':''))||'{}'))}catch(e){}let page='home',lessonId=0,qi=0,score=0,answered=false,tab='hiragana',search='',wordCategory='Semua';
-
-const esc=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const lessons=data.lessons.map((l,i)=>({...l,desc:l.summary,icon:['☀','☺','一','☕'][i%4],items:[...(l.japanese?[[l.japanese,l.romaji||'',l.translation||'','',l.audio_url]]:[]),...l.vocabularies.map(v=>[v.japanese,v.romaji,v.meaning,v.example_translation||'',v.audio_url])]}));
-const words=data.words.map(v=>[v.japanese,v.romaji,v.meaning,v.category,v.audio_url,v.id,v.example,v.example_translation,v.reading]);
-const questions=data.questions.map(q=>({id:q.id,q:q.prompt,a:q.options,type:q.type,audio:q.audio_url,lesson:q.lesson_title}));
-const readings=['a','i','u','e','o','ka','ki','ku','ke','ko','sa','shi','su','se','so','ta','chi','tsu','te','to','na','ni','nu','ne','no','ha','hi','fu','he','ho','ma','mi','mu','me','mo','ya','','yu','','yo','ra','ri','ru','re','ro','wa','','','','wo','n'];
-function kanaList(script){const chars=data.characters.filter(c=>c.script===script);const list=readings.map(r=>r?chars.find(c=>c.romaji.toLowerCase()===r)?.symbol||'':'');chars.filter(c=>!readings.includes(c.romaji.toLowerCase())).forEach(c=>list.push(c.symbol));return list;}
-const hira=kanaList('hiragana'),kata=kanaList('katakana');
-// Keep progress tied to stable database IDs, rather than the visual order.
-state.done=Array.isArray(state.done)?state.done.filter(id=>lessons.some(l=>l.id===id)):[];
-state.known=Array.isArray(state.known)?state.known.filter(id=>words.some(w=>w[5]===id)):[];
-state.scores=Array.isArray(state.scores)?state.scores.filter(s=>Number.isInteger(s.score)&&Number.isInteger(s.total)&&s.total>0&&s.score>=0&&s.score<=s.total&&Number.isFinite(Date.parse(s.date))).slice(-100):[];
-state.target=[5,10,15,20].includes(state.target)?state.target:10;state.romaji=state.romaji!==false;
-let currentAudio=null;
-function playAudio(url,text){if(currentAudio)currentAudio.pause();if('speechSynthesis' in window)speechSynthesis.cancel();if(url){currentAudio=new Audio(url);currentAudio.play().catch(()=>toast('Audio belum bisa diputar. Periksa berkas audio.'));}else speak(text);}
-function playLesson(i,j){const item=lessons[i]?.items[j];if(item)playAudio(item[4],item[0]);}
-function playWord(i){const word=words[i];if(word)playAudio(word[4],word[0]);}
-function playFeatured(){if(words.length)playWord(0);}
-function lessonEmpty(){return '<div class="card empty"><h2>Materi segera hadir 🌱</h2><p>Belum ada pelajaran yang dipublikasikan. Admin dapat memeriksa materi draft melalui pratinjau, kemudian menerbitkannya.</p></div>';}
-function save(){try{localStorage.setItem('haru-learning-v1'+(data?.preview?'-preview':''),JSON.stringify(state))}catch(e){toast('Browser tidak mengizinkan penyimpanan progres.')}}function toast(t){$('#toast').textContent=t;$('#toast').classList.remove('hide');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>$('#toast').classList.add('hide'),3500)}function speak(t){if(!('speechSynthesis'in window)){toast('Audio tidak tersedia di browser ini.');return}const voices=speechSynthesis.getVoices();if(!voices.some(v=>v.lang.startsWith('ja'))){toast('Suara Jepang belum tersedia. Aktifkan suara Jepang pada perangkat.');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.voice=voices.find(v=>v.lang.startsWith('ja'));u.rate=.8;u.onerror=()=>toast('Audio gagal diputar. Coba kembali.');speechSynthesis.speak(u)}function rom(t){return state.romaji?`<div class="romaji">${esc(t)}</div>`:''}function go(p){page=p;if(p==='quiz'){qi=0;score=0;answered=false;quizGeneration++}render();window.scrollTo(0,0)}function start(i){if(!lessons[i]){toast('Belum ada pelajaran yang tersedia.');return}lessonId=i;go('lesson')}function courseCards(){return lessons.map((l,i)=>`<button class="card course" onclick="start(${i})"><div class="row"><div class="tile">${l.icon}</div><span class="badge">${state.done.includes(l.id)?'✓ Selesai':'Pemula'}</span></div><h3>${esc(l.title)}</h3><p>${esc(l.desc)}</p><div class="bar"><i style="width:${state.done.includes(l.id)?100:0}%"></i></div><div class="small" style="margin-top:12px">${l.items.length} materi · ${state.done.includes(l.id)?'Pelajari kembali':'Mulai belajar'} →</div></button>`).join('')}
-function render(){document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===(page==='lesson'?'learn':page)));let html='';if(page==='home'){let next=lessons.findIndex((_,i)=>!state.done.includes(lessons[i].id));if(next<0)next=0;html=`<h1>こんにちは, teman belajar! 🌿</h1><p class="intro">Mulai dari satu kata. Bangun kebiasaan setiap hari.</p><div class="layout"><section><div class="hero"><div class="eyebrow">LANGKAH PERTAMA KE BAHASA JEPANG</div><div class="hero-art jp">あ</div><h2>Perjalanan kecil,<br>kemampuan baru.</h2><p>Kenali huruf, dengarkan pengucapan, dan coba percakapan pertamamu.</p><button class="btn light" ${lessons.length?'':'disabled'} onclick="start(${next})">${state.done.length?'Lanjutkan belajar':'Mulai pelajaran'} ↗</button></div><div class="stats"><div class="stat"><span class="small">PELAJARAN</span><strong>${state.done.length}<span class="small"> / ${lessons.length}</span></strong><span class="small">Sudah diselesaikan</span></div><div class="stat"><span class="small">KOSAKATA</span><strong>${state.known.length}</strong><span class="small">Ditandai dikuasai</span></div><div class="stat"><span class="small">LATIHAN</span><strong>${state.scores.length}</strong><span class="small">Kuis diselesaikan</span></div></div><div class="heading"><h2>Pelajaran untukmu</h2><button class="link" onclick="go('learn')">Lihat semua →</button></div><div class="courses">${courseCards()||lessonEmpty()}</div></section><section class="right"><div class="card"><span class="badge">TARGET BELAJAR</span><h3 style="margin-top:16px">Sedikit, tetapi rutin.</h3><p class="small">Luangkan ${state.target} menit untuk belajar hari ini.</p><div class="days">${['S','S','R','K','J','S','M'].map((d,i)=>`<div class="day ${i===2?'today':''}">${d}<i>${i===2?'•':'–'}</i></div>`).join('')}</div><div class="small">Jadwal ilustrasi · belum melacak durasi</div></div><div class="card word"><div class="eyebrow">KATA PILIHAN</div><div class="jp" lang="ja">${esc(words[0]?.[0]||'—')}</div>${rom(words[0]?.[1]||'')}<p>${esc(words[0]?.[2]||'Kosakata segera hadir')}</p><button class="audio" aria-label="Dengarkan kata pilihan" onclick="playFeatured()">▶</button></div><div class="notice">💡 Tips: dengarkan, ucapkan, lalu ulangi.<br>Rekaman diputar jika tersedia. Jika belum, audio memakai suara Jepang sintetis perangkat.</div></section></div>`}
-if(page==='learn')html=`<h1>Belajar selangkah demi selangkah</h1><p class="intro">Pelajaran pemula yang dikelola dan diperbarui oleh pengajar.</p><div class="courses">${courseCards()||lessonEmpty()}</div><div class="card" style="margin-top:22px"><h3>Peta belajar berikutnya</h3><p class="small">Huruf dasar → kosakata → pola kalimat → percakapan → kanji awal. Modul lanjutan akan ditambahkan setelah materi dasar.</p></div>`;
-if(page==='lesson'){const l=lessons[lessonId];html=`<div class="lesson"><div class="toolbar"><button class="btn secondary" onclick="go('learn')">← Semua pelajaran</button><span class="pill">Pelajaran ${lessonId+1} dari ${lessons.length}</span></div><h1>${esc(l.title)}</h1><p class="intro">${esc(l.desc)} Dengarkan lalu ucapkan kembali.</p><div class="card lesson-text">${esc(l.content)}</div>${l.items.map((it,j)=>`<div class="phrase"><div class="row"><div><div class="jp" lang="ja">${esc(it[0])}</div>${rom(it[1])}</div><button class="audio" aria-label="Dengarkan ${esc(it[1])}" onclick="playLesson(${lessonId},${j})">▶</button></div><h3 style="margin-top:20px">${esc(it[2])}</h3><p class="small">${esc(it[3])}</p></div>`).join('')}<div class="card"><h3>Coba ucapkan sendiri</h3><p class="small">Ulangi setiap contoh dengan suara lantang. Setelah siap, tandai pelajaran selesai.</p><button class="btn" onclick="completeLesson()">${state.done.includes(lessons[lessonId].id)?'✓ Sudah selesai':'Tandai selesai'} </button> <button class="btn secondary" onclick="go('quiz')">Coba kuis campuran →</button></div></div>`}
-if(page==='kana')html=`<h1>Kenali huruf Jepang</h1><p class="intro">Klik huruf untuk melihat cara baca dan mendengarkan bunyinya.</p><div class="toolbar"><button class="btn ${tab==='hiragana'?'':'secondary'}" onclick="tab='hiragana';render()">Hiragana</button><button class="btn ${tab==='katakana'?'':'secondary'}" onclick="tab='katakana';render()">Katakana</button></div><p class="small">Huruf yang telah ditambahkan oleh pengajar. Klik untuk mendengarkan.</p><div class="kana-grid">${(tab==='hiragana'?hira:kata).map((k,i)=>k?`<button class="kana" onclick="openKana(${i})"><strong class="jp" lang="ja">${esc(k)}</strong>${rom(data.characters.find(c=>c.script===tab&&c.symbol===k)?.romaji||'')}</button>`:'<div></div>').join('')}</div><p class="notice">を biasanya dibaca o sebagai partikel. Bunyi ん bergantung pada bunyi di sekitarnya.</p>`;
-if(page==='words'){const filtered=words.map((w,i)=>({w,i})).filter(({w})=>(wordCategory==='Semua'||w[3]===wordCategory)&&[w[0],w[1],w[2],w[3],w[6],w[7]].join(' ').toLowerCase().includes(search.toLowerCase()));html=`<h1>Kantong kosakata</h1><p class="intro">Dengarkan, pahami, dan tandai kata yang sudah kamu kuasai.</p><div class="toolbar"><input id="wordSearch" aria-label="Cari kosakata" placeholder="Cari kata, romaji, atau arti…" value=""><select id="category" aria-label="Kategori kosakata">${['Semua',...new Set(words.map(w=>w[3]))].map(c=>`<option ${c===wordCategory?'selected':''}>${esc(c)}</option>`).join('')}</select></div><div class="vocab-grid">${filtered.map(({w,i})=>`<div class="card vocab"><span class="badge">${esc(w[3])}</span><div class="jp" lang="ja">${esc(w[0])}</div>${rom(w[1])}<p>${esc(w[2])}</p>${w[8]?`<p class="small" lang="ja">${esc(w[8])}</p>`:''}${w[6]?`<p class="small" lang="ja">${esc(w[6])}<br>${esc(w[7]||'')}</p>`:''}<button class="audio" aria-label="Dengarkan ${esc(w[1])}" onclick="playWord(${i})">▶</button><br><button class="btn ${state.known.includes(words[i][5])?'':'secondary'}" onclick="toggleWord(${i})">${state.known.includes(words[i][5])?'✓ Dikuasai':'Tandai dikuasai'}</button></div>`).join('')||'<p>Tidak ada kata yang cocok.</p>'}</div>`}
-if(page==='quiz')html=quizHTML();
-if(page==='profile')html=`<h1>Perjalanan belajarmu</h1><p class="intro">Setiap langkah kecil tetap berarti.</p><div class="layout"><div class="card"><div class="row"><div><span class="badge">PELAJAR PEMULA</span><h2 style="margin-top:15px">Pelajar Haru</h2></div><div class="avatar">H</div></div><div class="progress-list">${lessons.map((l,i)=>`<div><div class="row"><span>${esc(l.title)}</span><span class="small">${state.done.includes(l.id)?'Selesai':'Belum selesai'}</span></div><div class="bar" style="margin-top:10px"><i style="width:${state.done.includes(l.id)?100:0}%"></i></div></div>`).join('')}</div><h3>Riwayat kuis</h3>${state.scores.length?state.scores.slice(-5).reverse().map(s=>`<p class="small">${new Date(s.date).toLocaleDateString('id-ID')} · ${s.score}/${s.total} jawaban benar</p>`).join(''):'<p class="small">Belum ada kuis selesai. Yuk, coba latihan pertamamu.</p>'}</div><div class="card"><h2>Pengaturan belajar</h2><label class="setting"><span>Tampilkan romaji<br><span class="small">Bantuan baca huruf Latin</span></span><input type="checkbox" id="romajiSetting" ${state.romaji?'checked':''}></label><label class="setting"><span>Target harian</span><select id="targetSetting">${[5,10,15,20].map(n=>`<option value="${n}" ${state.target==n?'selected':''}>${n} menit</option>`).join('')}</select></label><p class="notice">Progres disimpan pada browser ini. Target harian adalah pengaturan; durasi belum dihitung.</p><button class="btn secondary" onclick="resetDemo()">Reset progres belajar</button><p class="notice">Progres tersimpan pada browser ini, belum disinkronkan ke akun. Suara sintetis memerlukan suara Jepang pada perangkat.</p></div></div>`;
-$('#app').innerHTML=html;if(page==='words'){const input=$('#wordSearch');input.value=search;input.oninput=e=>{const pos=e.target.selectionStart;search=e.target.value;render();$('#wordSearch').focus();$('#wordSearch').setSelectionRange(pos,pos)};$('#category').onchange=e=>{wordCategory=e.target.value;render()}}if(page==='profile'){$('#romajiSetting').onchange=e=>{state.romaji=e.target.checked;save();toast('Pengaturan romaji disimpan')};$('#targetSetting').onchange=e=>{state.target=+e.target.value;save();toast('Target belajar disimpan')}}}
-function completeLesson(){if(!state.done.includes(lessons[lessonId].id)){state.done.push(lessons[lessonId].id);save()}render();toast('Pelajaran selesai. Bagus, lanjutkan langkah berikutnya!')}function toggleWord(i){state.known=state.known.includes(words[i][5])?state.known.filter(n=>n!==words[i][5]):[...state.known,words[i][5]];save();render()}function openKana(i){const symbol=(tab==='hiragana'?hira:kata)[i];const character=data.characters.find(c=>c.script===tab&&c.symbol===symbol);if(!character)return;$('#dialogKana').textContent=symbol;$('#dialogReading').textContent='Cara baca: '+character.romaji+(character.romaji==='wo'?' (o saat digunakan sebagai partikel)':'');$('#dialogAudio').onclick=()=>playAudio(character.audio_url,symbol);$('#kanaDialog').showModal()}$('#closeDialog').onclick=()=>$('#kanaDialog').close();
-let quizGeneration=0;
-function quizHTML(){
- if(!questions.length)return '<h1>Latihan kecil, kemajuan besar</h1><div class="card empty"><p>Belum ada soal pada materi yang tersedia.</p><button class="btn" onclick="go(\'learn\')">Lihat pelajaran</button></div>';
- if(qi>=questions.length)return `<div class="quiz card" style="text-align:center"><span class="badge">LATIHAN SELESAI</span><h1>${score===questions.length?'Hebat! 🌟':'Terus berlatih 🌱'}</h1><div style="font-size:58px;margin:20px">${score}<span class="small"> / ${questions.length}</span></div><p>Pelajari pembahasan dan ulangi latihan untuk memperkuat ingatan.</p><button class="btn" onclick="go('quiz')">Ulangi kuis</button> <button class="btn secondary" onclick="go('profile')">Lihat progres</button></div>`;
- const q=questions[qi];return `<h1>Latihan kecil, kemajuan besar</h1><p class="intro">Pilih satu jawaban. Pembahasan muncul setelah menjawab.</p><div class="quiz card"><div class="row"><span class="badge">SOAL ${qi+1} / ${questions.length}</span><span class="small">${score} jawaban benar</span></div><div class="bar" style="margin-top:18px"><i style="width:${qi/questions.length*100}%"></i></div><p class="small" style="margin-top:25px">${esc(q.lesson)}</p><div class="question jp">${esc(q.q)}</div>${q.type==='listening'?'<button class="audio question-audio" aria-label="Dengarkan soal" onclick="playQuestion()">▶</button>':''}<div class="answers">${q.a.map((a,i)=>`<button class="answer" onclick="answer(${i})">${String.fromCharCode(65+i)}. ${esc(a)}</button>`).join('')}</div><div id="feedback" aria-live="polite"></div><button id="next" class="btn hide" onclick="nextQuestion()" style="margin-top:10px">${qi===questions.length-1?'Lihat hasil':'Soal berikutnya'} →</button></div>`;
-}
-function playQuestion(){const q=questions[qi];if(q?.audio)playAudio(q.audio,'');else toast('Audio soal belum tersedia.');}
-async function answer(i){if(answered)return;answered=true;const q=questions[qi],generation=quizGeneration;document.querySelectorAll('.answer').forEach(b=>b.disabled=true);try{
- const response=await fetch(data.answer_base+'/'+q.id+'/answer',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json','X-CSRF-TOKEN':document.querySelector('meta[name=csrf-token]').content},body:JSON.stringify({answer_index:i})});
- if(!response.ok)throw Error('Jawaban belum bisa diperiksa. Silakan coba lagi.');const result=await response.json();if(page!=='quiz'||generation!==quizGeneration)return;if(result.correct)score++;
- document.querySelectorAll('.answer').forEach((b,n)=>{if(n===result.correct_index)b.classList.add('correct');else if(n===i)b.classList.add('wrong')});$('#feedback').textContent=(result.correct?'✓ Benar! ':'Belum tepat. ')+result.explanation;$('#feedback').className='feedback';$('#next').classList.remove('hide');
- }catch(e){if(page!=='quiz'||generation!==quizGeneration)return;answered=false;document.querySelectorAll('.answer').forEach(b=>b.disabled=false);toast(e.message);}}
-function nextQuestion(){if(!answered)return;qi++;answered=false;if(qi===questions.length){state.scores.push({score,total:questions.length,date:new Date().toISOString()});state.scores=state.scores.slice(-100);save()}render()}
-function resetDemo(){if(confirm('Hapus progres dan pengaturan belajar pada browser ini?')){state={done:[],known:[],scores:[],romaji:true,target:10};save();render();toast('Progres belajar direset')}}document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>go(b.dataset.page));render();
+(() => {
+  'use strict';
+  const data = window.learningData;
+  const root = document.querySelector('#jt-upgrade');
+  const out = root.querySelector('#jt-content');
+  const picker = root.querySelector('#jt-level');
+  const key = 'haru-learning-v1' + (data.preview ? '-preview' : '');
+  let stored = {};
+  try { stored = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch (_) {}
+  const progress = {done: [], known: [], scores: [], romaji: true, target: 10, ...stored};
+  for (const field of ['done', 'known', 'scores']) if (!Array.isArray(progress[field])) progress[field] = [];
+  const state = {page: 'home', level: 'foundation', learnView: 'current', lessonId: null, script: 'hiragana', search: '', category: 'Semua', practiceView: 'current', practiceLesson: '', qi: 0, selected: null, feedback: null, busy: false, exam: null, examIndex: 0, examBusy: false, examDeadline: 0};
+  let generation = 0, timer = null, audioPlayer = null;
+  const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+  const title = (small, big, desc = '') => `<div class="stack"><span class="eyebrow">${esc(small)}</span><h1>${esc(big)}</h1>${desc ? `<p class="muted">${esc(desc)}</p>` : ''}</div>`;
+  const button = (text, action, cls = '') => `<button class="btn ${cls}" data-action="${action}">${esc(text)}</button>`;
+  const romaji = text => progress.romaji && text ? `<small>${esc(text)}</small>` : '';
+  const levelOf = lesson => lesson.level || 'foundation';
+  const track = () => data.tracks.find(t => t.code === state.level) || {name: 'Fondasi', description: 'Mulai dari huruf dan kosakata.'};
+  const currentLessons = () => data.lessons.filter(l => !l.reference_id);
+  const completed = () => data.lessons.filter(l => progress.done.includes(l.id)).length;
+  const countKnown = () => data.words.filter(w => progress.known.includes(w.id)).length;
+  function persist() { try { localStorage.setItem(key, JSON.stringify(progress)); } catch (_) { toast('Browser tidak dapat menyimpan progres lokal.'); } }
+  function toast(message) {
+    let el = root.querySelector('#toast');
+    if (!el) { el = document.createElement('div'); el.id = 'toast'; el.className = 'notice'; el.setAttribute('role', 'status'); el.style.cssText = 'position:fixed;bottom:20px;left:20px;right:20px;z-index:80;max-width:700px;margin:auto;box-shadow:0 6px 20px #0002'; root.append(el); }
+    el.textContent = message; clearTimeout(toast.timeout); toast.timeout = setTimeout(() => el.remove(), 5000);
+  }
+  async function request(url, body) {
+    const options = {headers: {'Accept': 'application/json'}, credentials: 'same-origin'};
+    if (body !== undefined) { options.method = 'POST'; options.headers['Content-Type'] = 'application/json'; options.headers['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').content; options.body = JSON.stringify(body); }
+    const response = await fetch(url, options);
+    let result; try { result = await response.json(); } catch (_) { throw Error('Respons server belum dapat dibaca. Muat ulang halaman.'); }
+    if (!response.ok) throw Error(response.status === 419 ? 'Sesi halaman berakhir. Muat ulang lalu coba kembali.' : (result.message || 'Permintaan belum berhasil. Coba kembali.'));
+    return result;
+  }
+  function play(text, url) {
+    if (audioPlayer) audioPlayer.pause();
+    if (window.speechSynthesis) speechSynthesis.cancel();
+    if (url) { audioPlayer = new Audio(url); audioPlayer.play().catch(() => toast('Rekaman belum dapat diputar.')); return; }
+    if (!window.speechSynthesis) { toast('Suara Jepang belum tersedia di browser ini.'); return; }
+    const u = new SpeechSynthesisUtterance(text); u.lang = 'ja-JP'; u.rate = .8; speechSynthesis.speak(u);
+    toast('Menggunakan suara Jepang sintetis perangkat.');
+  }
+  function go(page) { generation++; state.busy = false; state.page = page; render(); }
+  function lessonCards(list) {
+    return list.map(l => `<article class="panel stack"><div class="row"><span class="tag">${esc(levelOf(l) === 'foundation' ? 'Pemula Haru' : levelOf(l))} · ${l.duration_minutes} menit</span><small>${progress.done.includes(l.id) ? '✓ Dipelajari' : ''}</small></div><h2>${esc(l.title)}</h2><p class="muted">${esc(l.summary)}</p>${l.japanese ? `<p class="jp" lang="ja">${esc(l.japanese)}</p>` : ''}${l.review_status === 'needs_japanese_teacher_review' ? '<small>Materi awal · perlu tinjauan pengajar</small>' : ''}<button class="btn primary" data-lesson="${l.id}">Buka materi →</button></article>`).join('') || '<section class="panel"><p class="empty">Materi jalur ini sedang disiapkan oleh pengajar.</p></section>';
+  }
+  function home() {
+    const next = data.lessons.find(l => !progress.done.includes(l.id)) || data.lessons[0];
+    return `${title('Belajar Minna no Nihongo', 'Bahasa baru. Kesempatan baru.', 'Huruf dan kosakata tetap menjadi fondasi. Lanjutkan bertahap dengan materi, latihan, dan virtual test.')}<section class="hero"><div><span class="tag">Haru · Belajar harian</span><h2 style="margin-top:13px">Pelan-pelan, pasti bisa 🌱</h2><p>Luangkan ${progress.target} menit hari ini. ${next ? 'Materi berikutnya: ' + esc(next.title) : 'Materi akan tampil setelah diterbitkan oleh pengajar.'}</p><div class="quick-links">${next ? `<button class="btn primary" data-lesson="${next.id}">Lanjutkan belajar →</button>` : button('Lihat materi', 'learn', 'primary')}${button('Kenali huruf', 'kana')}</div></div><div class="hero-art" aria-hidden="true"><span>学ぶ</span></div></section><div class="skills"><button class="skill statlink" data-action="kana"><small>Hiragana & katakana</small><strong>${data.characters.length} huruf</strong></button><button class="skill statlink" data-action="words"><small>Kosakata dikenal</small><strong>${countKnown()} / ${data.words.length}</strong></button><button class="skill statlink" data-action="learn"><small>Materi dipelajari</small><strong>${completed()} / ${data.lessons.length}</strong></button><button class="skill statlink" data-action="progress"><small>Target harian</small><strong>${progress.target} menit</strong></button></div><div class="row"><h2>Materi pemula Haru</h2>${button('Lihat semua materi', 'learn')}</div><div class="grid2">${lessonCards(currentLessons())}</div><section class="panel stack"><span class="eyebrow">Jalur upgrade</span><h2>Fondasi → N5 → N4 → N3 → N2 → N1 → Profesional</h2><p class="muted">Rangkuman Bab 1–50 tersedia sebagai materi awal pada N5/N4. Pemetaan bersifat editorial; jalur lanjut akan diisi bertahap.</p><div class="quick-links">${button('Jelajahi kurikulum', 'path', 'soft')}${button('Mini virtual test', 'exam')}</div></section>`;
+  }
+  function path() {
+    return `${title('Dari pemula hingga mahir', 'Satu jalur. Banyak kemungkinan.', 'Pemetaan Japantest mengacu konsep materi, bukan daftar resmi atau kesetaraan bab dengan level JLPT.')}<div class="level-cards">${data.tracks.map(t => { const count = data.lessons.filter(l => levelOf(l) === t.code).length; return `<section class="panel level-card ${t.code === state.level ? 'selected' : ''}"><div class="row"><span class="level-code">${esc(t.code === 'foundation' ? 'あいう' : t.code === 'pro' ? 'PRO' : t.code)}</span><span class="tag ${count ? '' : 'warm'}">${count ? count + ' materi' : 'Sedang disiapkan'}</span></div><h3>${esc(t.name)}</h3><p class="muted">${esc(t.description)}</p><small>${t.focus.map(esc).join(' · ')}</small><button class="btn ${t.code === state.level ? 'primary' : ''}" data-track="${esc(t.code)}">Lihat jalur →</button></section>`; }).join('')}</div><div class="notice">Fondasi dan Profesional merupakan jalur Japantest. Materi awal N5/N4 masih memerlukan tinjauan pengajar; belum mencakup seluruh kompetensi ujian.</div>`;
+  }
+  function wordCard(w) {
+    return `<article class="panel word-card ${progress.known.includes(w.id) ? 'known' : ''}"><div class="row"><span class="badge">${esc(w.category)}</span><button class="textbtn" data-word-audio="${w.id}" aria-label="Dengarkan ${esc(w.japanese)}">▶ Audio</button></div><p class="jp" lang="ja">${esc(w.japanese)}</p>${w.reading ? `<p lang="ja">${esc(w.reading)}</p>` : ''}${romaji(w.romaji)}<h3>${esc(w.meaning)}</h3>${w.example ? `<div class="lesson-example"><p lang="ja">${esc(w.example)}</p><small>${esc(w.example_translation)}</small></div>` : ''}<button class="btn ${progress.known.includes(w.id) ? 'soft' : ''}" data-known="${w.id}" aria-pressed="${progress.known.includes(w.id)}">${progress.known.includes(w.id) ? '✓ Sudah dikenal' : 'Tandai sudah dikenal'}</button></article>`;
+  }
+  function learn() {
+    const tabs = `<div class="tabs"><button data-learn-view="current" class="${state.learnView === 'current' ? 'active' : ''}">Materi Haru</button><button data-learn-view="track" class="${state.learnView === 'track' ? 'active' : ''}">Jalur ${esc(track().name)}</button><button data-learn-view="all" class="${state.learnView === 'all' ? 'active' : ''}">Semua materi</button></div>`;
+    const l = data.lessons.find(l => l.id === state.lessonId);
+    if (l) return `${tabs}${title('Belajar · ' + (l.chapter ? 'Bab ' + l.chapter : 'Pemula'), l.title, l.summary)}<div class="grid2"><section class="panel stack"><div class="row"><span class="tag">${esc(levelOf(l))} · ${l.duration_minutes} menit</span><button class="textbtn" data-back-lessons>← Semua materi</button></div>${l.patterns?.length ? `<div class="tabs">${l.patterns.map(p => `<span class="badge">${esc(p)}</span>`).join('')}</div>` : ''}<div class="lesson-example"><p class="jp" lang="ja">${esc(l.japanese)}</p>${romaji(l.romaji)}<p>${esc(l.translation)}</p></div><p class="lesson-text">${esc(l.content)}</p><div class="quick-links"><button class="btn" data-lesson-audio="${l.id}">▶ Dengarkan contoh</button><button class="btn soft" data-complete="${l.id}">${progress.done.includes(l.id) ? '✓ Sudah dipelajari' : 'Tandai dipelajari'}</button></div><button class="btn primary" data-lesson-practice="${l.id}">Latihan materi ini →</button>${l.review_status === 'needs_japanese_teacher_review' ? '<div class="notice">Rangkuman dan contoh orisinal Japantest, masih memerlukan tinjauan pengajar.</div>' : ''}${l.source_reference ? `<small>Acuan konsep: Minna no Nihongo ${l.chapter <= 25 ? 'I' : 'II'} · Bab ${l.chapter}. Pemetaan tingkat bersifat editorial.</small>` : ''}</section><section class="stack"><h2>Kosakata materi</h2>${data.words.filter(w => w.lesson_id === l.id).map(wordCard).join('') || '<section class="panel"><p class="muted">Kosakata khusus bab ini akan dilengkapi pengajar. Kata pemula tetap tersedia di menu Kosakata.</p>' + button('Buka Kosakata', 'words') + '</section>'}</section></div>`;
+    const list = state.learnView === 'current' ? currentLessons() : state.learnView === 'all' ? data.lessons : data.lessons.filter(l => levelOf(l) === state.level);
+    return `${tabs}${title('Belajar', state.learnView === 'current' ? 'Materi Haru yang sudah kamu kenal.' : state.learnView === 'all' ? 'Semua materi belajar.' : track().name, `${list.length} materi tersedia. Pilih satu bab, pahami konsepnya, lalu coba latihan.`)}<div class="grid2">${lessonCards(list)}</div>`;
+  }
+  function kana() {
+    const chars = data.characters.filter(c => c.script === state.script);
+    const map = new Map(chars.map(c => [c.romaji, c]));
+    const rows = [['a','i','u','e','o'],['ka','ki','ku','ke','ko'],['sa','shi','su','se','so'],['ta','chi','tsu','te','to'],['na','ni','nu','ne','no'],['ha','hi','fu','he','ho'],['ma','mi','mu','me','mo'],['ya',null,'yu',null,'yo'],['ra','ri','ru','re','ro'],['wa',null,null,null,'wo'],['n',null,null,null,null]].flat();
+    const tile = c => `<button class="kana-tile" data-kana="${c.id}" aria-label="${esc(c.symbol + ' dibaca ' + c.romaji)}"><span lang="ja">${esc(c.symbol)}</span>${romaji(c.romaji)}</button>`;
+    return `${title('Huruf · Fondasi', 'Kenali huruf, kenali bunyinya.', 'Hiragana dan katakana tetap tersedia pada semua jalur belajar. Ketuk satu huruf untuk melihat cara bacanya.')}<div class="row"><div class="tabs">${['hiragana', 'katakana'].map(s => `<button data-script="${s}" class="${s === state.script ? 'active' : ''}">${s === 'hiragana' ? 'Hiragana' : 'Katakana'} · ${data.characters.filter(c => c.script === s).length}</button>`).join('')}</div><label><input type="checkbox" data-setting="romaji" ${progress.romaji ? 'checked' : ''}> Tampilkan romaji</label></div><section class="panel"><div class="kana-grid">${rows.map(r => map.has(r) ? tile(map.get(r)) : '<span aria-hidden="true"></span>').join('')}${chars.filter(c => !rows.includes(c.romaji)).map(tile).join('')}</div></section><div class="notice">を / ヲ lazim dilafalkan o; romaji wo membedakannya dari お / オ. Pelajari dakuten dan gabungan bunyi setelah huruf dasar.</div>${button('Lanjut ke kosakata →', 'words', 'primary')}`;
+  }
+  function wordResults() {
+    const list = data.words.filter(w => (state.category === 'Semua' || w.category === state.category) && [w.japanese, w.reading, w.romaji, w.meaning, w.category, w.example, w.example_translation].join(' ').toLowerCase().includes(state.search.toLowerCase()));
+    return `<p class="word-count muted">${list.length} dari ${data.words.length} kosakata · ${countKnown()} sudah dikenal</p><div class="grid3">${list.map(wordCard).join('') || '<p class="empty">Kosakata belum ditemukan. Coba pencarian lain.</p>'}</div>`;
+  }
+  function words() {
+    return `${title('Kosakata · Haru', 'Satu kata baru setiap hari.', 'Cari Jepang, romaji, atau arti. Dengarkan lalu tandai kata yang sudah dikenal.')}<div class="tools"><label class="screen-reader" for="word-search">Cari kosakata</label><input id="word-search" type="search" placeholder="Cari Jepang, romaji, atau arti…" value="${esc(state.search)}"><label class="screen-reader" for="word-category">Kategori</label><select id="word-category">${['Semua', ...new Set(data.words.map(w => w.category))].map(c => `<option ${c === state.category ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select><label><input type="checkbox" data-setting="romaji" ${progress.romaji ? 'checked' : ''}> Romaji</label></div><div id="word-results">${wordResults()}</div>`;
+  }
+  function questionPool() {
+    return data.questions.filter(q => {
+      const l = data.lessons.find(l => l.id === q.lesson_id);
+      return (state.practiceView === 'current' ? !l?.reference_id : (q.level || levelOf(l || {})) === state.level) && (!state.practiceLesson || String(q.lesson_id) === state.practiceLesson) && (q.type !== 'listening' || q.audio_url);
+    });
+  }
+  function practice() {
+    const list = questionPool(); const q = list[state.qi % list.length];
+    const tabs = `<div class="tabs"><button data-practice-view="current" class="${state.practiceView === 'current' ? 'active' : ''}">Latihan Haru</button><button data-practice-view="track" class="${state.practiceView === 'track' ? 'active' : ''}">Latihan ${esc(track().name)}</button></div>`;
+    const lessons = data.lessons.filter(l => state.practiceView === 'current' ? !l.reference_id : levelOf(l) === state.level || data.questions.some(q => q.lesson_id === l.id && q.level === state.level));
+    const filter = `<label>Materi <select id="practice-lesson"><option value="">Semua materi</option>${lessons.map(l => `<option value="${l.id}" ${String(l.id) === state.practiceLesson ? 'selected' : ''}>${esc(l.title)}</option>`).join('')}</select></label>`;
+    if (!q) return `${tabs}${title('Latihan', 'Soal sedang disiapkan.', 'Pilih materi lain atau pelajari konsepnya terlebih dahulu.')}${filter}<section class="panel stack"><p class="muted">Belum ada soal yang dapat dimainkan pada pilihan ini. Soal menyimak tersedia setelah rekamannya diunggah.</p>${button('Lihat materi', 'learn', 'primary')}</section>`;
+    return `${tabs}${title('Latihan', 'Pahami, coba jawab, ulangi.', 'Pembahasan muncul setelah jawaban diperiksa server.')}${filter}<section class="panel stack"><div class="row"><span class="tag">${esc(q.lesson_title)}</span><small>Soal ${state.qi % list.length + 1} / ${list.length}</small></div><p class="jp" lang="ja">${esc(q.prompt)}</p>${q.audio_url ? `<button class="btn" data-question-audio="${q.id}">▶ Dengarkan soal</button>` : ''}${q.options.map((a, i) => `<button class="btn answer ${state.selected === i ? 'chosen' : ''}" data-answer="${i}" ${state.feedback || state.busy ? 'disabled' : ''}>${i + 1}. ${esc(a)}</button>`).join('')}${state.feedback ? `<div class="feedback ${state.feedback.correct ? '' : 'wrong'}"><strong>${state.feedback.correct ? 'Benar!' : 'Mari pelajari jawabannya.'}</strong><p>${esc(state.feedback.explanation)}</p><p>Jawaban: ${esc(q.options[state.feedback.correct_index])}</p></div>` : ''}<div class="quick-links"><button class="btn primary" data-action="check" ${state.selected === null || state.feedback || state.busy ? 'disabled' : ''}>${state.busy ? 'Memeriksa…' : 'Periksa jawaban'}</button><button class="btn" data-action="next-question" ${state.busy ? 'disabled' : ''}>Soal berikutnya →</button></div>${q.review_status === 'needs_japanese_teacher_review' ? '<small>Soal orisinal · materi awal perlu tinjauan pengajar</small>' : ''}</section>`;
+  }
+  async function check() {
+    if (state.busy || state.feedback || state.selected === null) return;
+    const q = questionPool()[state.qi % questionPool().length]; const answer = state.selected; const g = generation;
+    state.busy = true; render();
+    try {
+      const result = await request(data.answer_base + '/' + q.id + '/answer', {answer_index: answer});
+      if (g !== generation) return;
+      state.feedback = result;
+      progress.scores.push({score: result.correct ? 1 : 0, total: 1, date: new Date().toISOString(), title: q.prompt, level: q.level || 'Pemula Haru'}); progress.scores = progress.scores.slice(-100); persist();
+    } catch (e) { if (g === generation) toast(e.message); }
+    finally { if (g === generation) { state.busy = false; render(); } }
+  }
+  function exam() {
+    const a = state.exam;
+    if (a?.result) return examResult(a);
+    if (a?.status === 'in_progress') return examActive(a);
+    const list = data.templates.filter(t => t.level === state.level); const mini = list.filter(t => t.mode === 'mini' && t.status === 'published'); const blueprint = list.find(t => t.mode === 'blueprint');
+    return `${title('Virtual test · ' + track().name, 'Latih fokus. Ukur pemahamanmu.', 'Mini test memakai timer server, menyimpan jawaban, dan dapat dilanjutkan setelah halaman dimuat ulang pada sesi browser yang sama.')}<div class="grid2">${mini.map(t => `<section class="panel stack"><span class="tag">Mini test · ${t.duration_seconds / 60} menit</span><h2>${esc(t.title)}</h2><p class="muted">${esc(t.description)}</p><button class="btn primary" data-start-test="${t.id}" ${state.examBusy ? 'disabled' : ''}>${state.examBusy ? 'Menyiapkan…' : 'Mulai mini test →'}</button></section>`).join('') || '<section class="panel stack"><h2>Evaluasi sedang disiapkan</h2><p class="muted">' + (state.level === 'foundation' ? 'Mulai dengan huruf dan latihan pemula, lalu pilih N5 untuk mini test.' : state.level === 'pro' ? 'Jalur Profesional akan memakai proyek presentasi, email, dan rubrik keterampilan.' : 'Bank soal tingkat ini akan dilengkapi sebelum virtual test tersedia.') + '</p>' + button('Buka latihan', 'practice', 'soft') + '</section>'}${blueprint ? `<section class="panel stack"><div class="row"><h2>${esc(blueprint.title)}</h2><span class="tag warm">Belum tersedia</span></div><div class="exam-sections">${blueprint.sections.map((s, i) => `<div class="exam-section"><span><small>Sesi ${i + 1}</small><br>${esc(s.name_id)}</span><strong>${s.minutes} mnt</strong></div>`).join('')}</div><p class="muted">${esc(blueprint.description)}</p><small>Waktu jeda belum termasuk. Durasi menyimak dapat berbeda menurut rekaman.</small>${blueprint.official_score_reference ? `<div class="notice">Acuan resmi: ambang total ${blueprint.official_score_reference.overall_pass_mark}/180. ${esc(blueprint.official_score_reference.sectional_note)} Skor resmi berskala; akurasi mini test tidak dikonversi menjadi skor atau keputusan lulus JLPT.</div>` : ''}</section>` : ''}</div><section class="panel stack"><h3>Riwayat mini virtual test</h3>${(progress.exams || []).slice(-5).reverse().map(r => `<div class="list-row"><div class="grow">${esc(r.title)}<br><small>${new Date(r.date).toLocaleDateString('id-ID')} · ${r.correct}/${r.total} benar</small></div><button class="textbtn" data-result-test="${esc(r.id)}">Pembahasan →</button></div>`).join('') || '<p class="muted">Belum ada tes selesai di browser ini.</p>'}</section>`;
+  }
+  function examActive(a) {
+    const q = a.questions[state.examIndex] || a.questions[0]; const answer = a.answers[q.id];
+    return `${title(a.title, 'Kerjakan dengan tenang.', 'Jawaban dan waktu tersimpan di server. Pembahasan terbuka setelah seluruh mini test selesai.')}<section class="panel stack"><div class="row"><span class="tag">Soal ${state.examIndex + 1} / ${a.questions.length}</span><span class="timer" id="exam-timer" role="timer">${timeLeft()}</span></div><div class="question-nav">${a.questions.map((q, i) => `<button class="btn ${i === state.examIndex ? 'primary' : a.answers[q.id] != null ? 'soft' : ''}" data-exam-index="${i}" ${state.examBusy ? 'disabled' : ''} aria-label="Soal ${i + 1}${a.answers[q.id] != null ? ', sudah dijawab' : ''}">${i + 1}${a.answers[q.id] != null ? ' ✓' : ''}</button>`).join('')}</div><p class="jp" lang="ja">${esc(q.prompt)}</p>${q.audio_url ? `<button class="btn" data-exam-audio>▶ Dengarkan</button>` : ''}${q.options.map((c, i) => `<button class="btn answer ${answer === i ? 'chosen' : ''}" data-exam-answer="${i}" ${state.examBusy ? 'disabled' : ''}>${i + 1}. ${esc(c)}</button>`).join('')}<div class="row"><small>${Object.keys(a.answers).length} / ${a.questions.length} dijawab · ${state.examBusy ? 'Menyimpan…' : 'Tersimpan di server'}</small><button class="btn primary" data-action="finish-test" ${state.examBusy ? 'disabled' : ''}>Selesaikan mini test</button></div></section>`;
+  }
+  function examResult(a) {
+    const r = a.result;
+    return `${title(a.title, a.status === 'timed_out' ? 'Waktu selesai. Lihat pembahasanmu.' : 'Selesai. Saatnya belajar dari hasil.')}<section class="panel stack"><span class="result">${r.correct}/${r.total}</span><h2>${r.accuracy}% jawaban benar</h2><p>${esc(r.recommendation)}</p><div class="skills">${Object.entries(r.skills).map(([skill, s]) => `<div class="skill"><small>${esc(({grammar: 'Tata bahasa', vocabulary: 'Kosakata', reading: 'Membaca', listening: 'Menyimak'})[skill] || skill)}</small><strong>${s.correct}/${s.total}</strong></div>`).join('')}</div><div class="notice">Hasil ini adalah akurasi mini test. Bukan skor 0–180, prediksi lulus, atau sertifikat JLPT.</div><button class="btn" data-action="close-test">Kembali ke daftar tes</button></section><section class="stack"><h2>Pembahasan soal</h2>${r.reviews.map((q, i) => `<article class="panel stack"><span class="tag">Soal ${i + 1} · ${q.correct ? 'Benar' : q.answer_index == null ? 'Belum dijawab' : 'Perlu pengulangan'}</span><p class="jp" lang="ja">${esc(q.prompt)}</p><p>Jawabanmu: ${q.answer_index == null ? '—' : esc(q.options[q.answer_index])}</p><p><strong>Jawaban benar: ${esc(q.options[q.correct_index])}</strong></p><p class="muted">${esc(q.explanation)}</p></article>`).join('')}</section>`;
+  }
+  const attemptKey = 'haru-virtual-test-active';
+  function acceptAttempt(a) {
+    state.exam = a; state.examDeadline = Date.now() + a.remaining_seconds * 1000;
+    try { if (a.status === 'in_progress') localStorage.setItem(attemptKey, a.id); else localStorage.removeItem(attemptKey); } catch (_) {}
+    if (a.result) { progress.exams ||= []; if (!progress.exams.some(r => r.id === a.id)) { progress.exams.push({id: a.id, title: a.title, correct: a.result.correct, total: a.result.total, date: new Date().toISOString()}); progress.exams = progress.exams.slice(-100); persist(); } }
+    clearInterval(timer);
+    if (a.status === 'in_progress') timer = setInterval(() => { const el = root.querySelector('#exam-timer'); if (el) el.textContent = timeLeft(); if (Date.now() >= state.examDeadline && !state.examBusy) finishTest(true); }, 1000);
+  }
+  function timeLeft() { const seconds = Math.max(0, Math.ceil((state.examDeadline - Date.now()) / 1000)); return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`; }
+  async function startTest(id) {
+    if (state.examBusy) return; state.examBusy = true; render();
+    try { const a = await request(data.exam_base + '/templates/' + id + '/start', {}); state.examIndex = 0; acceptAttempt(a); state.page = 'exam'; }
+    catch (e) { toast(e.message); } finally { state.examBusy = false; render(); }
+  }
+  async function saveExamAnswer(index) {
+    if (state.examBusy || !state.exam) return;
+    const a = state.exam; const q = a.questions[state.examIndex]; state.examBusy = true; render();
+    try { acceptAttempt(await request(data.exam_base + '/attempts/' + a.id + '/answers', {answers: {[q.id]: index}})); }
+    catch (e) { toast(e.message + ' Jawaban belum tersimpan; coba kembali.'); } finally { state.examBusy = false; render(); }
+  }
+  async function finishTest(expired = false) {
+    if (state.examBusy || !state.exam || state.exam.status !== 'in_progress') return;
+    if (!expired && !confirm('Selesaikan mini test? Jawaban tidak dapat diubah setelah selesai.')) return;
+    state.examBusy = true; render();
+    try { acceptAttempt(await request(data.exam_base + '/attempts/' + state.exam.id + '/finish', {answers: {}})); }
+    catch (e) { toast(e.message); state.examDeadline = Date.now() + 10000; } finally { state.examBusy = false; render(); }
+  }
+  async function loadAttempt(id, open = true) {
+    state.examBusy = true;
+    try { const a = await request(data.exam_base + '/attempts/' + id); state.examIndex = 0; acceptAttempt(a); if (open) { state.page = 'exam'; state.level = a.level; } }
+    catch (e) { try { localStorage.removeItem(attemptKey); } catch (_) {} toast('Tes tidak dapat dipulihkan: ' + e.message); }
+    finally { state.examBusy = false; render(); }
+  }
+  function profile() {
+    const total = progress.scores.reduce((n, s) => n + s.total, 0), right = progress.scores.reduce((n, s) => n + s.score, 0);
+    return `${title('Profil · Pelajar Haru', 'Lihat kemajuanmu.', 'Progres Huruf, Kosakata, dan Belajar tetap tersimpan pada browser ini.')}<div class="skills"><section class="skill"><small>Materi dipelajari</small><strong>${completed()} / ${data.lessons.length}</strong></section><section class="skill"><small>Kosakata dikenal</small><strong>${countKnown()} / ${data.words.length}</strong></section><section class="skill"><small>Latihan dijawab</small><strong>${total}</strong></section><section class="skill"><small>Akurasi latihan</small><strong>${total ? Math.round(right / total * 100) + '%' : 'Belum ada'}</strong></section></div><div class="grid2"><section class="panel stack"><h2>Preferensi belajar</h2><label><input type="checkbox" data-setting="romaji" ${progress.romaji ? 'checked' : ''}> Tampilkan romaji</label><label>Target harian <select id="daily-target">${[5,10,15,20].map(n => `<option value="${n}" ${progress.target === n ? 'selected' : ''}>${n} menit</option>`).join('')}</select></label><p class="muted">Target adalah pengaturan; durasi belajar belum dilacak otomatis.</p>${button('Lanjutkan belajar', 'learn', 'primary')}${button('Reset progres belajar', 'reset')}<small>Progres belajar lokal belum disinkronkan ke akun. Jawaban virtual test tersimpan pada sesi browser di server.</small></section><section class="panel stack"><h2>Riwayat latihan</h2>${progress.scores.slice(-5).reverse().map(s => `<div class="list-row"><span class="number">${s.score === s.total ? '✓' : '↻'}</span><div class="grow">${esc(s.title || 'Kuis Haru')}<br><small>${new Date(s.date).toLocaleDateString('id-ID')} · ${s.score}/${s.total} benar</small></div></div>`).join('') || '<p class="empty">Belum ada latihan dijawab.</p>'}<h3>Materi selesai</h3>${data.lessons.filter(l => progress.done.includes(l.id)).map(l => `<button class="textbtn" data-lesson="${l.id}">✓ ${esc(l.title)}</button>`).join('') || '<p class="muted">Mulai satu pelajaran untuk melihat progres.</p>'}${button('Riwayat virtual test', 'exam')}</section></div>`;
+  }
+  function render() {
+    picker.value = state.level;
+    root.querySelectorAll('[data-nav]').forEach(b => { b.classList.toggle('active', b.dataset.nav === state.page); if (b.dataset.nav === state.page) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
+    out.innerHTML = ({home, path, learn, kana, words, practice, exam, progress: profile})[state.page]();
+  }
+  function clearQuestion() { generation++; state.selected = null; state.feedback = null; state.busy = false; }
+  let modalFocus = null;
+  function openKana(id) {
+    const c = data.characters.find(c => c.id === id); if (!c) return;
+    modalFocus = document.activeElement; const el = document.createElement('div'); el.className = 'modal-backdrop';
+    el.innerHTML = `<section class="panel kana-modal stack" role="dialog" aria-modal="true" aria-labelledby="kana-modal-title"><span class="eyebrow" id="kana-modal-title">Kenali bunyinya · ${esc(c.script)}</span><div class="big-kana" lang="ja">${esc(c.symbol)}</div><h2>${esc(c.romaji)}</h2><div class="row"><button class="btn primary" data-kana-audio="${c.id}">▶ Dengarkan</button><button class="btn" data-close-kana>Tutup</button></div><small>Audio rekaman jika tersedia; jika belum, suara Jepang sintetis perangkat.</small></section>`;
+    root.append(el); el.querySelector('[data-close-kana]').focus(); el.onclick = e => { if (e.target === el) closeKana(); };
+  }
+  function closeKana() { root.querySelector('.modal-backdrop')?.remove(); modalFocus?.focus(); }
+  root.addEventListener('keydown', e => {
+    const modal = root.querySelector('.modal-backdrop'); if (!modal) return;
+    if (e.key === 'Escape') closeKana();
+    if (e.key === 'Tab') { const bs = modal.querySelectorAll('button'); if (e.shiftKey && document.activeElement === bs[0]) { e.preventDefault(); bs[bs.length - 1].focus(); } else if (!e.shiftKey && document.activeElement === bs[bs.length - 1]) { e.preventDefault(); bs[0].focus(); } }
+  });
+  root.addEventListener('input', e => { if (e.target.id === 'word-search') { state.search = e.target.value; root.querySelector('#word-results').innerHTML = wordResults(); } });
+  root.addEventListener('change', e => {
+    const t = e.target;
+    if (t.dataset.setting === 'romaji') { progress.romaji = t.checked; persist(); render(); }
+    if (t.id === 'word-category') { state.category = t.value; root.querySelector('#word-results').innerHTML = wordResults(); }
+    if (t.id === 'daily-target') { progress.target = +t.value; persist(); render(); }
+    if (t.id === 'practice-lesson') { state.practiceLesson = t.value; state.qi = 0; clearQuestion(); render(); }
+  });
+  picker.addEventListener('change', () => { state.level = picker.value; state.lessonId = null; state.learnView = state.level === 'foundation' ? 'current' : 'track'; state.practiceView = state.level === 'foundation' ? 'current' : 'track'; state.practiceLesson = ''; state.qi = 0; clearQuestion(); render(); });
+  root.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b || b.disabled) return; const d = b.dataset;
+    if (d.nav) { go(d.nav); return; }
+    if (d.track) { state.level = d.track; state.learnView = 'track'; state.lessonId = null; state.practiceView = 'track'; state.practiceLesson = ''; state.qi = 0; clearQuestion(); go('learn'); return; }
+    if (d.lesson) { state.lessonId = +d.lesson; go('learn'); return; }
+    if (d.learnView) { state.learnView = d.learnView; state.lessonId = null; render(); return; }
+    if ('backLessons' in d) { state.lessonId = null; render(); return; }
+    if (d.complete) { if (!progress.done.includes(+d.complete)) progress.done.push(+d.complete); persist(); render(); return; }
+    if (d.lessonPractice) { const l = data.lessons.find(l => l.id === +d.lessonPractice); state.level = levelOf(l); state.practiceView = l.reference_id ? 'track' : 'current'; state.practiceLesson = d.lessonPractice; state.qi = 0; clearQuestion(); go('practice'); return; }
+    if (d.practiceView) { state.practiceView = d.practiceView; state.practiceLesson = ''; state.qi = 0; clearQuestion(); render(); return; }
+    if (d.script) { state.script = d.script; render(); return; }
+    if (d.kana) { openKana(+d.kana); return; }
+    if ('closeKana' in d) { closeKana(); return; }
+    if (d.kanaAudio) { const c = data.characters.find(c => c.id === +d.kanaAudio); play(c.symbol, c.audio_url); return; }
+    if (d.wordAudio) { const w = data.words.find(w => w.id === +d.wordAudio); play(w.japanese, w.audio_url); return; }
+    if (d.lessonAudio) { const l = data.lessons.find(l => l.id === +d.lessonAudio); play(l.japanese, l.audio_url); return; }
+    if (d.questionAudio) { const q = data.questions.find(q => q.id === +d.questionAudio); play('', q.audio_url); return; }
+    if (d.known) { const id = +d.known; progress.known = progress.known.includes(id) ? progress.known.filter(n => n !== id) : [...progress.known, id]; persist(); render(); return; }
+    if (d.answer != null) { state.selected = +d.answer; render(); return; }
+    if (d.startTest) { startTest(+d.startTest); return; }
+    if (d.resultTest) { loadAttempt(d.resultTest); return; }
+    if (d.examAnswer != null) { saveExamAnswer(+d.examAnswer); return; }
+    if (d.examIndex != null) { state.examIndex = +d.examIndex; render(); return; }
+    if ('examAudio' in d) { const q = state.exam.questions[state.examIndex]; play('', q.audio_url); return; }
+    const action = d.action;
+    if (['home','path','learn','kana','words','practice','exam','progress'].includes(action)) { go(action); return; }
+    if (action === 'check') check();
+    if (action === 'next-question') { state.qi++; clearQuestion(); render(); }
+    if (action === 'finish-test') finishTest();
+    if (action === 'close-test') { state.exam = null; render(); }
+    if (action === 'reset' && confirm('Reset progres belajar dan preferensi pada browser ini? Riwayat tes di server tetap tersedia pada sesi yang sama.')) { Object.assign(progress, {done: [], known: [], scores: [], romaji: true, target: 10, exams: []}); persist(); render(); }
+  });
+  render();
+  try { const id = localStorage.getItem(attemptKey); if (id) loadAttempt(id); } catch (_) {}
+})();
