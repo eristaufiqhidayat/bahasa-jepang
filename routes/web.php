@@ -1,10 +1,19 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LearningWebController;
 use App\Http\Controllers\MaterialController;
 use Illuminate\Support\Facades\Route;
 
-Route::redirect('/', '/admin');
+Route::get('/', [LearningWebController::class, 'index'])->name('learning.home');
+Route::get('/belajar', [LearningWebController::class, 'index'])->name('learning');
+Route::get('/belajar/audio/{type}/{id}', [LearningWebController::class, 'audio'])->whereNumber('id')->name('learning.audio');
+Route::post('/belajar/questions/{question}/answer', [LearningWebController::class, 'answer'])->middleware('throttle:60,1');
+Route::middleware(['auth', 'admin'])->prefix('pratinjau')->group(function () {
+    Route::get('/', [LearningWebController::class, 'preview'])->name('learning.preview');
+    Route::get('/audio/{type}/{id}', [LearningWebController::class, 'previewAudio'])->whereNumber('id')->name('learning.preview.audio');
+    Route::post('/questions/{question}/answer', [LearningWebController::class, 'previewAnswer'])->middleware('throttle:60,1');
+});
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'create'])->name('login');
     Route::post('/login', [AuthController::class, 'store'])->middleware('throttle:5,1');

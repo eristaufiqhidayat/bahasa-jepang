@@ -8,7 +8,7 @@ $choices=match($field){'status'=>['draft'=>'Draft','published'=>'Published'],'sc
 <option value="">Pilih pelajaran</option>@foreach($lessons as $lesson)<option value="{{ $lesson->id }}" @selected((string)$value===(string)$lesson->id)>{{ $lesson->title }}</option>@endforeach</select>@elseif($choices)<select name="{{ $field }}">@foreach($choices as $key=>$text)<option value="{{ $key }}" @selected((string)$value===(string)$key)>{{ $text }}</option>@endforeach</select>@elseif(in_array($field,['content','summary','explanation','prompt','translation','example','example_translation']))<textarea name="{{ $field }}" rows="{{ $field==='content'?10:3 }}">{{ $value }}</textarea>@else<input name="{{ $field }}" value="{{ $value }}" type="{{ in_array($field,['position','duration_minutes'])?'number':'text' }}" @if(in_array($field,['position','duration_minutes'])) min="1" @endif>@endif</label>@endforeach<label class="wide">Audio (opsional; wajib untuk soal mendengarkan)<input type="file" name="audio" accept=".mp3,.wav,.ogg,.m4a">
 <small>Maksimal 10 MB. MP3, WAV, OGG, atau M4A.</small>
 </label>@if($item->audio_path)<div class="wide">
-<audio controls src="{{ Storage::disk('public')->url($item->audio_path) }}">
+<audio controls src="{{ route('learning.preview.audio',[$type,$item->id]) }}">
 </audio>
 <label>
 <input type="checkbox" name="remove_audio" value="1"> Hapus audio saat ini</label>

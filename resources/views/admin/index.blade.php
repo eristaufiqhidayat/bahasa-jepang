@@ -26,7 +26,7 @@
 <strong>{{ $item->title ?? $item->japanese ?? $item->symbol ?? $item->prompt }}</strong>
 </td>
 <td>{{ $item->status ?? $item->meaning ?? $item->romaji ?? $item->type }}</td>
-<td>@if($item->audio_path)<audio controls preload="none" src="{{ Storage::disk('public')->url($item->audio_path) }}">
+<td>@if($item->audio_path)<audio controls preload="none" src="{{ route('learning.preview.audio',[$type,$item->id]) }}">
 </audio>@else<span class="muted">Belum ada</span>@endif</td>
 <td>
 <div class="actions">

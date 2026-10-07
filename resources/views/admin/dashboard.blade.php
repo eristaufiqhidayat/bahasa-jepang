@@ -1,5 +1,5 @@
 @extends('layouts.admin') 
-@section('content')<h1>Siapkan langkah pertama mereka.</h1>
+@section('content')<p><a class="button" href="{{ route('learning.preview') }}">Pratinjau halaman belajar ↗</a> <a href="{{ route('learning.home') }}">Halaman publik ↗</a></p><h1>Siapkan langkah pertama mereka.</h1>
 <p class="muted">Kelola materi bahasa Jepang yang mudah diikuti oleh pemula Indonesia.</p>
 <div class="stats">@foreach($counts as $label=>$count)<div class="card">
 <span>{{ $label }}</span>

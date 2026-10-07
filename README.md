@@ -83,3 +83,24 @@ php artisan view:cache
 ```
 
 Tes menggunakan SQLite in-memory; mencakup otorisasi admin, CRUD seluruh jenis, validasi audio, cascade delete, draft/public API, kunci jawaban, dan seeder berulang. Workflow GitHub Actions disertakan.
+
+## Halaman belajar web sesuai mockup Haru
+
+- Buka `/` atau `/belajar` untuk halaman pengguna: Beranda, Belajar, Huruf, Kosakata, Latihan, Profil.
+- Tampilan hijau, kartu materi, sidebar desktop, dan navigasi bawah HP mengikuti mockup HTML.
+- Materi mengambil database. Hanya pelajaran `published` beserta kosakata dan soalnya tampil publik; huruf tampil independen.
+- Data contoh tetap draft. Login `/login`, buka `/admin`, pilih **Pratinjau halaman belajar** untuk mencoba draft tanpa menerbitkannya. Setelah diperiksa, edit pelajaran dan pilih `published`.
+- Kuis diperiksa oleh server; kunci dan pembahasan tidak dimuat dalam halaman sebelum menjawab.
+- Progres pelajaran, kosakata dikuasai, riwayat kuis, romaji, dan target menit disimpan pada browser. Belum ada akun siswa atau sinkronisasi antarperangkat. Durasi/streak belum dihitung.
+- Rekaman audio diputar jika diunggah. Tanpa rekaman, tombol menggunakan suara Jepang sintetis perangkat bila tersedia. Soal mendengarkan tetap memerlukan rekaman.
+- Audio halaman belajar dan panel admin dilayani melalui endpoint Laravel, sehingga tidak memerlukan symlink/`exec()`. Audio API berbasis `audio_path` masih menggunakan konfigurasi storage publik yang dijelaskan di atas.
+
+### Memperbarui hosting yang sudah terpasang
+
+```bash
+git pull origin main
+php artisan optimize:clear
+php artisan optimize
+```
+
+Perubahan halaman belajar tidak menambah tabel. Tidak perlu mengulang seeder atau membuat ulang akun admin. Untuk hosting yang mematikan `proc_open`, jika menginstal dependensi gunakan `composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts`, lalu `php artisan package:discover --ansi`.
